@@ -74,12 +74,23 @@ export function useFrameworkLinks() {
       return []
     }
 
+    const isActiveMainDocs = !!theme.value.frameworksNav.some(link => {
+      return route.path.match(new RegExp(link.activeMatch!))
+    })
+
+    if (isActiveMainDocs) {
+      return theme.value.frameworksNav?.map(link => ({
+        text: link.text,
+        link: route.path.replace(
+          /^\/(\w{2}-\w{2}\/)?\w+/,
+          `${localePath.value}${link.name}`
+        ),
+      })) as NavItemWithLink[]
+    }
+
     return theme.value.frameworksNav?.map(link => ({
       text: link.text,
-      link: route.path.replace(
-        new RegExp(`^/(\\w{2}-\\w{2}/)?\\w+`),
-        `${localePath.value}${link.name}`
-      ),
+      link: (link as NavItemWithLink).link,
     })) as NavItemWithLink[]
   })
 }
