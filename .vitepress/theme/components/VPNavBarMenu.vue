@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, watchEffect } from 'vue'
+import { computed } from 'vue'
 import { useConfig } from '../composables/config'
 import { useLanguageLinks, useFrameworkLinks } from '../composables/nav'
 import VPNavBarMenuLink from './VPNavBarMenuLink.vue'
@@ -8,7 +8,7 @@ import VPNavBarMenuGroup from './VPNavBarMenuGroup.vue'
 const { config } = useConfig()
 const languageLinks = useLanguageLinks()
 const frameworkLinks = useFrameworkLinks()
-const show = computed(() => config.value.nav || languageLinks.value)
+const show = computed(() => config.value.nav || languageLinks.value || frameworkLinks.value)
 </script>
 
 <template>
