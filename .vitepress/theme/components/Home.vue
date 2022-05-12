@@ -10,7 +10,6 @@
       user interfaces.
     </p>
     <p class="actions">
-      <vue-mastery-modal />
       <a class="get-started" href="/guide/introduction.html">
         Get Started
         <svg
