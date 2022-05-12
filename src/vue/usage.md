@@ -1,0 +1,55 @@
+---
+footer: false
+---
+
+# Usage
+
+Start by finding a Headless UI component that needs to position the element, such as the `<Menu>` component for this example. Import `<Float>` component:
+
+```html
+<script setup>
+import { Float } from 'headlessui-float-vue'
+</script>
+```
+
+Then wrap `<Float>` around `<MenuButton>` and `<MenuItems>`:
+
+```diff
+<Menu>
++ <Float>
+    <MenuButton class="...">
+      Options
+    </MenuButton>
+
+    <MenuItems class="...">
+      ...
+    </MenuItems>
++ </Float>
+</Menu>
+```
+
+Note that `<Float>` must contain 2 child elements, the first is the reference element, and the second is the floating element. It can be a Headless UI component or an HTML element.
+
+Then remove the `"absolute"`, `"right-0"` and other positioning class from `<MenuItems>`, and add the `placement="bottom-end"` attribute:
+
+```html
+<Menu>
+  <Float placement="bottom-end">
+    ...
+  </Float>
+</Menu>
+```
+
+Remove the `"mt-2"` class from `<MenuItems>`, and add the `:offset="4"` attribute:
+
+```html
+<Menu>
+  <Float placement="bottom-end" :offset="4">
+    ...
+  </Float>
+</Menu>
+```
+
+Then `<Menu>` can automatically position the inner `<MenuItems>`.
+
+In addition to `<Menu>`, the same can be used on `<Listbox>`, `<Popover>` or `<Combobox>` components, and you can use `<Float>` on any element that requires floating positioning.
