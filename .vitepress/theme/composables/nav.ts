@@ -49,7 +49,9 @@ export function useLanguageLinks() {
     const route = useRoute()
 
     // intentionally remove the leading slash because each locale has one
-    const currentPath = route.path.replace(localePath.value, '')
+    const currentPath = route.path
+      .replace(localePath.value, '')
+      .replace('index.html', '')
 
     const candidates = localePaths.map((localePath) => ({
       text: langs[localePath].label,

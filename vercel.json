@@ -1,4 +1,14 @@
 {
+  "redirects": [
+    { "source": "/index.html", "destination": "/" },
+    { "source": "/zh-tw/index.html", "destination": "/zh-tw/" },
+
+    { "source": "/react", "destination": "/react/installation.html" },
+    { "source": "/react/", "destination": "/react/installation.html" },
+
+    { "source": "/vue", "destination": "/vue/installation.html" },
+    { "source": "/vue/", "destination": "/vue/installation.html" }
+  ],
   "github": {
     "silent": true
   }
