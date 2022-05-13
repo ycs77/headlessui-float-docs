@@ -78,12 +78,12 @@ export interface Config {
       lastUpdated?: string
 
       nav?: NavItem[]
-      frameworksNav?: (NavItem & { name: string })[]
+      frameworksNav?: NavItemWithFramework[]
       sidebar?: SidebarConfig
     }
   }
 
-  frameworksNav?: (NavItem & { name: string })[]
+  frameworksNav?: NavItemWithFramework[]
 }
 
 /**
@@ -115,6 +115,8 @@ export interface NavItemWithChildren {
   activeMatch?: string
   items: (NavItemWithLink | MenuItemChildWithChildren)[]
 }
+
+export type NavItemWithFramework = NavItem & { name: string }
 
 export type SidebarConfig = SidebarGroup[] | MultiSidebarConfig
 

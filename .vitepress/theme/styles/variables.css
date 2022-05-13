@@ -1,0 +1,10 @@
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vt-c-brand: var(--vt-c-blue);
+  --vt-c-brand-light: var(--vt-c-blue-light);
+  --vt-c-brand-dark: var(--vt-c-blue-dark);
+  --vt-c-brand-highlight: var(--vt-c-brand-dark);
+}

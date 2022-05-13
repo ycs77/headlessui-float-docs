@@ -69,16 +69,20 @@ export function useFrameworkLinks() {
   const { localePath, theme } = useData<Config>()
   const route = useRoute()
 
-  return computed(() => {
+  const currentFramework = computed(() => {
+    if (!theme.value.frameworksNav) return
+
+    return theme.value.frameworksNav.find(link => {
+      return route.path.match(new RegExp(link.activeMatch!))
+    })
+  })
+
+  const links = computed(() => {
     if (!theme.value.frameworksNav) {
       return []
     }
 
-    const isActiveMainDocs = !!theme.value.frameworksNav.some(link => {
-      return route.path.match(new RegExp(link.activeMatch!))
-    })
-
-    if (isActiveMainDocs) {
+    if (currentFramework.value) {
       return theme.value.frameworksNav?.map(link => ({
         text: link.text,
         link: route.path.replace(
@@ -93,4 +97,8 @@ export function useFrameworkLinks() {
       link: (link as NavItemWithLink).link,
     })) as NavItemWithLink[]
   })
+
+  const isActive = (current: NavItemWithLink) => currentFramework.value?.text === current.text
+
+  return { currentFramework, links, isActive }
 }

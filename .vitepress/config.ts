@@ -7,13 +7,13 @@ const frameworksNav = [
     name: 'react',
     text: 'React',
     activeMatch: `^/(\\w{2}-\\w{2}/)?react/`,
-    link: '/react/installation.html',
+    link: '/react/installation',
   },
   {
     name: 'vue',
     text: 'Vue',
     activeMatch: `^/(\\w{2}-\\w{2}/)?vue/`,
-    link: '/vue/installation.html',
+    link: '/vue/installation',
   },
 ]
 
@@ -63,9 +63,6 @@ const sidebar = {
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
-  lang: 'en-US',
-  title: 'Headless UI Float',
-  description: 'Easy use Headless UI components with Floating UI (Popper.js)',
   srcDir: 'src',
 
   locales: {

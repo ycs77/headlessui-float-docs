@@ -48,13 +48,13 @@ const focusOnTargetAnchor = ({ target }: Event) => {
   font-size: 0.9em;
   font-weight: bold;
   text-decoration: none;
-  color: var(--vt-c-green);
+  color: var(--vt-c-blue);
   box-shadow: var(--vt-shadow-3);
   background-color: var(--vt-c-bg);
   border-radius: 8px;
 }
 .dark .VPSkipLink {
-  color: var(--vt-c-green);
+  color: var(--vt-c-blue);
 }
 .VPSkipLink:focus {
   height: auto;

@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useConfig } from '../composables/config'
-import { useLanguageLinks, useFrameworkLinks } from '../composables/nav'
+import { useLanguageLinks } from '../composables/nav'
 import VPNavBarMenuLink from './VPNavBarMenuLink.vue'
 import VPNavBarMenuGroup from './VPNavBarMenuGroup.vue'
 
 const { config } = useConfig()
 const languageLinks = useLanguageLinks()
-const frameworkLinks = useFrameworkLinks()
-const show = computed(() => config.value.nav || languageLinks.value || frameworkLinks.value)
+const show = computed(() => config.value.nav || languageLinks.value)
 </script>
 
 <template>
@@ -18,8 +17,6 @@ const show = computed(() => config.value.nav || languageLinks.value || framework
       <VPNavBarMenuLink v-if="'link' in item" :item="item" />
       <VPNavBarMenuGroup v-else :item="item" />
     </template>
-
-    <VPNavBarMenuLink v-for="item in frameworkLinks" :key="item.text" :item="item" />
 
     <VPNavBarMenuGroup v-if="languageLinks" :item="languageLinks" />
   </nav>

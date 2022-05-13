@@ -1,57 +1,87 @@
 <template>
   <section id="hero">
     <h1 class="tagline">
-      The
-      <span class="accent">Progressive</span>
-      <br />JavaScript Framework
+      {{ locale['tagline-1'] }}<br />
+      <span class="accent">{{ locale['tagline-2'] }}</span> {{ locale['tagline-3'] }}
     </h1>
     <p class="description">
-      An approachable, performant and versatile framework for building web
-      user interfaces.
+      {{ locale.description }}
     </p>
     <p class="actions">
-      <a class="get-started" href="/guide/introduction.html">
-        Get Started
-        <svg
-          class="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
-          />
-        </svg>
-      </a>
-      <a class="setup" href="/guide/quick-start.html">Install</a>
+      <a class="action-react" :href="`${localePath}react/installation.html`">React</a>
+      <a class="action-vue" :href="`${localePath}vue/installation.html`">Vue</a>
     </p>
   </section>
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
-      <h2>Approachable</h2>
+      <h2>{{ locale['feature-1'].title }}</h2>
       <p>
-        Builds on top of standard HTML, CSS and JavaScript with intuitive
-        API and world-class documentation.
+        {{ locale['feature-1'].description }}
       </p>
     </div>
     <div class="vt-box">
-      <h2>Performant</h2>
+      <h2>{{ locale['feature-2'].title }}</h2>
       <p>
-        Truly reactive, compiler-optimized rendering system that rarely
-        requires manual optimization.
+        {{ locale['feature-2'].description }}
       </p>
     </div>
     <div class="vt-box">
-      <h2>Versatile</h2>
+      <h2>{{ locale['feature-3'].title }}</h2>
       <p>
-        A rich, incrementally adoptable ecosystem that scales between a
-        library and a full-featured framework.
+        {{ locale['feature-3'].description }}
       </p>
     </div>
   </section>
 </template>
+
+<script lang="ts" setup>
+import { computed } from 'vue'
+import { useData } from 'vitepress'
+
+const { site, localePath } = useData()
+
+const locales = {
+  'en-US': {
+    'tagline-1': 'Easy Floating',
+    'tagline-2': 'Headless UI',
+    'tagline-3': 'Components',
+    description: 'Easy use Headless UI components with Floating UI (Popper.js)',
+    'feature-1': {
+      title: 'Tailwind CSS',
+      description: 'Easy use Headless UI & Tailwind CSS.',
+    },
+    'feature-2': {
+      title: 'Floating UI',
+      description: 'Using Floating UI (New version Popper.js) to position floating elements.',
+    },
+    'feature-3': {
+      title: 'More feature...',
+      description: 'Support Transition, Portal and Arrow.',
+    },
+  },
+  'zh-TW': {
+    'tagline-1': '輕鬆浮動定位',
+    'tagline-2': 'Headless UI',
+    'tagline-3': '元素',
+    'description': '輕鬆在 Headless UI 中使用 Floating UI (新版 Popper.js) 來定位浮動元素',
+    'feature-1': {
+      title: 'Tailwind CSS',
+      description: '輕鬆整合使用 Headless UI & Tailwind CSS。',
+    },
+    'feature-2': {
+      title: 'Floating UI',
+      description: '使用 Floating UI (新版 Popper.js) 定位浮動元素。',
+    },
+    'feature-3': {
+      title: '更多功能...',
+      description: '支援 Transition、Portal (Teleport) 和箭頭 (Arrow)。',
+    },
+  },
+} as Record<string, any>
+
+const locale = computed(() => locales[site.value.lang])
+</script>
 
 <style scoped>
 section {
@@ -74,7 +104,7 @@ section {
 
 html:not(.dark) .accent,
 .dark .tagline {
-  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  background: -webkit-linear-gradient(285deg, #66E3FF 10%, #7064F9);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -92,48 +122,45 @@ html:not(.dark) .accent,
 .actions a {
   font-size: 16px;
   display: inline-block;
-  background-color: var(--vt-c-bg-mute);
-  padding: 8px 18px;
+  padding: 9px 24px;
   font-weight: 500;
   border-radius: 8px;
   transition: background-color 0.5s, color 0.5s;
 }
 
-.actions .get-started {
+.actions a:not(.actions a:last-child) {
   margin-right: 18px;
 }
 
-.actions .icon {
-  display: inline;
-  position: relative;
-  top: -1px;
-  margin-left: 2px;
-  fill: currentColor;
-  transition: transform 0.2s;
+.actions .action-react {
+  background-color: var(--vt-c-blue);
 }
 
-.actions .get-started:hover {
+.actions .action-vue {
+  background-color: var(--vt-c-green);
+}
+
+.actions .action-react,
+.actions .action-vue {
+  color: #fff;
+}
+
+.actions .action-react:hover {
+  background-color: var(--vt-c-blue-dark);
   transition-duration: 0.2s;
 }
 
-.actions .get-started:hover .icon {
-  transform: translateX(2px);
-}
-
-.actions .get-started,
-.actions .setup {
-  color: var(--vt-c-text-code);
-}
-
-.actions .get-started:hover,
-.actions .setup:hover {
-  background-color: var(--vt-c-gray-light-4);
+.actions .action-vue:hover {
+  background-color: var(--vt-c-green-dark);
   transition-duration: 0.2s;
 }
 
-.dark .actions .get-started:hover,
-.dark .actions .setup:hover {
-  background-color: var(--vt-c-gray-dark-3);
+.dark .actions .action-react:hover {
+  background-color: var(--vt-c-blue-light);
+}
+
+.dark .actions .action-vue:hover {
+  background-color: var(--vt-c-green-light);
 }
 
 #special-sponsor {
