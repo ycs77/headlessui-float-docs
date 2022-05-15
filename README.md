@@ -1,5 +1,3 @@
-# Headless UI Float Documation
+# headlessui-float.vercel.app
 
-The documation source of [Headless UI Float](https://github.com/ycs77/headlessui-float).
-
-[**Documation**](https://headlessui-float.vercel.app)
+Documation for [Headless UI Float](https://github.com/ycs77/headlessui-float).
