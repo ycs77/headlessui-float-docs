@@ -114,7 +114,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   head: [
     ['meta', { name: 'twitter:site', content: '@ycs77' }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     [
       'meta',
       {
