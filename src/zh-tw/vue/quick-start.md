@@ -1,8 +1,19 @@
----
-footer: false
----
+# 快速開始
 
-# 開始使用
+[**線上 Demo**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
+
+## 安裝
+
+套件相依於 **Vue 3** 和 **Headless UI Vue**，記得需要先安裝。
+
+```bash
+# npm
+npm i headlessui-float-vue
+# yarn
+yarn add headlessui-float-vue
+```
+
+## 開始使用
 
 先去找一個需要自動定位元素位置的 Headless UI 元件，比如這裡用 `<Menu>` 元件來示範。引入 `<Float>` 元件：
 

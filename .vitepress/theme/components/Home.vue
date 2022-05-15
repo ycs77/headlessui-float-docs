@@ -8,8 +8,8 @@
       {{ locale.description }}
     </p>
     <p class="actions">
-      <a class="action-react" :href="`${localePath}react/installation.html`">React</a>
-      <a class="action-vue" :href="`${localePath}vue/installation.html`">Vue</a>
+      <a class="action-react" :href="`${localePath}react/quick-start.html`">React</a>
+      <a class="action-vue" :href="`${localePath}vue/quick-start.html`">Vue</a>
     </p>
   </section>
 

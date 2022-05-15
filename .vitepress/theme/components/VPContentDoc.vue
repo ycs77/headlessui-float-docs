@@ -143,6 +143,7 @@ const pageClass = computed(() => {
     min-width: 620px;
     margin: 0;
     order: 1;
+    flex: 1;
   }
   .VPContentDoc:not(.has-aside) .content {
     min-width: 688px;

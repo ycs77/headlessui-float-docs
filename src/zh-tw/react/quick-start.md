@@ -1,8 +1,19 @@
----
-footer: false
----
+# 快速開始
 
-# 開始使用
+[**線上 Demo**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
+
+## 安裝
+
+套件相依於 **React**、**React DOM** 和 **Headless UI React**，記得需要先安裝。
+
+```bash
+# npm
+npm i headlessui-float-react
+# yarn
+yarn add headlessui-float-react
+```
+
+## 開始使用
 
 先去找一個需要自動定位元素位置的 Headless UI 元件，比如這裡用 `<Menu>` 元件來示範。引入 `<Float>` 元件：
 

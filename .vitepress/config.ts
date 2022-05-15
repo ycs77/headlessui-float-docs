@@ -7,13 +7,13 @@ const frameworksNav = [
     name: 'react',
     text: 'React',
     activeMatch: `^/(\\w{2}-\\w{2}/)?react/`,
-    link: '/react/installation',
+    link: '/react/quick-start',
   },
   {
     name: 'vue',
     text: 'Vue',
     activeMatch: `^/(\\w{2}-\\w{2}/)?vue/`,
-    link: '/vue/installation',
+    link: '/vue/quick-start',
   },
 ]
 
@@ -21,40 +21,86 @@ const sidebar = {
   'en-US': {
     '/react/': [
       {
-        text: 'Getting Started',
+        text: 'Guide',
         items: [
-          { text: 'Installation', link: '/react/installation' },
-          { text: 'Usage', link: '/react/usage' },
-        ]
+          { text: 'Quick Start', link: '/react/quick-start' },
+          { text: 'Floating UI Options', link: '/react/floatingui-options' },
+          { text: 'Transition', link: '/react/transition' },
+          { text: 'Arrow', link: '/react/arrow' },
+          { text: 'Portal (Teleport)', link: '/react/portal' },
+          { text: 'Other Options', link: '/react/other-options' },
+          { text: 'High-Order Component', link: '/react/high-order-component' },
+        ],
+      },
+      {
+        text: 'API',
+        items: [
+          { text: 'Component API', link: '/react/api' },
+        ],
       },
     ],
     '/vue/': [
       {
-        text: 'Getting Started',
+        text: 'Guide',
         items: [
-          { text: 'Installation', link: '/vue/installation' },
-          { text: 'Usage', link: '/vue/usage' },
-        ]
+          { text: 'Quick Start', link: '/vue/quick-start' },
+          { text: 'Floating UI Options', link: '/vue/floatingui-options' },
+          { text: 'Transition', link: '/vue/transition' },
+          { text: 'Arrow', link: '/vue/arrow' },
+          { text: 'Portal (Teleport)', link: '/vue/portal' },
+          { text: 'Other Options', link: '/vue/other-options' },
+          { text: 'High-Order Component', link: '/vue/high-order-component' },
+          { text: 'Auto Importing Components', link: '/vue/auto-importing' },
+        ],
+      },
+      {
+        text: 'API',
+        items: [
+          { text: 'Component API', link: '/vue/api' },
+        ],
       },
     ],
   },
   'zh-TW': {
     '/zh-tw/react/': [
       {
-        text: '開始',
+        text: '指南',
         items: [
-          { text: '安裝', link: '/zh-tw/react/installation' },
-          { text: '開始使用', link: '/zh-tw/react/usage' },
-        ]
+          { text: '快速開始', link: '/zh-tw/react/quick-start' },
+          { text: 'Floating UI 選項', link: '/zh-tw/react/floatingui-options' },
+          { text: 'Transition (過場)', link: '/zh-tw/react/transition' },
+          { text: 'Arrow (箭頭)', link: '/zh-tw/react/arrow' },
+          { text: 'Portal (Teleport)', link: '/zh-tw/react/portal' },
+          { text: '其他選項', link: '/zh-tw/react/other-options' },
+          { text: 'High-Order Component', link: '/zh-tw/react/high-order-component' },
+        ],
+      },
+      {
+        text: 'API',
+        items: [
+          { text: '元件 API', link: '/zh-tw/react/api' },
+        ],
       },
     ],
     '/zh-tw/vue/': [
       {
-        text: '開始',
+        text: '指南',
         items: [
-          { text: '安裝', link: '/zh-tw/vue/installation' },
-          { text: '開始使用', link: '/zh-tw/vue/usage' },
-        ]
+          { text: '快速開始', link: '/zh-tw/vue/quick-start' },
+          { text: 'Floating UI 選項', link: '/zh-tw/vue/floatingui-options' },
+          { text: 'Transition (過場)', link: '/zh-tw/vue/transition' },
+          { text: 'Arrow (箭頭)', link: '/zh-tw/vue/arrow' },
+          { text: 'Portal (Teleport)', link: '/zh-tw/vue/portal' },
+          { text: '其他選項', link: '/zh-tw/vue/other-options' },
+          { text: 'High-Order Component', link: '/zh-tw/vue/high-order-component' },
+          { text: '自動引入元件', link: '/zh-tw/vue/auto-importing' },
+        ],
+      },
+      {
+        text: 'API',
+        items: [
+          { text: '元件 API', link: '/zh-tw/vue/api' },
+        ],
       },
     ],
   },

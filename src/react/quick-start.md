@@ -1,8 +1,19 @@
----
-footer: false
----
+# Quick Start
 
-# Usage
+[**Demo**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
+
+## Installation
+
+This package is require **React**, **React DOM** and **Headless UI React**, you must be installed them first.
+
+```bash
+# npm
+npm i headlessui-float-react
+# yarn
+yarn add headlessui-float-react
+```
+
+## Usage
 
 Start by finding a Headless UI component that needs to position the element, such as the `<Menu>` component for this example. Import `<Float>` component:
 
