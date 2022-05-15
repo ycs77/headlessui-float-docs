@@ -12,3 +12,8 @@ For local development, yarn is preferred as package manager:
 yarn
 yarn dev
 ```
+
+## Working on the content
+
+* See VitePress docs on supported [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown.html) and the ability to [use Vue syntax inside markdown](https://vitepress.vuejs.org/guide/using-vue.html).
+* Contributions to add languages other than English and Traditional Chinese are not accepted.
