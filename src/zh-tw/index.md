@@ -1,6 +1,6 @@
 ---
 page: true
-title: Headless UI Float - 輕鬆在 Headless UI 中使用 Floating UI (新版 Popper.js) 來定位浮動元素
+title: Headless UI Float - 輕鬆浮動定位 Headless UI 元素
 ---
 
 <script setup>

@@ -115,12 +115,12 @@ export default defineConfigWithTheme<ThemeConfig>({
     '/': {
       lang: 'en-US',
       title: 'Headless UI Float',
-      description: 'Easy use Headless UI components with Floating UI (Popper.js)',
+      description: 'Headless UI Float - Easy floating Headless UI components',
     },
     '/zh-tw/': {
       lang: 'zh-TW',
       title: 'Headless UI Float',
-      description: '輕鬆在 Headless UI 中使用 Floating UI (新版 Popper.js) 來定位浮動元素',
+      description: 'Headless UI Float - 輕鬆浮動定位 Headless UI 元素',
     },
   },
 

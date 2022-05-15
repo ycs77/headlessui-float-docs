@@ -1,6 +1,6 @@
 ---
 page: true
-title: Headless UI Float - Easy use Headless UI components with Floating UI (Popper.js)
+title: Headless UI Float - Easy floating Headless UI components
 ---
 
 <script setup>
