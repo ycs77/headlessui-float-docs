@@ -146,6 +146,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       },
     },
 
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/ycs77/headlessui-float' },
+    ],
+
     editLink: {
       repo: 'ycs77/headlessui-float-docs',
     },
