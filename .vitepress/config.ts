@@ -110,6 +110,19 @@ export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   srcDir: 'src',
+  scrollOffset: 'header',
+
+  head: [
+    ['meta', { name: 'twitter:site', content: '@ycs77' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    [
+      'meta',
+      {
+        name: 'twitter:image',
+        content: 'https://headlessui-float.vercel.app/images/social_image.png'
+      }
+    ],
+  ],
 
   locales: {
     '/': {
