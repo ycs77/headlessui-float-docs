@@ -48,15 +48,15 @@ const locales = {
     'tagline-3': 'Components',
     description: 'Easy use Headless UI components with Floating UI (Popper.js)',
     'feature-1': {
-      title: 'Tailwind CSS',
+      title: '💙 Tailwind CSS',
       description: 'Easy use Headless UI & Tailwind CSS.',
     },
     'feature-2': {
-      title: 'Floating UI',
+      title: '💬 Floating UI',
       description: 'Using Floating UI (New version Popper.js) to position floating elements.',
     },
     'feature-3': {
-      title: 'More feature...',
+      title: '➡️ More feature...',
       description: 'Support Transition, Portal and Arrow.',
     },
   },
@@ -66,15 +66,15 @@ const locales = {
     'tagline-3': '元素',
     'description': '輕鬆在 Headless UI 中使用 Floating UI (新版 Popper.js) 來定位浮動元素',
     'feature-1': {
-      title: 'Tailwind CSS',
+      title: '💙 Tailwind CSS',
       description: '輕鬆整合使用 Headless UI & Tailwind CSS。',
     },
     'feature-2': {
-      title: 'Floating UI',
+      title: '💬 Floating UI',
       description: '使用 Floating UI (新版 Popper.js) 定位浮動元素。',
     },
     'feature-3': {
-      title: '更多功能...',
+      title: '➡️ 更多功能...',
       description: '支援 Transition、Portal (Teleport) 和箭頭 (Arrow)。',
     },
   },
