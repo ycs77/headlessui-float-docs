@@ -46,7 +46,7 @@ const locales = {
     'tagline-1': 'Easy Floating',
     'tagline-2': 'Headless UI',
     'tagline-3': 'Components',
-    description: 'Easy use Headless UI components with Floating UI (Popper.js)',
+    description: 'Easy use Headless UI with Floating UI (Popper.js) to position floating elements',
     'feature-1': {
       title: '💙 Tailwind CSS',
       description: 'Easy use Headless UI & Tailwind CSS.',
