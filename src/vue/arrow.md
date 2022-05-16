@@ -9,9 +9,8 @@ First import the `<FloatArrow>` component, and put it inside the floating elemen
     <PopoverPanel>
       <!-- add arrow -->
       <FloatArrow class="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
-      <div>
-        Popover & arrow, content...
-      </div>
+
+      Popover & arrow, content...
     </PopoverPanel>
   </Float>
 </Popover>

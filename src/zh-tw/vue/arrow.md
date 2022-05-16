@@ -9,9 +9,8 @@
     <PopoverPanel>
       <!-- 加入箭頭 -->
       <FloatArrow class="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
-      <div>
-        Popover & arrow, content...
-      </div>
+
+      Popover & arrow, content...
     </PopoverPanel>
   </Float>
 </Popover>

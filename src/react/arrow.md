@@ -1,6 +1,6 @@
 # Arrow
 
-First import the `<Float.Arrow>` component, and put it inside the floating element, then add the class:
+First put the `<Float.Arrow>` inside the floating element, then add the class:
 
 ```jsx
 <Popover>
@@ -9,9 +9,8 @@ First import the `<Float.Arrow>` component, and put it inside the floating eleme
     <Popover.Panel>
       {/* add arrow */}
       <Float.Arrow className="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
-      <div>
-        Popover & arrow, content...
-      </div>
+
+      Popover & arrow, content...
     </Popover.Panel>
   </Float>
 </Popover>
@@ -25,7 +24,7 @@ Then add the `arrow` prop in `<Float>`, and add `:offset="15"` to keep the arrow
 
 But then we will find that the arrow is stacked on top of the floating element, which is not the effect we want, so need to wrap the content below and set the position to `relative`, and it will move to the top of the arrow. Of course, we also need to set the background color, otherwise will still see the arrow below:
 
-```html
+```jsx
 <Popover.Panel className="w-[240px] h-[70px] bg-white border border-gray-200 rounded-md shadow-lg focus:outline-none">
   <Float.Arrow className="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
 
