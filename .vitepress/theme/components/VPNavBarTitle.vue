@@ -11,7 +11,7 @@
           d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z"
         />
       </svg> -->
-      <span class="text">Headless UI Float</span>
+      <span class="text"><span class="text-blue">Headless UI</span> Float</span>
     </slot>
   </a>
 </template>
@@ -46,5 +46,13 @@ const { localePath } = useData()
 .text {
   font-size: 16px;
   font-weight: 500;
+}
+
+.text-blue {
+  color: var(--vt-c-blue-light);
+  transition: color 0.5s;
+}
+.dark .text-blue {
+  color: var(--vt-c-blue-lighter);
 }
 </style>
