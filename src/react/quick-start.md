@@ -1,7 +1,5 @@
 # Quick Start
 
-[**Demo**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
-
 ## Installation
 
 This package is require **React**, **React DOM** and **Headless UI React**, you must be installed them first.
@@ -12,6 +10,11 @@ npm i headlessui-float-react
 # yarn
 yarn add headlessui-float-react
 ```
+
+### Online Demo
+
+* [**React**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
+* [**React + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react-ts?file=src%2FApp.vue)
 
 ## Usage
 
