@@ -63,7 +63,7 @@ const locales = {
   'zh-TW': {
     'tagline-1': '輕鬆浮動定位',
     'tagline-2': 'Headless UI',
-    'tagline-3': '元素',
+    'tagline-3': '元件',
     'description': '輕鬆在 Headless UI 中使用 Floating UI (新版 Popper.js) 來定位浮動元素',
     'feature-1': {
       title: '💙 Tailwind CSS',
