@@ -1,6 +1,6 @@
 ---
 page: true
-title: Headless UI Float - 輕鬆浮動定位 Headless UI 元素
+title: Headless UI Float - 輕鬆浮動定位 Headless UI 元件
 ---
 
 <script setup>

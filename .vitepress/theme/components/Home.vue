@@ -43,13 +43,13 @@ const { site, localePath } = useData()
 
 const locales = {
   'en-US': {
-    'tagline-1': 'Easy Floating',
+    'tagline-1': 'Easily Float',
     'tagline-2': 'Headless UI',
     'tagline-3': 'Components',
-    description: 'Easy use Headless UI with Floating UI (Popper.js) to position floating elements',
+    description: 'Easily use Headless UI with Floating UI (Popper.js) to position floating elements.',
     'feature-1': {
       title: '💙 Tailwind CSS',
-      description: 'Easy use Headless UI & Tailwind CSS.',
+      description: 'Easily with Headless UI & Tailwind CSS.',
     },
     'feature-2': {
       title: '💬 Floating UI',

@@ -128,12 +128,12 @@ export default defineConfigWithTheme<ThemeConfig>({
     '/': {
       lang: 'en-US',
       title: 'Headless UI Float',
-      description: 'Headless UI Float - Easy floating the Headless UI components',
+      description: 'Headless UI Float - Easily float the Headless UI components',
     },
     '/zh-tw/': {
       lang: 'zh-TW',
       title: 'Headless UI Float',
-      description: 'Headless UI Float - 輕鬆浮動定位 Headless UI 元素',
+      description: 'Headless UI Float - 輕鬆浮動定位 Headless UI 元件',
     },
   },
 

@@ -1,6 +1,6 @@
 ---
 page: true
-title: Headless UI Float - Easy floating the Headless UI components
+title: Headless UI Float - Easily float the Headless UI components
 ---
 
 <script setup>
