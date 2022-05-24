@@ -1,3 +1,3 @@
 <template>
-  <!-- to keep component name highlight feature for Volar -->
+  <!-- this file is to keep component name highlight feature for Volar -->
 </template>
