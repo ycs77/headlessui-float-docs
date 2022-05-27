@@ -115,13 +115,10 @@ export default defineConfigWithTheme<ThemeConfig>({
   head: [
     ['meta', { name: 'twitter:site', content: '@ycs77' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    [
-      'meta',
-      {
-        name: 'twitter:image',
-        content: 'https://headlessui-float.vercel.app/images/social_image.png'
-      }
-    ],
+    ['meta', {
+      name: 'og:image',
+      content: 'https://headlessui-float.vercel.app/images/social_image.jpg',
+    }],
   ],
 
   locales: {
