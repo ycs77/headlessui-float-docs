@@ -6,7 +6,7 @@
 ```js
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
-import { HeadlessUiFloatResolver } from 'headlessui-float-vue'
+import { HeadlessUiFloatResolver } from '@headlessui-float/vue'
 
 export default {
   plugins: [

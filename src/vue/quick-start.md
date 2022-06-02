@@ -6,9 +6,9 @@ This package is require **Vue 3** and **Headless UI Vue**, you must be installed
 
 ```bash
 # npm
-npm i headlessui-float-vue
+npm i @headlessui-float/vue
 # yarn
-yarn add headlessui-float-vue
+yarn add @headlessui-float/vue
 ```
 
 ### Online Demo
@@ -22,7 +22,7 @@ Start by finding a Headless UI component that needs to position the element, suc
 
 ```html
 <script setup>
-import { Float } from 'headlessui-float-vue'
+import { Float } from '@headlessui-float/vue'
 </script>
 ```
 

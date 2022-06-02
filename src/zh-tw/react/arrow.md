@@ -38,7 +38,7 @@
 
 ```jsx
 import { Popover } from '@headlessui/react'
-import { Float } from 'headlessui-float-react'
+import { Float } from '@headlessui-float/react'
 
 export default function ArrowExample() {
   return (

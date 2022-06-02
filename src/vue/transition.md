@@ -20,7 +20,7 @@ If using the `tailwindcss-origin-class`, also need to add the `origin` class to 
 
 *tailwind.config.js*
 ```js
-const { tailwindcssOriginSafelist } = require('headlessui-float-vue')
+const { tailwindcssOriginSafelist } = require('@headlessui-float/vue')
 
 module.exports = {
   safelist: [...tailwindcssOriginSafelist],

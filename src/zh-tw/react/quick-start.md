@@ -6,9 +6,9 @@
 
 ```bash
 # npm
-npm i headlessui-float-react
+npm i @headlessui-float/react
 # yarn
-yarn add headlessui-float-react
+yarn add @headlessui-float/react
 ```
 
 ### 線上 Demo
@@ -21,7 +21,7 @@ yarn add headlessui-float-react
 先去找一個需要自動定位元素位置的 Headless UI 元件，比如這裡用 `<Menu>` 元件來示範。引入 `<Float>` 元件：
 
 ```js
-import { Float } from 'headlessui-float-react'
+import { Float } from '@headlessui-float/react'
 ```
 
 然後在 `<Menu.Button>` 和 `<Menu.Items>` 外包一層 `<Float>`：

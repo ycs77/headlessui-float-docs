@@ -17,7 +17,7 @@ First import the `<FloatArrow>` component, and put it inside the floating elemen
 
 <script setup>
 ...
-import { Float, FloatArrow } from 'headlessui-float-vue'
+import { Float, FloatArrow } from '@headlessui-float/vue'
 </script>
 ```
 
@@ -66,6 +66,6 @@ Full example of the arrow:
 
 <script setup>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { Float, FloatArrow } from 'headlessui-float-vue'
+import { Float, FloatArrow } from '@headlessui-float/vue'
 </script>
 ```

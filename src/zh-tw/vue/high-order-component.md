@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { Float } from 'headlessui-float-vue'
+import { Float } from '@headlessui-float/vue'
 </script>
 ```
 
@@ -47,7 +47,7 @@ import { Float } from 'headlessui-float-vue'
 *HighOrderFloat.vue*
 ```vue
 <script setup>
-import { Float, FloatProps } from 'headlessui-float-vue'
+import { Float, FloatProps } from '@headlessui-float/vue'
 
 defineProps(FloatProps)
 </script>

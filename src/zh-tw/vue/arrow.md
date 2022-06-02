@@ -17,7 +17,7 @@
 
 <script setup>
 ...
-import { Float, FloatArrow } from 'headlessui-float-vue'
+import { Float, FloatArrow } from '@headlessui-float/vue'
 </script>
 ```
 
@@ -66,6 +66,6 @@ import { Float, FloatArrow } from 'headlessui-float-vue'
 
 <script setup>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { Float, FloatArrow } from 'headlessui-float-vue'
+import { Float, FloatArrow } from '@headlessui-float/vue'
 </script>
 ```

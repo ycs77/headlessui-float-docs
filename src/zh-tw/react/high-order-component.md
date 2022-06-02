@@ -4,7 +4,7 @@
 
 *HighOrderFloat.jsx*
 ```jsx
-import { Float } from 'headlessui-float-react'
+import { Float } from '@headlessui-float/react'
 
 export default function HighOrderFloat(props) {
   return (
@@ -47,7 +47,7 @@ export default function HighOrderFloat(props) {
 
 *HighOrderFloat.tsx*
 ```jsx
-import { Float, FloatProps } from 'headlessui-float-react'
+import { Float, FloatProps } from '@headlessui-float/react'
 
 export default function HighOrderFloat(props: FloatProps) {
   // ...

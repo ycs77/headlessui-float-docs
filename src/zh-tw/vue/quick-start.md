@@ -6,9 +6,9 @@
 
 ```bash
 # npm
-npm i headlessui-float-vue
+npm i @headlessui-float/vue
 # yarn
-yarn add headlessui-float-vue
+yarn add @headlessui-float/vue
 ```
 
 ### 線上 Demo
@@ -22,7 +22,7 @@ yarn add headlessui-float-vue
 
 ```html
 <script setup>
-import { Float } from 'headlessui-float-vue'
+import { Float } from '@headlessui-float/vue'
 </script>
 ```
 

@@ -20,7 +20,7 @@ If using the `tailwindcssOriginClass`, also need to add the `origin` class to th
 
 *tailwind.config.js*
 ```js
-const { tailwindcssOriginSafelist } = require('headlessui-float-react')
+const { tailwindcssOriginSafelist } = require('@headlessui-float/react')
 
 module.exports = {
   safelist: [...tailwindcssOriginSafelist],

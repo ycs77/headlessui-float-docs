@@ -6,9 +6,9 @@ This package is require **React**, **React DOM** and **Headless UI React**, you 
 
 ```bash
 # npm
-npm i headlessui-float-react
+npm i @headlessui-float/react
 # yarn
-yarn add headlessui-float-react
+yarn add @headlessui-float/react
 ```
 
 ### Online Demo
@@ -21,7 +21,7 @@ yarn add headlessui-float-react
 Start by finding a Headless UI component that needs to position the element, such as the `<Menu>` component for this example. Import `<Float>` component:
 
 ```js
-import { Float } from 'headlessui-float-react'
+import { Float } from '@headlessui-float/react'
 ```
 
 Then wrap `<Float>` around `<Menu.Button>` and `<Menu.Items>`:
