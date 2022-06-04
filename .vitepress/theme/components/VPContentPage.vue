@@ -16,3 +16,15 @@ const { frontmatter } = useData()
     <slot name="footer-after" />
   </div>
 </template>
+
+<style scoped>
+.VPContentPage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.VPContentPage main {
+  flex: 1;
+}
+</style>
