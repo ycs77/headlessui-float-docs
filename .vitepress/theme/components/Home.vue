@@ -123,7 +123,7 @@ html:not(.dark) .accent,
   border-width: 1px;
   border-style: solid;
   border-radius: 9999px;
-  transition: background-color 0.5s, color 0.5s;
+  transition: color 0.5s, background-color 0.5s, border-color 0.5s;
 }
 
 .actions a:not(.actions a:last-child) {
@@ -135,33 +135,55 @@ html:not(.dark) .accent,
   background-color: var(--vt-c-blue);
   border-color: var(--vt-c-blue);
 }
+.actions .action-react:hover {
+  background-color: var(--vt-c-blue-light);
+  border-color: var(--vt-c-blue-light);
+  transition-duration: 0.2s;
+}
+.actions .action-react:active {
+  background-color: var(--vt-c-blue-dark);
+  border-color: var(--vt-c-blue-dark);
+  transition-duration: 0.2s;
+}
+.dark .actions .action-react {
+  background-color: var(--vt-c-blue-dark);
+  border-color: var(--vt-c-blue-light);
+}
+.dark .actions .action-react:hover {
+  background-color: var(--vt-c-blue);
+  border-color: var(--vt-c-blue-lighter);
+}
+.dark .actions .action-react:active {
+  background-color: var(--vt-c-blue-dark);
+  border-color: var(--vt-c-blue-lighter);
+}
 
 .actions .action-vue {
   color: #fff;
   background-color: var(--vt-c-green);
   border-color: var(--vt-c-green);
 }
-
-.actions .action-react:hover {
-  background-color: var(--vt-c-blue-dark);
-  border-color: var(--vt-c-blue-dark);
+.actions .action-vue:hover {
+  background-color: var(--vt-c-green-light);
+  border-color: var(--vt-c-green-light);
   transition-duration: 0.2s;
 }
-
-.actions .action-vue:hover {
+.actions .action-vue:active {
   background-color: var(--vt-c-green-dark);
   border-color: var(--vt-c-green-dark);
   transition-duration: 0.2s;
 }
-
-.dark .actions .action-react:hover {
-  background-color: var(--vt-c-blue-light);
-  border-color: var(--vt-c-blue-light);
-}
-
-.dark .actions .action-vue:hover {
-  background-color: var(--vt-c-green-light);
+.dark .actions .action-vue {
+  background-color: var(--vt-c-green-dark);
   border-color: var(--vt-c-green-light);
+}
+.dark .actions .action-vue:hover {
+  background-color: var(--vt-c-green);
+  border-color: var(--vt-c-green-lighter);
+}
+.dark .actions .action-vue:active {
+  background-color: var(--vt-c-green-dark);
+  border-color: var(--vt-c-green-lighter);
 }
 
 #special-sponsor {
