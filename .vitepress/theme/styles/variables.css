@@ -7,4 +7,26 @@
   --vt-c-brand-light: var(--vt-c-blue-light);
   --vt-c-brand-dark: var(--vt-c-blue-dark);
   --vt-c-brand-highlight: var(--vt-c-brand-dark);
+
+  --vt-button-alt-border: var(--vt-c-gray-light-3);
+  --vt-button-alt-text: var(--vt-c-text-light-1);
+  --vt-button-alt-bg: var(--vt-c-gray-light-5);
+  --vt-button-alt-hover-border: var(--vt-c-gray-light-3);
+  --vt-button-alt-hover-text: var(--vt-c-text-light-1);
+  --vt-button-alt-hover-bg: var(--vt-c-gray-light-4);
+  --vt-button-alt-active-border: var(--vt-c-gray-light-3);
+  --vt-button-alt-active-text: var(--vt-c-text-light-1);
+  --vt-button-alt-active-bg: var(--vt-c-gray-light-3);
+}
+
+.dark {
+  --vt-button-alt-border: var(--vt-c-gray-dark-2);
+  --vt-button-alt-text: var(--vt-c-text-dark-1);
+  --vt-button-alt-bg: var(--vt-c-bg-mute);
+  --vt-button-alt-hover-border: var(--vt-c-gray-dark-2);
+  --vt-button-alt-hover-text: var(--vt-c-text-dark-1);
+  --vt-button-alt-hover-bg: var(--vt-c-gray-dark-2);
+  --vt-button-alt-active-border: var(--vt-c-gray-dark-2);
+  --vt-button-alt-active-text: var(--vt-c-text-dark-1);
+  --vt-button-alt-active-bg: var(--vt-button-alt-bg);
 }

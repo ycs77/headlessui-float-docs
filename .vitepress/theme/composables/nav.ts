@@ -34,8 +34,32 @@ export function useNav() {
   }
 }
 
+export function useDocsNav() {
+  const { theme, lang } = useData<Config>()
+  const { currentFramework } = useFrameworkLinks()
+
+  return computed(() => {
+    const framework = currentFramework.value?.name || theme.value.frameworksNav?.[0].name
+    if (!framework) return []
+
+    const nav = {
+      'en-US': [
+        { text: 'Guide', link: `/${framework}/quick-start`, activeMatch: `/${framework}/(?!api)` },
+        { text: 'API', link: `/${framework}/api`, activeMatch: `/${framework}/api` },
+      ],
+      'zh-TW': [
+        { text: '指南', link: `/zh-tw/${framework}/quick-start`, activeMatch: `/zh-tw/${framework}/(?!api)` },
+        { text: 'API', link: `/zh-tw/${framework}/api`, activeMatch: `/zh-tw/${framework}/api` },
+      ],
+    } as Record<string, NavItemWithLink[]>
+
+    return nav[lang.value]
+  })
+}
+
 export function useLanguageLinks() {
-  const { site, localePath, theme } = useData()
+  const { site, localePath, theme } = useData<Config>()
+  const route = useRoute()
 
   return computed(() => {
     const langs = site.value.langs
@@ -46,23 +70,21 @@ export function useLanguageLinks() {
       return null
     }
 
-    const route = useRoute()
-
     // intentionally remove the leading slash because each locale has one
     const currentPath = route.path
       .replace(localePath.value, '')
       .replace('index.html', '')
 
-    const candidates = localePaths.map((localePath) => ({
-      text: langs[localePath].label,
-      link: `${localePath}${currentPath}`
-    }))
-
     const selectText = theme.value.selectText || 'Languages'
+
+    const items = localePaths.map((localePath) => ({
+      text: langs[localePath].label,
+      link: `${localePath}${currentPath}`,
+    }))
 
     return {
       text: selectText,
-      items: candidates,
+      items,
     } as NavItemWithChildren
   })
 }
@@ -72,7 +94,9 @@ export function useFrameworkLinks() {
   const route = useRoute()
 
   const currentFramework = computed(() => {
-    if (!theme.value.frameworksNav) return
+    if (!theme.value.frameworksNav) {
+      return null
+    }
 
     return theme.value.frameworksNav.find(link => {
       return route.path.match(new RegExp(link.activeMatch!))

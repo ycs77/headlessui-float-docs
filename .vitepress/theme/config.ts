@@ -70,6 +70,9 @@ export interface Config {
     placement: string
   }
 
+  /**
+   * The locales config.
+   */
   locales?: {
     [path: string]: {
       label: string
@@ -83,7 +86,15 @@ export interface Config {
     }
   }
 
+  /**
+   * The frameworks nav items.
+   */
   frameworksNav?: NavItemWithFramework[]
+
+  /**
+   * The select language text.
+   */
+  selectText?: string
 }
 
 /**

@@ -61,6 +61,7 @@ const pageClass = computed(() => {
 
 <style scoped>
 .VPContentDoc {
+  width: 100%;
   padding: 32px 24px 96px;
 }
 

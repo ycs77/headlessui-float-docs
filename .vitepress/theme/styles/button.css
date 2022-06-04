@@ -1,0 +1,17 @@
+.VPButton.alt {
+  border-color: var(--vt-button-alt-border);
+  color: var(--vt-button-alt-text);
+  background-color: var(--vt-button-alt-bg);
+}
+
+.VPButton.alt:hover {
+  border-color: var(--vt-button-alt-hover-border);
+  color: var(--vt-button-alt-hover-text);
+  background-color: var(--vt-button-alt-hover-bg);
+}
+
+.VPButton.alt:active {
+  border-color: var(--vt-button-alt-active-border);
+  color: var(--vt-button-alt-active-text);
+  background-color: var(--vt-button-alt-active-bg);
+}

@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useConfig } from '../composables/config'
-import { useLanguageLinks } from '../composables/nav'
+import { useDocsNav, useLanguageLinks } from '../composables/nav'
 import VPNavBarMenuLink from './VPNavBarMenuLink.vue'
 import VPNavBarMenuGroup from './VPNavBarMenuGroup.vue'
 
 const { config } = useConfig()
+const docsNav = useDocsNav()
 const languageLinks = useLanguageLinks()
 const show = computed(() => config.value.nav || languageLinks.value)
 </script>
@@ -18,6 +19,10 @@ const show = computed(() => config.value.nav || languageLinks.value)
       <VPNavBarMenuGroup v-else :item="item" />
     </template>
 
+    <!-- Docs nav links -->
+    <VPNavBarMenuLink v-for="item in docsNav" :item="item" />
+
+    <!-- Language links -->
     <VPNavBarMenuGroup v-if="languageLinks" :item="languageLinks" />
   </nav>
 </template>

@@ -30,6 +30,7 @@ const { links, isActive } = useFrameworkLinks()
   padding-top: 10px;
   margin-bottom: 20px;
 }
+
 #frameworks-buttons {
   display: flex;
   gap: 4px;
@@ -37,6 +38,7 @@ const { links, isActive } = useFrameworkLinks()
   background-color: var(--vt-c-bg-soft);
   transition: background-color 0.5s;
 }
+
 #frameworks-buttons a {
   flex: 1;
   padding: 2px 0;
@@ -48,6 +50,7 @@ const { links, isActive } = useFrameworkLinks()
   user-select: none;
   transition: color 0.2s, background-color 0.2s;
 }
+
 #frameworks-buttons a.active-react {
   color: #fff;
   background-color: var(--vt-c-blue);

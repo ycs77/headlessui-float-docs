@@ -110,6 +110,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   srcDir: 'src',
+  appearance: false,
   scrollOffset: 'header',
 
   head: [
@@ -169,7 +170,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: 'MIT License',
         link: 'https://github.com/ycs77/headlessui-float/blob/main/LICENSE.md',
       },
-      copyright: `Copyright © 2022-${new Date().getFullYear()} Lucas Yang`,
+      copyright: 'Copyright © 2022-present Lucas Yang',
     },
   },
 

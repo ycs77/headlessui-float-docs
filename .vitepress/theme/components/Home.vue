@@ -10,27 +10,22 @@
     <p class="actions">
       <a class="action-react" :href="`${localePath}react/quick-start.html`">React</a>
       <a class="action-vue" :href="`${localePath}vue/quick-start.html`">Vue</a>
+      <a class="VPButton alt" href="https://github.com/ycs77/headlessui-float" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </p>
   </section>
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
       <h2>{{ locale['feature-1'].title }}</h2>
-      <p>
-        {{ locale['feature-1'].description }}
-      </p>
+      <p>{{ locale['feature-1'].description }}</p>
     </div>
     <div class="vt-box">
       <h2>{{ locale['feature-2'].title }}</h2>
-      <p>
-        {{ locale['feature-2'].description }}
-      </p>
+      <p>{{ locale['feature-2'].description }}</p>
     </div>
     <div class="vt-box">
       <h2>{{ locale['feature-3'].title }}</h2>
-      <p>
-        {{ locale['feature-3'].description }}
-      </p>
+      <p>{{ locale['feature-3'].description }}</p>
     </div>
   </section>
 </template>
@@ -38,8 +33,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import type { Config } from '../config'
 
-const { site, localePath } = useData()
+const { site, localePath } = useData<Config>()
 
 const locales = {
   'en-US': {
@@ -120,47 +116,52 @@ html:not(.dark) .accent,
 }
 
 .actions a {
-  font-size: 16px;
+  font-size: 14px;
   display: inline-block;
-  padding: 9px 24px;
+  padding: 8px 24px;
   font-weight: 500;
-  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 9999px;
   transition: background-color 0.5s, color 0.5s;
 }
 
 .actions a:not(.actions a:last-child) {
-  margin-right: 18px;
+  margin-right: 12px;
 }
 
 .actions .action-react {
+  color: #fff;
   background-color: var(--vt-c-blue);
+  border-color: var(--vt-c-blue);
 }
 
-.actions .action-vue {
-  background-color: var(--vt-c-green);
-}
-
-.actions .action-react,
 .actions .action-vue {
   color: #fff;
+  background-color: var(--vt-c-green);
+  border-color: var(--vt-c-green);
 }
 
 .actions .action-react:hover {
   background-color: var(--vt-c-blue-dark);
+  border-color: var(--vt-c-blue-dark);
   transition-duration: 0.2s;
 }
 
 .actions .action-vue:hover {
   background-color: var(--vt-c-green-dark);
+  border-color: var(--vt-c-green-dark);
   transition-duration: 0.2s;
 }
 
 .dark .actions .action-react:hover {
   background-color: var(--vt-c-blue-light);
+  border-color: var(--vt-c-blue-light);
 }
 
 .dark .actions .action-vue:hover {
   background-color: var(--vt-c-green-light);
+  border-color: var(--vt-c-green-light);
 }
 
 #special-sponsor {
