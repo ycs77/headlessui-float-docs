@@ -13,16 +13,20 @@
         </a>
       </div>
       <div
+        ref="frameworkBgRef"
         class="framework-bg"
-        :class="`framework-bg-${currentFramework?.name}`"
+        :class="[
+          `framework-bg-${currentFramework?.name}`,
+          { 'no-transition': noTransition },
+        ]"
       ></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref, computed } from 'vue'
-import { useElementSize } from '@vueuse/core'
+import { ref, type Ref, computed, onMounted } from 'vue'
+import { useElementSize, promiseTimeout } from '@vueuse/core'
 import { useFrameworkLinks } from '../composables/nav'
 import type { NavItemWithLink } from '../config'
 
@@ -32,8 +36,9 @@ interface FrameworkElSize {
   link: NavItemWithLink
 }
 
-const gap = 4
+const noTransition = ref(true)
 const els = ref([]) as Ref<FrameworkElSize[]>
+const gap = 4
 
 const { links, isActive, currentFramework } = useFrameworkLinks()
 
@@ -57,6 +62,11 @@ function setEl(el: HTMLElement, link: NavItemWithLink, index: number) {
 function findSize(framework: string) {
   return els.value.find(({ link }) => link.text === framework)
 }
+
+onMounted(async () => {
+  await promiseTimeout(0)
+  noTransition.value = false
+})
 </script>
 
 <style scoped>
@@ -107,15 +117,19 @@ function findSize(framework: string) {
 }
 
 .framework-bg-react {
-  width: v-bind("reactSize?.width + 'px'");
+  width: v-bind("(reactSize?.width ?? 0) + 'px'");
   top: 10px;
-  left: calc(16px + v-bind("reactSize?.left + 'px'"));
+  left: calc(16px + v-bind("(reactSize?.left ?? 0) + 'px'"));
   background-color: var(--vt-c-blue);
 }
 .framework-bg-vue {
-  width: v-bind("vueSize?.width + 'px'");
+  width: v-bind("(vueSize?.width ?? 0) + 'px'");
   top: 10px;
-  left: calc(16px + v-bind("vueSize?.left + 'px'"));
+  left: calc(16px + v-bind("(vueSize?.left ?? 0) + 'px'"));
   background-color: var(--vt-c-green);
+}
+
+.no-transition {
+  transition: none !important;
 }
 </style>
