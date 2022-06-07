@@ -4,6 +4,7 @@ import { createHead } from '@vueuse/head'
 import { withConfigProvider } from './composables/config'
 import VPApp from './components/VPApp.vue'
 import VPNotFound from './components/VPNotFound.vue'
+import DocGroupNameForCrawl from './components/DocGroupNameForCrawl.vue'
 import FrameworksButtons from './components/FrameworksButtons.vue'
 import './styles/index.css'
 
@@ -16,8 +17,7 @@ export default Object.assign({}, VPTheme, {
   Layout: () => {
     return h(VPTheme.Layout, null, {
       'sidebar-top': () => h(FrameworksButtons),
-      // 'aside-mid': () => h(SponsorsAside),
-      // 'aside-bottom': () => h(VueJobs),
+      'content-top': () => h(DocGroupNameForCrawl),
     })
   },
   enhanceApp({ app }: { app: App }) {

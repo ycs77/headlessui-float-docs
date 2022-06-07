@@ -27,7 +27,7 @@ const { hasSidebar } = useSidebar()
       <template #content-bottom><slot name="content-bottom" /></template>
       <template #aside-top><slot name="aside-top" /></template>
       <template #aside-mid><slot name="aside-mid" /></template>
-      <template #aside-bottom><slot name="aside-bottom" /></template>\
+      <template #aside-bottom><slot name="aside-bottom" /></template>
     </VPContentDoc>
   </div>
 </template>

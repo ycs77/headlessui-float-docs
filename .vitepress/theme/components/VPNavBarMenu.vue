@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useHead } from '@vueuse/head'
 import { useConfig } from '../composables/config'
-import { useDocsNav, useGroupTitle, useLanguageLinks } from '../composables/nav'
+import { useDocsNav, useLanguageLinks } from '../composables/nav'
 import VPNavBarMenuLink from './VPNavBarMenuLink.vue'
 import VPNavBarMenuGroup from './VPNavBarMenuGroup.vue'
 
@@ -10,16 +9,6 @@ const { config } = useConfig()
 const docsNav = useDocsNav()
 const languageLinks = useLanguageLinks()
 const show = computed(() => config.value.nav || languageLinks.value)
-
-const groupTitle = useGroupTitle()
-useHead({
-  meta: computed(() =>
-    groupTitle.value ? [{
-      name: 'docsearch:lvl0',
-      content: groupTitle.value,
-    }] : []
-  ),
-})
 </script>
 
 <template>
