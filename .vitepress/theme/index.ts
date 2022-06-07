@@ -1,5 +1,6 @@
 import { h, App } from 'vue'
 import { Theme } from 'vitepress'
+import { createHead } from '@vueuse/head'
 import { withConfigProvider } from './composables/config'
 import VPApp from './components/VPApp.vue'
 import VPNotFound from './components/VPNotFound.vue'
@@ -20,6 +21,7 @@ export default Object.assign({}, VPTheme, {
     })
   },
   enhanceApp({ app }: { app: App }) {
-    //
+    const head = createHead()
+    app.use(head)
   },
 })

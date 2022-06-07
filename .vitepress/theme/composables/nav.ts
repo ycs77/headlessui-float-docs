@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
-import type { Config, NavItemWithLink, NavItemWithChildren } from '../config'
+import type { Config, MultiSidebarConfig, NavItemWithLink, NavItemWithChildren } from '../config'
 
 export function useNav() {
   const isScreenOpen = ref(false)
@@ -37,10 +37,10 @@ export function useNav() {
 export function useDocsNav() {
   const { theme, lang } = useData<Config>()
   const { currentFramework } = useFrameworkLinks()
+  const frameworksNav = theme.value.frameworksNav!
 
   return computed(() => {
-    const framework = currentFramework.value?.name || theme.value.frameworksNav?.[0].name
-    if (!framework) return []
+    const framework = currentFramework.value?.name || frameworksNav[0].name
 
     const nav = {
       'en-US': [
@@ -55,6 +55,21 @@ export function useDocsNav() {
 
     return nav[lang.value]
   })
+}
+
+export function useGroupTitle() {
+  const route = useRoute()
+  const nav = useDocsNav()
+
+  const group = computed(() => {
+    return nav.value.find(link =>
+      link.activeMatch
+        ? route.path.match(new RegExp(link.activeMatch))
+        : false
+    )
+  })
+
+  return computed(() => group.value?.text)
 }
 
 export function useLanguageLinks() {
@@ -92,24 +107,17 @@ export function useLanguageLinks() {
 export function useFrameworkLinks() {
   const { localePath, theme } = useData<Config>()
   const route = useRoute()
+  const frameworksNav = theme.value.frameworksNav!
 
   const currentFramework = computed(() => {
-    if (!theme.value.frameworksNav) {
-      return null
-    }
-
-    return theme.value.frameworksNav.find(link => {
+    return frameworksNav.find(link => {
       return route.path.match(new RegExp(link.activeMatch!))
     })
   })
 
   const links = computed(() => {
-    if (!theme.value.frameworksNav) {
-      return []
-    }
-
     if (currentFramework.value) {
-      return theme.value.frameworksNav?.map(link => ({
+      return frameworksNav?.map(link => ({
         text: link.text,
         link: route.path.replace(
           /^\/(\w{2}-\w{2}\/)?\w+/,
@@ -118,7 +126,7 @@ export function useFrameworkLinks() {
       })) as NavItemWithLink[]
     }
 
-    return theme.value.frameworksNav?.map(link => ({
+    return frameworksNav?.map(link => ({
       text: link.text,
       link: (link as NavItemWithLink).link,
     })) as NavItemWithLink[]

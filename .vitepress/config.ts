@@ -157,6 +157,15 @@ export default defineConfigWithTheme<ThemeConfig>({
       },
     },
 
+    algolia: {
+      indexName: 'headlessui-float',
+      appId: 'XSDH9ZB960',
+      apiKey: 'ff29ace901ddeaf2a763f3744e7f1e40',
+      searchParameters: {
+        facetFilters: ['lang:en-US'],
+      },
+    },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ycs77/headlessui-float' },
     ],
