@@ -27,7 +27,6 @@
 <script setup lang="ts">
 import { ref, type Ref, computed, onMounted } from 'vue'
 import { useElementSize, promiseTimeout } from '@vueuse/core'
-import { useHead } from '@vueuse/head'
 import { useFrameworkLinks } from '../composables/nav'
 import type { NavItemWithLink } from '../config'
 
@@ -45,15 +44,6 @@ const { links, isActive, currentFramework } = useFrameworkLinks()
 
 const reactSize = computed(() => findSize('React'))
 const vueSize = computed(() => findSize('Vue'))
-
-useHead({
-  meta: computed(() =>
-    currentFramework.value ? [{
-      name: 'docsearch:framework',
-      content: currentFramework.value.name,
-    }] : []
-  ),
-})
 
 function setEl(el: HTMLElement, link: NavItemWithLink, index: number) {
   const { width } = useElementSize(el)
