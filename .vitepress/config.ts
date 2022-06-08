@@ -121,6 +121,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       name: 'og:image',
       content: 'https://headlessui-float.vercel.app/images/social_image.jpg',
     }],
+    ['meta', {
+      name: 'google-site-verification',
+      content: 'Wa8krcXE98k0kOUZMVWseTPxyzqchmJRU9qlvpuo4OE',
+    }],
   ],
 
   locales: {
