@@ -2,19 +2,51 @@
 
 ## Show/Hide
 
-If the floating element is Headless UI component, since the control of display is in the Headless UI component, it can be used directly.
+Since the control of the display is in the Headless UI component, it can usually be used directly without any setting.
 
-However, if you want to manually control the display of the floating element, need to set `show`:
+But if we need to control the display of the floating element (`<MenuItems>`) manually, we need to set the `show` prop. Then set `static` on the component of the floating element to make it static, so that we can manually control the display state:
 
 ```html
-<Float :show="show">
+<Menu>
+  <Float :show="show">
+    <MenuButton @click="toggle">
+      Options
+    </MenuButton>
+
+    <MenuItems static>
+      ...
+    </MenuItems>
+  </Float>
+</Menu>
 
 <script setup>
 const show = ref(false)
+const toggle = () => {
+  show.value = !show.value
+}
 </script>
 ```
 
-> If the floating element uses an HTML element instead of the Headless UI component, need to set `show`.
+HTML elements can also be used directly by setting `show` to control the display of floating elements (`<div>`):
+
+```html
+<Float :show="show">
+  <button @click="toggle">
+    Options
+  </button>
+
+  <div>
+    ...
+  </div>
+</Float>
+
+<script setup>
+const show = ref(false)
+const toggle = () => {
+  show.value = !show.value
+}
+</script>
+```
 
 ## z-index
 

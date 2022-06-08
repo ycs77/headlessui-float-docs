@@ -2,17 +2,47 @@
 
 ## 顯示/隱藏 {#show-hide}
 
-如果浮動元素是 Headless UI 元件，因為顯示的控制權在 Headless UI 元件中，可以直接使用。
+因為顯示的控制權在 Headless UI 元件中，通常可以不需要做任何設定就可以直接使用。
 
-但如果需要手動控制浮動元素的顯示與否，就需要設定 `show` 了：
+但如果需要手動控制浮動元素 (`<MenuItems>`) 的顯示的時候，就需要設定 `show`。然後在浮動元素的組件上設定 `static` 變成靜態的，讓我們可以手動控制顯示狀態：
 
 ```jsx
 const [show, setShow] = useState(false)
+const toggle = () => {
+  setShow(!show)
+}
 
-<Float show={show}>
+<Menu>
+  <Float show={show}>
+    <Menu.Button onClick={toggle}>
+      Options
+    </Menu.Button>
+
+    <Menu.Items static>
+      ...
+    </Menu.Items>
+  </Float>
+</Menu>
 ```
 
-> 如果浮動元素使用 HTML 元素，而不是 Headless UI 元件的話，就需要設定 `show`。
+HTML 元素也可以直接使用，一樣是設定 `show` 來控制浮動元素 (`<div>`) 的顯示：
+
+```jsx
+const [show, setShow] = useState(false)
+const toggle = () => {
+  setShow(!show)
+}
+
+<Float show={show}>
+  <button onClick={toggle}>
+    Options
+  </button>
+
+  <div>
+    ...
+  </div>
+</Float>
+```
 
 ## z-index
 
