@@ -113,7 +113,7 @@
   - `@hide`
   - `@update`
 
-## `<FloatArrow>`
+## `<FloatArrow>` {#float-arrow}
 
 - **Props**
 

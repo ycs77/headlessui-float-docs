@@ -1,4 +1,4 @@
-# 元件 API
+# 元件 API {#component-api}
 
 ## `<Float>`
 
@@ -114,7 +114,7 @@
   type OriginClassResolver = (placement: Placement) => string
   ```
 
-## `<FloatArrow>`
+## `<FloatArrow>` {#float-arrow}
 
 - **Props**
 

@@ -1,4 +1,4 @@
-# Portal (Teleport)
+# Portal (Teleport) {#portal}
 
 Append the floating element to `<body>`:
 

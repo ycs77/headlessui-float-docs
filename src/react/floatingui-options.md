@@ -75,7 +75,7 @@ Sets the minimum padding (px) of the floating element from the view border when 
 
 > More options supported by `flip`, refer to Floating UI's `flip` documentation: https://floating-ui.com/docs/flip
 
-## autoPlacement
+## autoPlacement {#auto-placement}
 
 Floating elements choose the placement with more space left:
 
@@ -91,7 +91,7 @@ Floating elements choose the placement with more space left:
 
 When the reference element is not visible, the floating element is hidden: -->
 
-## autoUpdate
+## autoUpdate {#auto-update}
 
 Automatically update floating elements when needed, the default value is `true`. Can be set to `false` to disable autoUpdate:
 

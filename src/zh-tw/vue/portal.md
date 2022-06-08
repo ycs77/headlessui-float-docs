@@ -1,4 +1,4 @@
-# Portal (Teleport)
+# Portal (Teleport) {#portal}
 
 將浮動元素傳送到 `<body>` 的底部：
 

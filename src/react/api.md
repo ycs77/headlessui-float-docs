@@ -114,7 +114,7 @@
   type OriginClassResolver = (placement: Placement) => string
   ```
 
-## `<FloatArrow>`
+## `<FloatArrow>` {#float-arrow}
 
 - **Props**
 

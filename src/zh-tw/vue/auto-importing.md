@@ -1,4 +1,4 @@
-# 自動引入元件
+# 自動引入元件 {#auto-importing}
 
 使用 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 來自動引入元件：
 

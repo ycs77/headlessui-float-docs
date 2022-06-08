@@ -1,4 +1,4 @@
-# 元件 API
+# 元件 API {#component-api}
 
 ## `<Float>`
 
@@ -113,7 +113,7 @@
   - `@hide`
   - `@update`
 
-## `<FloatArrow>`
+## `<FloatArrow>` {#float-arrow}
 
 - **Props**
 

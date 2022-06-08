@@ -1,6 +1,6 @@
-# 其他選項
+# 其他選項 {#other-options}
 
-## 顯示/隱藏
+## 顯示/隱藏 {#show-hide}
 
 如果浮動元素是 Headless UI 元件，因為顯示的控制權在 Headless UI 元件中，可以直接使用。
 
@@ -22,7 +22,7 @@ const [show, setShow] = useState(false)
 <Float zIndex={100}>
 ```
 
-## 定位模式
+## 定位模式 {#position-mode}
 
 預設會使用 CSS 的 transform 來定位浮動元素，如果會造成 transform 屬性的衝突的話，可以設為 `false` 來使用 `top` / `left` 做定位：
 

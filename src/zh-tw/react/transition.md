@@ -1,4 +1,4 @@
-# Transition (過場)
+# Transition (過場) {#transition}
 
 `<Float>` 自帶 `<Transition>` 元件，只需要加上過場中需要的 class：
 

@@ -1,4 +1,4 @@
-# Floating UI 選項
+# Floating UI 選項 {#floating-ui-options}
 
 ## placement
 
@@ -75,7 +75,7 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 
 > 更多 `flip` 支援的輸入選項，請參考 Floating UI 的 `flip` 說明：https://floating-ui.com/docs/flip
 
-## autoPlacement
+## autoPlacement {#auto-placement}
 
 浮動元素自動選擇剩餘空間最多的方向：
 
@@ -91,7 +91,7 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 
 當無法看到參考元素時，就會隱藏浮動元素： -->
 
-## autoUpdate
+## autoUpdate {#auto-update}
 
 自動在需要的時候更新浮動元素，預設值為 `true`。可以設為 `false` 把它關閉：
 
