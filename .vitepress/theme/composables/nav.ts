@@ -43,7 +43,7 @@ export function useDocsNav() {
     const framework = currentFramework.value?.name || frameworksNav[0].name
 
     const nav = {
-      'en-US': [
+      'en': [
         { text: 'Guide', link: `/${framework}/quick-start`, activeMatch: `/${framework}/(?!api)` },
         { text: 'API', link: `/${framework}/api`, activeMatch: `/${framework}/api` },
       ],

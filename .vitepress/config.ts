@@ -1,4 +1,5 @@
 import { defineConfigWithTheme } from 'vitepress'
+import Sitemap from './vite-plugins/sitemap'
 import baseConfig from './theme/config/baseConfig'
 import type { Config as ThemeConfig } from './theme/config'
 
@@ -18,7 +19,7 @@ const frameworksNav = [
 ]
 
 const sidebar = {
-  'en-US': {
+  'en': {
     '/react/': [
       {
         text: 'Guide',
@@ -124,7 +125,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   locales: {
     '/': {
-      lang: 'en-US',
+      lang: 'en',
       title: 'Headless UI Float',
       description: 'Headless UI Float - Easily float the Headless UI components',
     },
@@ -144,7 +145,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         lastUpdated: 'Last Updated',
 
         frameworksNav,
-        sidebar: sidebar['en-US'],
+        sidebar: sidebar['en'],
       },
       '/zh-tw/': {
         label: '繁體中文',
@@ -230,6 +231,17 @@ export default defineConfigWithTheme<ThemeConfig>({
     define: {
       __VUE_OPTIONS_API__: false,
     },
+    plugins: [
+      Sitemap({
+        outDir: '.vitepress/dist',
+        hostname: 'https://headlessui-float.vercel.app',
+        // readable: true,
+        locales: {
+          '/': 'en',
+          '/zh-tw/': 'zh-TW',
+        },
+      }),
+    ],
     server: {
       host: true,
       fs: {

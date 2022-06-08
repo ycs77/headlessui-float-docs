@@ -38,7 +38,7 @@ import type { Config } from '../config'
 const { site, localePath } = useData<Config>()
 
 const locales = {
-  'en-US': {
+  'en': {
     'tagline-1': 'Easily Float',
     'tagline-2': 'Headless UI',
     'tagline-3': 'Components',
