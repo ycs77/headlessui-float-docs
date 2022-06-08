@@ -161,8 +161,51 @@ export default defineConfigWithTheme<ThemeConfig>({
       indexName: 'headlessui-float',
       appId: 'XSDH9ZB960',
       apiKey: 'ff29ace901ddeaf2a763f3744e7f1e40',
-      searchParameters: {
-        facetFilters: ['lang:en-US'],
+      locales: {
+        '/': {
+          placeholder: 'Search docs for %s version',
+        },
+        '/zh-tw/': {
+          placeholder: '搜尋文檔 (%s版本)',
+          translations: {
+            button: {
+              buttonText: '搜尋',
+              buttonAriaLabel: '搜尋',
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: '清除搜尋',
+                resetButtonAriaLabel: '清除搜尋',
+                cancelButtonText: '取消',
+                cancelButtonAriaLabel: '取消',
+              },
+              startScreen: {
+                recentSearchesTitle: '最近搜尋紀錄',
+                noRecentSearchesText: '沒有搜尋紀錄',
+                saveRecentSearchButtonTitle: '保存此搜尋紀錄',
+                removeRecentSearchButtonTitle: '移除此搜尋紀錄',
+                favoriteSearchesTitle: '我的最愛',
+                removeFavoriteSearchButtonTitle: '移除我的最愛紀錄',
+              },
+              errorScreen: {
+                titleText: '無法取得搜尋結果',
+                helpText: '請檢查您的網路連線',
+              },
+              footer: {
+                selectText: '選擇',
+                navigateText: '切換',
+                closeText: '關閉',
+                searchByText: '搜尋提供者',
+              },
+              noResultsScreen: {
+                noResultsText: '沒有相關搜尋結果',
+                suggestedQueryText: '試試搜尋',
+                reportMissingResultsText: '你認為這個搜尋應該要有結果嗎?',
+                reportMissingResultsLinkText: '點擊回報',
+              },
+            },
+          },
+        },
       },
     },
 

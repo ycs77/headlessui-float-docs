@@ -2,8 +2,10 @@
 import '@docsearch/css'
 import { useData } from 'vitepress'
 import { ref, defineAsyncComponent, onMounted, onUnmounted } from 'vue'
+import { useDocsearchLocales } from '../composables/docsearch'
 
 const { theme } = useData()
+const locales = useDocsearchLocales()
 const VPAlgoliaSearchBox = defineAsyncComponent(
   () => import('./VPAlgoliaSearchBox.vue')
 )
@@ -67,7 +69,7 @@ function load() {
               stroke-linejoin="round"
             ></path>
           </svg>
-          <span class="DocSearch-Button-Placeholder">Search</span>
+          <span class="DocSearch-Button-Placeholder">{{ locales.translations?.button?.buttonText ?? 'Search' }}</span>
         </span>
         <span class="DocSearch-Button-Keys">
           <span class="DocSearch-Button-Key" ref="metaKey">Meta</span>

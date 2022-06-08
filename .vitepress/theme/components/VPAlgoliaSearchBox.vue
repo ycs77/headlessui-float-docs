@@ -1,17 +1,52 @@
 <script setup lang="ts">
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter, useData } from 'vitepress'
-import { onMounted } from 'vue'
+import { watch, onMounted } from 'vue'
 import { DocSearchHit } from '@docsearch/react/dist/esm/types'
+import { useDocsearchLocales } from '../composables/docsearch'
+import { useFrameworkLinks } from '../composables/nav'
 import { AlgoliaSearchOptions } from '../config'
+import { computed } from '@vue/reactivity'
 
-const { theme } = useData()
+const { theme, lang } = useData()
 const route = useRoute()
 const router = useRouter()
+const locales = useDocsearchLocales()
+const { currentFramework: framework } = useFrameworkLinks()
+
+const facetFilters: string[] = []
+
+const placeholder = computed(() =>
+  locales.value.placeholder
+    ? locales.value.placeholder.replace('%s', framework.value?.text ?? 'React')
+    : undefined
+)
 
 onMounted(() => {
   initialize(theme.value.algolia)
   setTimeout(poll, 16)
+
+  watch([lang, locales], (
+    [curLang, curLocales],
+    [prevLang, prevLocales]
+  ) => {
+    if (curLang === prevLang) return
+    if (JSON.stringify(curLocales) === JSON.stringify(prevLocales)) return
+    initialize(theme.value.algolia)
+  })
+
+  watch(framework, (curFramework, prevFramework) => {
+    if (curFramework === prevFramework) return
+    initialize(theme.value.algolia)
+  })
+})
+
+watch(lang, (curLang, prevLang) => {
+  replaceFacetFilter(`lang:${prevLang}`, `lang:${curLang}`)
+})
+
+watch(framework, (curFramework, prevFramework) => {
+  replaceFacetFilter(`framework:${prevFramework?.name}`, `framework:${curFramework?.name ?? 'react'}`)
 })
 
 function poll() {
@@ -28,8 +63,10 @@ function poll() {
 }
 
 function initialize(userOptions: AlgoliaSearchOptions) {
-  // Note: multi-lang search support is removed since the theme
-  // doesn't support multiple locales as of now
+  const rawFacetFilters = userOptions.searchParameters?.facetFilters ?? []
+  const defaultFacetFilters = [`lang:${lang.value}`, `framework:${framework.value?.name ?? 'react'}`]
+
+  facetFilters.splice(0, facetFilters.length, ...defaultFacetFilters, ...rawFacetFilters)
 
   const options = Object.assign({}, userOptions, {
     container: '#docsearch',
@@ -94,10 +131,27 @@ function initialize(userOptions: AlgoliaSearchOptions) {
         },
         __v: null
       }
-    }
+    },
+
+    searchParameters: {
+      ...userOptions.searchParameters,
+      facetFilters,
+    },
+
+    translations: locales.value.translations,
+    placeholder: placeholder.value,
   })
 
   docsearch(options)
+}
+
+function replaceFacetFilter(searchValue: string, replaceValue: string) {
+  if (replaceValue !== searchValue) {
+    const prevIndex = facetFilters.findIndex(item => item === searchValue)
+    if (prevIndex > -1) {
+      facetFilters.splice(prevIndex, 1, replaceValue)
+    }
+  }
 }
 
 function isSpecialClick(event: MouseEvent) {

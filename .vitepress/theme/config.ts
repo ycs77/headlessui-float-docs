@@ -109,6 +109,7 @@ export interface AlgoliaSearchOptions {
   searchParameters?: any
   disableUserPersonalization?: boolean
   initialQuery?: string
+  locales?: any
 }
 
 export type NavItem = NavItemWithLink | NavItemWithChildren
