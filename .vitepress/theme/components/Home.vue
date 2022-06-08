@@ -10,7 +10,7 @@
     <p class="actions">
       <a class="action-react" :href="`${localePath}react/quick-start.html`">React</a>
       <a class="action-vue" :href="`${localePath}vue/quick-start.html`">Vue</a>
-      <a class="VPButton alt" href="https://github.com/ycs77/headlessui-float" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a class="VPButton alt" href="https://github.com/ycs77/headlessui-float" target="_blank" rel="noopener noreferrer">{{ locale.source }}</a>
     </p>
   </section>
 
@@ -43,6 +43,7 @@ const locales = {
     'tagline-2': 'Headless UI',
     'tagline-3': 'Components',
     description: 'Easily use Headless UI with Floating UI (Popper.js) to position floating elements.',
+    'source': 'View on GitHub',
     'feature-1': {
       title: '💙 Tailwind CSS',
       description: 'Easily with Headless UI & Tailwind CSS.',
@@ -61,6 +62,7 @@ const locales = {
     'tagline-2': 'Headless UI',
     'tagline-3': '元件',
     'description': '輕鬆在 Headless UI 中使用 Floating UI (新版 Popper.js) 來定位浮動元素',
+    'source': '查看原始碼',
     'feature-1': {
       title: '💙 Tailwind CSS',
       description: '輕鬆整合使用 Headless UI & Tailwind CSS。',
