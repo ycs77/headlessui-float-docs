@@ -28,6 +28,14 @@
       <p>{{ locale['feature-3'].description }}</p>
     </div>
   </section>
+
+  <section id="sponsors">
+    <h2>{{ locale.sponsor.title }}</h2>
+    <p>{{ locale.sponsor['content-1'] }}<a href="https://www.patreon.com/ycs77" target="_blank" rel="noopener noreferrer">{{ locale.sponsor['content-2'] }}</a>{{ locale.sponsor['content-3'] }}</p>
+    <div class="join-block">
+      <b>{{ locale.sponsor['join-block-1'] }}<a href="https://www.patreon.com/ycs77" target="_blank" rel="noopener noreferrer">{{ locale.sponsor['join-block-2'] }}</a>{{ locale.sponsor['join-block-3'] }}</b>
+    </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -56,6 +64,15 @@ const locales = {
       title: '➡️ More feature...',
       description: 'Support Transition, Portal and Arrow.',
     },
+    'sponsor': {
+      title: 'Sponsors',
+      'content-1': 'If you think this package have helped you, can ',
+      'content-2': 'Become a sponsor',
+      'content-3': ' to support my work~ and your avatar will be visible on this and my major projects.',
+      'join-block-1': 'Now there are no sponsors yet, ',
+      'join-block-2': 'join it',
+      'join-block-3': '.',
+    },
   },
   'zh-TW': {
     'tagline-1': '輕鬆浮動定位',
@@ -75,6 +92,15 @@ const locales = {
       title: '➡️ 更多功能...',
       description: '支援 Transition、Portal (Teleport) 和箭頭 (Arrow)。',
     },
+    'sponsor': {
+      title: '贊助商',
+      'content-1': '如果這個套件有幫助到你，可以考慮',
+      'content-2': '贊助',
+      'content-3': '我~ 我會很感謝你~ 而且還可以顯示您的大頭貼在這裡我的主要專案中。',
+      'join-block-1': '現在還沒有人贊助，',
+      'join-block-2': '馬上加入吧',
+      'join-block-3': '！',
+    },
   },
 } as Record<string, any>
 
@@ -83,7 +109,7 @@ const locale = computed(() => locales[site.value.lang])
 
 <style scoped>
 section {
-  padding: 42px 32px;
+  padding: 36px 32px;
 }
 
 #hero {
@@ -239,7 +265,7 @@ html:not(.dark) .accent,
 
 #sponsors {
   max-width: 900px;
-  margin: 0px auto;
+  margin: 0px auto 24px;
 }
 
 #sponsors h2 {
@@ -248,8 +274,21 @@ html:not(.dark) .accent,
   margin-bottom: 1em;
 }
 
-#sponsors .sponsor-container {
-  margin-bottom: 3em;
+#sponsors p {
+  color: var(--vt-c-text-2);
+}
+
+#sponsors a {
+  color: var(--vt-c-brand);
+  font-weight: 700;
+}
+
+#sponsors .join-block {
+  font-size: 18px;
+  padding: 18px 24px;
+  margin: 24px 0;
+  border: 1px solid var(--vt-c-divider);
+  border-radius: 10px;
 }
 
 @media (max-width: 960px) {
