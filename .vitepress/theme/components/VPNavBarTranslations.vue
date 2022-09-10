@@ -28,7 +28,7 @@ const languageLinks = useLanguageLinks()
   display: none;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .VPNavBarTranslations {
     display: flex;
     align-items: center;

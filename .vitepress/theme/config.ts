@@ -1,19 +1,22 @@
-import type { DefaultTheme } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
+import type { AlgoliaLocale, AlgoliaSearchOptions } from './composables/docsearch'
 
 export interface Config extends DefaultTheme.Config {
   /**
    * The locales config.
    */
-  locales?: Record<string, {
-    label: string
-    selectText?: string
-    editLink?: DefaultTheme.EditLink
-    lastUpdated?: string
+  locales?: {
+    [path: string]: {
+      label: string
+      selectText?: string
+      editLink?: DefaultTheme.EditLink
+      lastUpdated?: string
 
-    frameworksNav?: NavItemWithFramework[]
-    sidebar?: DefaultTheme.SidebarMulti
-    algolia?: AlgoliaUiLocale
-  }>
+      frameworksNav?: NavItemWithFramework[]
+      sidebar?: DefaultTheme.SidebarMulti
+      algolia?: AlgoliaLocale
+    }
+  }
 
   /**
    * The frameworks nav items.
@@ -24,48 +27,11 @@ export interface Config extends DefaultTheme.Config {
    * The select language text.
    */
   selectText?: string
+
+  /**
+   * The algolia options. Leave it undefined to disable the search feature.
+   */
+  algolia?: AlgoliaSearchOptions
 }
 
 export type NavItemWithFramework = DefaultTheme.NavItem & { name: string }
-
-export interface AlgoliaUiLocale {
-  placeholder?: string
-  translations?: {
-    button?: {
-      buttonText?: string
-      buttonAriaLabel?: string
-    }
-    modal: {
-      searchBox: {
-        resetButtonTitle?: string
-        resetButtonAriaLabel?: string
-        cancelButtonText?: string
-        cancelButtonAriaLabel?: string
-      }
-      startScreen: {
-        recentSearchesTitle?: string
-        noRecentSearchesText?: string
-        saveRecentSearchButtonTitle?: string
-        removeRecentSearchButtonTitle?: string
-        favoriteSearchesTitle?: string
-        removeFavoriteSearchButtonTitle?: string
-      }
-      errorScreen: {
-        titleText?: string
-        helpText?: string
-      }
-      footer: {
-        selectText?: string
-        navigateText?: string
-        closeText?: string
-        searchByText?: string
-      }
-      noResultsScreen: {
-        noResultsText?: string
-        suggestedQueryText?: string
-        reportMissingResultsText?: string
-        reportMissingResultsLinkText?: string
-      }
-    }
-  }
-}

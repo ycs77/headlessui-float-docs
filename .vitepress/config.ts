@@ -1,5 +1,7 @@
-import { defineConfigWithTheme, type DefaultTheme } from 'vitepress'
-import type { Config as ThemeConfig, AlgoliaUiLocale } from './theme/config'
+import { defineConfigWithTheme } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
+import type { Config as ThemeConfig } from './theme/config'
+import type { AlgoliaLocale } from './theme/composables/docsearch'
 
 export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'src',
@@ -43,7 +45,6 @@ export default defineConfigWithTheme<ThemeConfig>({
 
         frameworksNav: frameworksNav(),
         sidebar: sidebar('en'),
-        algolia: algoliaLocale('en'),
       },
       '/zh-tw/': {
         label: '繁體中文',
@@ -56,7 +57,6 @@ export default defineConfigWithTheme<ThemeConfig>({
 
         frameworksNav: frameworksNav(),
         sidebar: sidebar('zh-TW'),
-        algolia: algoliaLocale('zh-TW'),
       },
     },
 
@@ -73,6 +73,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       indexName: 'headlessui-float',
       appId: 'XSDH9ZB960',
       apiKey: 'ff29ace901ddeaf2a763f3744e7f1e40',
+      locales: algoliaLocales(),
     },
   },
 })
@@ -187,12 +188,12 @@ function sidebar(lang: string) {
   return locales[lang]
 }
 
-function algoliaLocale(lang: string) {
-  const locales = {
-    'en': {
+function algoliaLocales() {
+  return {
+    '/': {
       placeholder: 'Search docs for %s version',
     },
-    'zh-TW': {
+    '/zh-tw/': {
       placeholder: '搜尋文檔 (%s版本)',
       translations: {
         button: {
@@ -233,7 +234,5 @@ function algoliaLocale(lang: string) {
         },
       },
     },
-  } as Record<string, AlgoliaUiLocale>
-
-  return locales[lang]
+  } as Record<string, AlgoliaLocale>
 }

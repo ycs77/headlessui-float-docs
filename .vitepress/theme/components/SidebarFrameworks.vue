@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { ref, type Ref, computed, onMounted } from 'vue'
-import type { DefaultTheme } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
 import { useElementSize, promiseTimeout } from '@vueuse/core'
 import { useFrameworkLinks } from '../composables/nav'
 

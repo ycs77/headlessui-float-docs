@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
 import VPNavBarTitle from './VPNavBarTitle.vue'
-import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
+import VPNavBarSearch from './VPNavBarSearch.vue'
 import VPNavBarMenu from './VPNavBarMenu.vue'
 import VPNavBarTranslations from './VPNavBarTranslations.vue'
 import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'

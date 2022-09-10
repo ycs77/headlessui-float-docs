@@ -1,5 +1,6 @@
 import { computed } from 'vue'
-import { useData, useRoute, type DefaultTheme } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
 import type { Config as ThemeConfig } from '../config'
 
 export function useLanguageLinks() {
