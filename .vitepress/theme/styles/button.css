@@ -1,0 +1,35 @@
+.VPButton.react {
+  border-color: var(--vp-button-react-border);
+  color: var(--vp-button-react-text);
+  background-color: var(--vp-button-react-bg);
+}
+
+.VPButton.react:hover {
+  border-color: var(--vp-button-react-hover-border);
+  color: var(--vp-button-react-hover-text);
+  background-color: var(--vp-button-react-hover-bg);
+}
+
+.VPButton.react:active {
+  border-color: var(--vp-button-react-active-border);
+  color: var(--vp-button-react-active-text);
+  background-color: var(--vp-button-react-active-bg);
+}
+
+.VPButton.vue {
+  border-color: var(--vp-button-vue-border);
+  color: var(--vp-button-vue-text);
+  background-color: var(--vp-button-vue-bg);
+}
+
+.VPButton.vue:hover {
+  border-color: var(--vp-button-vue-hover-border);
+  color: var(--vp-button-vue-hover-text);
+  background-color: var(--vp-button-vue-hover-bg);
+}
+
+.VPButton.vue:active {
+  border-color: var(--vp-button-vue-active-border);
+  color: var(--vp-button-vue-active-text);
+  background-color: var(--vp-button-vue-active-bg);
+}

@@ -18,8 +18,8 @@
 
 如果使用了 `tailwindcss-origin-class`，也需要在 safelist 中增加 `origin` class：
 
-*tailwind.config.js*
 ```js
+// tailwind.config.js
 const { tailwindcssOriginSafelist } = require('@headlessui-float/vue')
 
 module.exports = {

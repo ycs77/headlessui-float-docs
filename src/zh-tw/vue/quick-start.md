@@ -44,7 +44,9 @@ import { Float } from '@headlessui-float/vue'
 
 需要注意，`<Float>` 必須包含2個子元素，第1個是參考元素，第2個是浮動元素。可以使用 Headless UI 元件或 HTML 元素。
 
-> 如果要使用 HTML 元素，或手動控制 Headless UI 元件的顯示，請參考 [顯示/隱藏](other-options.md#show-hide)。
+::: tip 提示
+如果要使用 HTML 元素，或手動控制 Headless UI 元件的顯示，請參考 [顯示/隱藏](other-options.md#show-hide)。
+:::
 
 然後刪除掉 `<MenuItems>` 的 `absolute`、`right-0` 等定位 class，並加上 `placement="bottom-end"` 屬性：
 

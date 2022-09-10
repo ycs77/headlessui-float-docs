@@ -2,15 +2,21 @@
 layout: home
 sidebar: false
 
+title: Headless UI Float
+titleTemplate: Easily Float Headless UI Components
+
 hero:
   name: Headless UI Float
   text: Easily Float Headless UI Components
-  tagline: Easily use Headless UI with Floating UI (Popper.js) to position floating elements.
+  tagline: Easily use Headless UI with Floating UI (new version Popper.js) to position floating elements.
+  image:
+    src: /headlessui-float-logo-shadow.png
+    alt: Headless UI Float
   actions:
-    - theme: brand
+    - theme: react
       text: React
       link: /react/quick-start.html
-    - theme: brand
+    - theme: vue
       text: Vue
       link: /vue/quick-start.html
     - theme: alt
@@ -26,5 +32,11 @@ features:
     icon: 💬
   - title: More feature...
     details: Support Transition, Portal and Arrow
-    icon: ➡️
+    icon: 🛠️
 ---
+
+<HomeSponsors
+  message="Sponsored by"
+  action-text="Become a sponsor"
+  action-link="https://www.patreon.com/ycs77"
+/>

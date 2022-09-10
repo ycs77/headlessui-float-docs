@@ -2,8 +2,8 @@
 
 高階元件，可以將 `<Float>` 元件客製好包裝之後，輕鬆在專案中套用：
 
-*HighOrderFloat.jsx*
 ```jsx
+// HighOrderFloat.jsx
 import { Float } from '@headlessui-float/react'
 
 export default function HighOrderFloat(props) {
@@ -45,8 +45,8 @@ export default function HighOrderFloat(props) {
 
 如果你有使用 TypeScript，可以增加 `FloatProps` type 到 props 上：
 
-*HighOrderFloat.tsx*
-```jsx
+```tsx
+// HighOrderFloat.tsx
 import { Float, FloatProps } from '@headlessui-float/react'
 
 export default function HighOrderFloat(props: FloatProps) {

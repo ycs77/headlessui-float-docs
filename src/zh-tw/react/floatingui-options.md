@@ -39,7 +39,9 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 <Float offset={8}>
 ```
 
-> 更多 `offset` 支援的輸入選項，請參考 Floating UI 的 `offset` 說明：https://floating-ui.com/docs/offset
+::: tip 提示
+更多 `offset` 支援的輸入選項，請參考 Floating UI 的 `offset` 說明：https://floating-ui.com/docs/offset
+:::
 
 ## shift
 
@@ -55,13 +57,17 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 <Float shift={8}>
 ```
 
-> 更多 `shift` 支援的輸入選項，請參考 Floating UI 的 `shift` 說明：https://floating-ui.com/docs/shift
+::: tip 提示
+更多 `shift` 支援的輸入選項，請參考 Floating UI 的 `shift` 說明：https://floating-ui.com/docs/shift
+:::
 
 ## flip
 
 浮動元素超出邊界時，翻轉至不同的方向，預設為對面，確保可以在視圖中看到：
 
-> `flip` 不能和 `autoPlacement` 同時設定
+::: warning 注意
+`flip` 不能和 `autoPlacement` 同時設定。
+:::
 
 ```jsx
 <Float flip>
@@ -73,19 +79,25 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 <Float flip={10}>
 ```
 
-> 更多 `flip` 支援的輸入選項，請參考 Floating UI 的 `flip` 說明：https://floating-ui.com/docs/flip
+::: tip 提示
+更多 `flip` 支援的輸入選項，請參考 Floating UI 的 `flip` 說明：https://floating-ui.com/docs/flip
+:::
 
 ## autoPlacement {#auto-placement}
 
 浮動元素自動選擇剩餘空間最多的方向：
 
-> `autoPlacement` 不能和 `flip` 同時設定
+::: warning 注意
+`autoPlacement` 不能和 `flip` 同時設定。
+:::
 
 ```jsx
 <Float autoPlacement>
 ```
 
-> 更多 `autoPlacement` 支援的輸入選項，請參考 Floating UI 的 `autoPlacement` 說明：https://floating-ui.com/docs/autoPlacement
+::: tip 提示
+更多 `autoPlacement` 支援的輸入選項，請參考 Floating UI 的 `autoPlacement` 說明：https://floating-ui.com/docs/autoPlacement
+:::
 
 <!-- ## hide
 
@@ -99,7 +111,9 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 <Float autoUpdate={false}>
 ```
 
-> 更多 `autoUpdate` 支援的輸入選項，請參考 Floating UI 的 `autoUpdate` 說明：https://floating-ui.com/docs/autoUpdate
+::: tip 提示
+更多 `autoUpdate` 支援的輸入選項，請參考 Floating UI 的 `autoUpdate` 說明：https://floating-ui.com/docs/autoUpdate
+:::
 
 ## middleware
 

@@ -2,8 +2,8 @@
 
 The high-order component can be easily applied in projects after customizing the `<Float>` component:
 
-*HighOrderFloat.jsx*
 ```jsx
+// HighOrderFloat.jsx
 import { Float } from '@headlessui-float/react'
 
 export default function HighOrderFloat(props) {
@@ -45,8 +45,8 @@ Used in the same way as `<Float>`, it can also override the defined prop in high
 
 If you using the TypeScript, can add `FloatProps` type to props:
 
-*HighOrderFloat.tsx*
-```jsx
+```tsx
+// HighOrderFloat.tsx
 import { Float, FloatProps } from '@headlessui-float/react'
 
 export default function HighOrderFloat(props: FloatProps) {

@@ -39,7 +39,9 @@ The offset (px) of the floating element from the reference element:
 <Float offset={8}>
 ```
 
-> More options supported by `offset`, refer to Floating UI's `offset` documentation: https://floating-ui.com/docs/offset
+::: tip INFO
+More options supported by `offset`, refer to Floating UI's `offset` documentation: https://floating-ui.com/docs/offset
+:::
 
 ## shift
 
@@ -55,13 +57,17 @@ Set the offset (px) of the floating element from the view border:
 <Float shift={8}>
 ```
 
-> More options supported by `shift`, refer to Floating UI's `shift` documentation: https://floating-ui.com/docs/shift
+::: tip INFO
+More options supported by `shift`, refer to Floating UI's `shift` documentation: https://floating-ui.com/docs/shift
+:::
 
 ## flip
 
 Change to the opposite placement to keep it in view:
 
-> `flip` cannot be used with `autoPlacement`
+::: warning
+`flip` cannot be set at the same time as `autoPlacement`.
+:::
 
 ```jsx
 <Float flip>
@@ -73,19 +79,25 @@ Sets the minimum padding (px) of the floating element from the view border when 
 <Float flip={10}>
 ```
 
-> More options supported by `flip`, refer to Floating UI's `flip` documentation: https://floating-ui.com/docs/flip
+::: tip INFO
+More options supported by `flip`, refer to Floating UI's `flip` documentation: https://floating-ui.com/docs/flip
+:::
 
 ## autoPlacement {#auto-placement}
 
 Floating elements choose the placement with more space left:
 
-> `autoPlacement` cannot be used with `flip`
+::: warning
+`autoPlacement` cannot be set at the same time as `flip`.
+:::
 
 ```jsx
 <Float autoPlacement>
 ```
 
-> More options supported by `autoPlacement`, refer to Floating UI's `autoPlacement` documentation: https://floating-ui.com/docs/autoPlacement
+::: tip INFO
+More options supported by `autoPlacement`, refer to Floating UI's `autoPlacement` documentation: https://floating-ui.com/docs/autoPlacement
+:::
 
 <!-- ## hide
 
@@ -99,7 +111,9 @@ Automatically update floating elements when needed, the default value is `true`.
 <Float autoUpdate={false}>
 ```
 
-> More options supported by `autoUpdate`, refer to Floating UI's `autoUpdate` documentation: https://floating-ui.com/docs/autoUpdate
+::: tip INFO
+More options supported by `autoUpdate`, refer to Floating UI's `autoUpdate` documentation: https://floating-ui.com/docs/autoUpdate
+:::
 
 ## middleware
 

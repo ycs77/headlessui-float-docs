@@ -18,8 +18,8 @@ When `tailwindcssOriginClass` is enabled, the corresponding Tailwind CSS `origin
 
 If using the `tailwindcssOriginClass`, also need to add the `origin` class to the safelist:
 
-*tailwind.config.js*
 ```js
+// tailwind.config.js
 const { tailwindcssOriginSafelist } = require('@headlessui-float/react')
 
 module.exports = {

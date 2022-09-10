@@ -2,8 +2,8 @@
 
 高階元件，可以將 `<Float>` 元件客製好包裝之後，輕鬆在專案中套用：
 
-*HighOrderFloat.vue*
 ```vue
+<!-- HighOrderFloat.vue -->
 <template>
   <Float
     :offset="8"
@@ -44,8 +44,8 @@ import { Float } from '@headlessui-float/vue'
 
 如果你有使用 TypeScript，可以定義 `FloatProps` 到 `<HighOrderFloat>` 的 props：
 
-*HighOrderFloat.vue*
 ```vue
+<!-- HighOrderFloat.vue -->
 <script setup>
 import { Float, FloatProps } from '@headlessui-float/vue'
 

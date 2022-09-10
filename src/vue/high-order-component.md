@@ -2,8 +2,8 @@
 
 The high-order component can be easily applied in projects after customizing the `<Float>` component:
 
-*HighOrderFloat.vue*
 ```vue
+<!-- HighOrderFloat.vue -->
 <template>
   <Float
     :offset="8"
@@ -44,8 +44,8 @@ Used in the same way as `<Float>`, it can also override the defined prop in high
 
 If you using the TypeScript, can define `FloatProps` to the props of `<HighOrderFloat>`:
 
-*HighOrderFloat.vue*
 ```vue
+<!-- HighOrderFloat.vue -->
 <script setup>
 import { Float, FloatProps } from '@headlessui-float/vue'
 
