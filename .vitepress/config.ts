@@ -11,7 +11,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', {
       name: 'og:image',
-      content: 'https://headlessui-float.vercel.app/images/social_image.jpg',
+      content: 'https://headlessui-float.vercel.app/og-image.png',
     }],
     ['meta', {
       name: 'google-site-verification',
