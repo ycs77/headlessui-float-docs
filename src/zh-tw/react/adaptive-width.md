@@ -61,3 +61,27 @@ import * as React from 'react'
   </Listbox>
 </div>
 ```
+
+## 同時使用過場動畫 {#with-transition}
+
+需要注意的是，如果過場動畫有使用到 CSS 的 `transform` 屬性的話，會無法正常使用。因為 `floatingAs` 設為 `React.Fragment` 時，會直接定位浮動元素，且為了優化效能，預設使用 `transform` 來做定位的。如果要使用的話，要關閉 `transform` 切換成 `position` 和 `top`/`left` 屬性來做定位：
+
+```jsx
+<Float transform={false}>
+```
+
+然後就可以加上過場動畫的 class 了：
+
+```jsx
+<Float
+  transform={false}
+  floatingAs={React.Fragment}
+  enter="transition duration-200 ease-out"
+  enterFrom="opacity-0 scale-75"
+  enterTo="opacity-100 scale-100"
+  leave="transition duration-150 ease-in"
+  leaveFrom="opacity-100 scale-100"
+  leaveTo="opacity-0 scale-75"
+  tailwindcssOriginClass
+>
+```

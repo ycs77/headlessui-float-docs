@@ -59,3 +59,27 @@ If you put it in a `flex` container to fill the width, you need to add the `w-fu
   </Listbox>
 </div>
 ```
+
+## With transition {#with-transition}
+
+It should be noted that if the transition uses the `transform` property of CSS, it will not work properly. Because `floating-as` is set to `template`, the floating element will be positioned directly, and in order to optimize performance, `transform` is used for positioning by default. If you want to use it, turn off `transform` and switch to `position` and `top`/`left` properties for positioning:
+
+```html
+<Float :transform="false">
+```
+
+Then you can add the class for the transition:
+
+```html
+<Float
+  :transform="false"
+  floating-as="template"
+  enter="transition duration-200 ease-out"
+  enter-from="opacity-0 scale-75"
+  enter-to="opacity-100 scale-100"
+  leave="transition duration-150 ease-in"
+  leave-from="opacity-100 scale-100"
+  leave-to="opacity-0 scale-75"
+  tailwindcss-origin-class
+>
+```
