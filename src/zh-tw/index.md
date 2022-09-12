@@ -34,3 +34,9 @@ features:
     details: 支援 Transition、Portal (Teleport) 和箭頭 (Arrow)
     icon: 🛠️
 ---
+
+<HomeSponsors
+  message="贊助商"
+  action-text="加入贊助商"
+  action-link="https://www.patreon.com/ycs77"
+/>
