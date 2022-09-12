@@ -27,7 +27,7 @@ import { Float } from '@headlessui-float/vue'
 </script>
 ```
 
-Used in the same way as `<Float>`, it can also override the defined prop in high-order component:
+Used in the same way as `<Float>`, it can also override the defined prop in the high-order component:
 
 ```html
 <Menu>
@@ -42,13 +42,25 @@ Used in the same way as `<Float>`, it can also override the defined prop in high
 </Menu>
 ```
 
-If you using the TypeScript, can define `FloatProps` to the props of `<HighOrderFloat>`:
+## TypeScript
 
-```vue
-<!-- HighOrderFloat.vue -->
-<script setup>
-import { Float, FloatProps } from '@headlessui-float/vue'
+If you using the TypeScript, can using `createHighOrderFloatComponent()` function to create the `<HighOrderFloat>`, enjoy better type hinting:
 
-defineProps(FloatProps)
-</script>
+```ts
+// HighOrderFloat.ts
+import { createHighOrderFloatComponent } from '@headlessui-float/vue'
+
+export default createHighOrderFloatComponent({
+  offset: 8,
+  flip: true,
+  shift: 6,
+  portal: true,
+  enter: 'transition duration-200 ease-out',
+  enterFrom: 'scale-95 opacity-0',
+  enterTo: 'scale-100 opacity-100',
+  leave: 'transition duration-150 ease-in',
+  leaveFrom: 'scale-100 opacity-100',
+  leaveTo: 'scale-95 opacity-0',
+  tailwindcssOriginClass: true,
+})
 ```

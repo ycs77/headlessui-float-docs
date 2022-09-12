@@ -42,13 +42,25 @@ import { Float } from '@headlessui-float/vue'
 </Menu>
 ```
 
-如果你有使用 TypeScript，可以定義 `FloatProps` 到 `<HighOrderFloat>` 的 props：
+## TypeScript
 
-```vue
-<!-- HighOrderFloat.vue -->
-<script setup>
-import { Float, FloatProps } from '@headlessui-float/vue'
+如果你有使用 TypeScript，可以用 `createHighOrderFloatComponent()` 函數來創建 `<HighOrderFloat>`，享有更好的的型別提示：
 
-defineProps(FloatProps)
-</script>
+```ts
+// HighOrderFloat.ts
+import { createHighOrderFloatComponent } from '@headlessui-float/vue'
+
+export default createHighOrderFloatComponent({
+  offset: 8,
+  flip: true,
+  shift: 6,
+  portal: true,
+  enter: 'transition duration-200 ease-out',
+  enterFrom: 'scale-95 opacity-0',
+  enterTo: 'scale-100 opacity-100',
+  leave: 'transition duration-150 ease-in',
+  leaveFrom: 'scale-100 opacity-100',
+  leaveTo: 'scale-95 opacity-0',
+  tailwindcssOriginClass: true,
+})
 ```
