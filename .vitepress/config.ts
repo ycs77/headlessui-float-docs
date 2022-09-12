@@ -1,34 +1,44 @@
-import { defineConfigWithTheme } from 'vitepress'
-import type { DefaultTheme } from 'vitepress/theme'
+import { defineConfigWithTheme, type DefaultTheme, type HeadConfig } from 'vitepress'
 import type { Config as ThemeConfig } from './theme/config'
 import type { AlgoliaLocale } from './theme/composables/docsearch'
 
+const metadata = [
+  ['meta', { property: 'og:type', content: 'website' }],
+  ['meta', { property: 'og:title', content: 'Headless UI Float' }],
+  ['meta', {
+    property: 'og:image',
+    content: 'https://headlessui-float.vercel.app/og-image.png',
+  }],
+  ['meta', { property: 'og:url', content: 'https://headlessui-float.vercel.app/' }],
+  ['meta', { name: 'twitter:site', content: '@ycs77' }],
+  ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+  ['meta', {
+    name: 'google-site-verification',
+    content: 'Wa8krcXE98k0kOUZMVWseTPxyzqchmJRU9qlvpuo4OE',
+  }],
+] as HeadConfig[]
+
 export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'src',
-
-  head: [
-    ['meta', { name: 'twitter:site', content: '@ycs77' }],
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', {
-      name: 'og:image',
-      content: 'https://headlessui-float.vercel.app/og-image.png',
-    }],
-    ['meta', {
-      name: 'google-site-verification',
-      content: 'Wa8krcXE98k0kOUZMVWseTPxyzqchmJRU9qlvpuo4OE',
-    }],
-  ],
 
   locales: {
     '/': {
       lang: 'en',
       title: 'Headless UI Float',
-      description: 'Headless UI Float - Easily float the Headless UI components',
+      description: 'Easily float the Headless UI components',
+      head: [
+        ...metadata,
+        ['meta', { property: 'og:description', content: 'Easily float the Headless UI components' }],
+      ],
     },
     '/zh-tw/': {
       lang: 'zh-TW',
       title: 'Headless UI Float',
-      description: 'Headless UI Float - 輕鬆浮動定位 Headless UI 元件',
+      description: '輕鬆浮動定位 Headless UI 元件',
+      head: [
+        ...metadata,
+        ['meta', { property: 'og:description', content: '輕鬆浮動定位 Headless UI 元件' }],
+      ],
     },
   },
 
