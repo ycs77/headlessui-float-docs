@@ -1,6 +1,6 @@
 # Arrow
 
-First put the `<Float.Arrow>` inside the floating element, then add the class:
+First, put the `<Float.Arrow>` inside the floating element, then add the class:
 
 ```jsx
 <Popover>
@@ -16,7 +16,7 @@ First put the `<Float.Arrow>` inside the floating element, then add the class:
 </Popover>
 ```
 
-Then add the `arrow` prop in `<Float>`, and add `:offset="15"` to keep the arrow away from the reference element:
+Then add the `arrow` prop in `<Float>`, and add `offset={15}` to keep the arrow away from the reference element:
 
 ```jsx
 <Float arrow offset={15}>

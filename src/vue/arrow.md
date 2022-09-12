@@ -1,6 +1,6 @@
 # Arrow
 
-First import the `<FloatArrow>` component, and put it inside the floating element, then add the class:
+First, import the `<FloatArrow>` component and put it inside the floating element, then add the class:
 
 ```html
 <Popover>
