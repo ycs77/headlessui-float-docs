@@ -48,7 +48,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         label: 'English',
         selectText: 'Languages',
         editLink: {
-          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/docs/:path',
+          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/src/:path',
           text: 'Suggest changes to this page',
         },
         lastUpdated: 'Last Updated',
@@ -60,7 +60,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         label: '繁體中文',
         selectText: '語言',
         editLink: {
-          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/docs/:path',
+          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/src/:path',
           text: '為此頁面提供修改建議',
         },
         lastUpdated: '最後更新於',
