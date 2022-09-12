@@ -86,7 +86,6 @@ onMounted(async () => {
   padding: 10px 16px;
   background-color: var(--vp-c-bg-mute);
   border-radius: 4px;
-  transition: background-color .5s;
 }
 
 .frameworks-buttons {
