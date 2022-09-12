@@ -5,7 +5,7 @@
 先將 `<Float>` 元件增加 `as="div"` 和 `className="relative"`，將外圍渲染成 `<div className="relative">` 後，再增加 `floatingAs={React.Fragment}` 讓浮動元素外圍不渲染任何元素 (預設會渲染一層 `<div>` 元素)，直接對浮動元素進行定位，最後為參考元素和浮動元素加上 `w-full` class 就大功告成了。
 
 ::: tip 提示
-需要升級套件至 v0.9+ 才能使用 `floatingAs` prop。
+需要升級套件至 **v0.9+** 才能使用 `floatingAs` prop。
 :::
 
 現在按鈕和選單就會有同等的寬度了：
