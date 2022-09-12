@@ -7,10 +7,15 @@
   ```ts
   interface FloatProps {
     /**
+     * <Float> 渲染出的元素或元件。
+     * 預設："template"
+     */
+    as?: string | Component
+    /**
      * 包裹了浮動元素的元素或元件。
      * 預設："div"
      */
-    as?: string | Component
+    floatingAs?: string | Component
     /**
      * 控制是否顯示浮動元素。
      * 設為 `true` / `false` 會強制指定是否顯示，

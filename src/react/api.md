@@ -7,10 +7,15 @@
   ```ts
   interface FloatProps {
     /**
-     * The element or component the floating element should render as.
-     * Default: "div"
+     * The element or component the <Float> should render as.
+     * Default: <Fragment>
      */
     as?: ElementType
+    /**
+     * The element or component that wraps the floating element.
+     * Default: "div"
+     */
+    floatingAs?: ElementType
     /**
      * Control the floating element is show or not.
      * Set to `true` / `false` to force the display or not,
