@@ -64,7 +64,7 @@ import * as React from 'react'
 
 ## 同時使用過場動畫 {#with-transition}
 
-需要注意的是，如果過場動畫有使用到 CSS 的 `transform` 屬性的話，會無法正常使用。因為 `floatingAs` 設為 `React.Fragment` 時，會直接定位浮動元素，且為了優化效能，預設使用 `transform` 來做定位的。如果要使用的話，要關閉 `transform` 切換成 `position` 和 `top`/`left` 屬性來做定位：
+需要注意的是，如果過場動畫有使用到 CSS 的 `transform` 屬性的話，會無法正常使用。因為 `floatingAs` 設為 `React.Fragment` 時，會直接定位浮動元素，且為了優化效能，預設使用 `transform` 來做定位的。如果要使用的話，要關閉 `transform` 切換成 `top`/`left` 屬性來做定位：
 
 ```jsx
 <Float transform={false}>

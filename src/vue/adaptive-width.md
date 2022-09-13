@@ -62,7 +62,7 @@ If you put it in a `flex` container to fill the width, you need to add the `w-fu
 
 ## With transition {#with-transition}
 
-It should be noted that if the transition uses the `transform` property of CSS, it will not work properly. Because `floating-as` is set to `template`, the floating element will be positioned directly, and in order to optimize performance, `transform` is used for positioning by default. If you want to use it, turn off `transform` and switch to `position` and `top`/`left` properties for positioning:
+It should be noted that if the transition uses the `transform` property of CSS, it will not work properly. Because `floating-as` is set to `template`, the floating element will be positioned directly, and in order to optimize performance, `transform` is used for positioning by default. If you want to use it, turn off `transform` to switch to `top`/`left` properties for positioning:
 
 ```html
 <Float :transform="false">
