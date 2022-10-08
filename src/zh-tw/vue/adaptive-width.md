@@ -19,13 +19,13 @@
     :offset="4"
     floating-as="template"
   >
-    <Listbox.Button class="w-full ...">
+    <ListboxButton class="w-full ...">
       ...
-    </Listbox.Button>
+    </ListboxButton>
 
-    <Listbox.Options class="w-full ...">
+    <ListboxOptions class="w-full ...">
       ...
-    </Listbox.Options>
+    </ListboxOptions>
   </Float>
 </Listbox>
 ```
