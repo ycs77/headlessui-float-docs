@@ -2,6 +2,10 @@
 
 Use with [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) to auto-import components:
 
+::: tip INFO
+Requires upgrading [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) to **v0.19+** to work properly.
+:::
+
 ```js
 // vite.config.js
 import Vue from '@vitejs/plugin-vue'
