@@ -101,7 +101,15 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 
 <!-- ## hide
 
-當無法看到參考元素時，就會隱藏浮動元素： -->
+當無法看到參考元素時，就會隱藏浮動元素：
+
+```html
+<Float hide>
+```
+
+::: tip 提示
+更多 `hide` 支援的輸入選項，請參考 Floating UI 的 `hide` 說明：https://floating-ui.com/docs/hide
+::: -->
 
 ## autoUpdate {#auto-update}
 

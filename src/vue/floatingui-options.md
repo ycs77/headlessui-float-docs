@@ -101,7 +101,15 @@ More options supported by `autoPlacement`, refer to Floating UI's `autoPlacement
 
 <!-- ## hide
 
-When the reference element is not visible, the floating element is hidden: -->
+When the reference element is not visible, the floating element is hidden:
+
+```html
+<Float hide>
+```
+
+::: tip INFO
+More options supported by `hide`, refer to Floating UI's `hide` documentation: https://floating-ui.com/docs/hide
+::: -->
 
 ## autoUpdate {#auto-update}
 
