@@ -69,6 +69,15 @@
     zIndex?: number | string
 
     /**
+     * Use named class to define transition styles.
+     */
+    transitionName?: string
+    /**
+     * CSS transition type.
+     */
+    transitionType?: 'transition' | 'animation'
+
+    /**
      * Props for customizing transition classes.
      */
     enter?: string
@@ -79,7 +88,6 @@
     leaveTo?: string
     /**
      * The origin class of transform.
-     * Default:
      */
     originClass?: string | OriginClassResolver
     /**
@@ -98,6 +106,11 @@
      * Default: true
      */
     transform?: boolean
+    /**
+     * Floating element adaptive width.
+     * Default: false
+     */
+    adaptiveWidth?: boolean
 
     /**
      * Customizing middleware for Floating UI.

@@ -79,7 +79,6 @@
     leaveTo?: string
     /**
      * 設定 transform 的 origin class。
-     * 預設：
      */
     originClass?: string | OriginClassResolver
     /**
@@ -98,6 +97,11 @@
      * 預設：true
      */
     transform?: boolean
+    /**
+     * 浮動元素自適應寬度。
+     * 預設：false
+     */
+    adaptiveWidth?: boolean
 
     /**
      * 自訂 Floating UI 的 middleware (中間件)。

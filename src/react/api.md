@@ -79,7 +79,6 @@
     leaveTo?: string
     /**
      * The origin class of transform.
-     * Default:
      */
     originClass?: string | OriginClassResolver
     /**
@@ -98,6 +97,11 @@
      * Default: true
      */
     transform?: boolean
+    /**
+     * Floating element adaptive width.
+     * Default: false
+     */
+    adaptiveWidth?: boolean
 
     /**
      * Customizing middleware for Floating UI.

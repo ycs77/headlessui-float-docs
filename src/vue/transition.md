@@ -35,7 +35,7 @@ If need to override the `origin` class, can use `origin-class`.
 
 ## Named Transitions
 
-Use named transition classes to define transition styles:
+Use named class to define transition styles:
 
 ```html
 <Float transition-name="fade">

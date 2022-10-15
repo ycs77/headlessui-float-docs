@@ -69,6 +69,15 @@
     zIndex?: number | string
 
     /**
+     * 使用命名 class 來定義過場 CSS 效果。
+     */
+    transitionName?: string
+    /**
+     * CSS 過場類型。
+     */
+    transitionType?: 'transition' | 'animation'
+
+    /**
      * 定義 `<transition>` 過場 class 的 prop。
      */
     enter?: string
@@ -79,7 +88,6 @@
     leaveTo?: string
     /**
      * 設定 transform 的 origin class。
-     * 預設：
      */
     originClass?: string | OriginClassResolver
     /**
@@ -98,6 +106,11 @@
      * 預設：true
      */
     transform?: boolean
+    /**
+     * 浮動元素自適應寬度。
+     * 預設：false
+     */
+    adaptiveWidth?: boolean
 
     /**
      * 自訂 Floating UI 的 middleware (中間件)。
