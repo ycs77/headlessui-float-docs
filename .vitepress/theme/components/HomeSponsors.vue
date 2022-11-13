@@ -1,17 +1,21 @@
 <template>
   <section class="VPHomeSponsors">
-    <div class="container">
-      <div class="header">
+    <div class="container mx-auto max-w-[1152px]">
+      <div>
         <h2 class="message">{{ message }}</h2>
       </div>
 
-      <div class="sponsors">
+      <div class="mt-8">
         <a :href="actionLink" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.jsdelivr.net/gh/ycs77/static/sponsors.svg" alt="The Lucas Yang's sponsors" />
+          <img
+            class="mx-auto"
+            src="https://cdn.jsdelivr.net/gh/ycs77/static/sponsors.svg"
+            alt="The Lucas Yang's sponsors"
+          />
         </a>
       </div>
 
-      <div class="action">
+      <div class="mt-3.5 text-center">
         <VPButton
           theme="sponsor"
           :text="actionText ?? 'Become a sponsor'"
@@ -39,11 +43,6 @@ defineProps<{
   background-color: var(--vp-c-bg);
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1152px;
-}
-
 .message {
   margin: 0 auto;
   padding-top: 10px;
@@ -53,18 +52,5 @@ defineProps<{
   font-size: 16px;
   font-weight: 500;
   color: var(--vp-c-text-2);
-}
-
-.sponsors {
-  padding-top: 32px;
-}
-
-.sponsors img {
-  margin: auto;
-}
-
-.action {
-  padding-top: 40px;
-  text-align: center;
 }
 </style>
