@@ -90,7 +90,7 @@ Then you can add the class for the transition:
 >
 ```
 
-## Adaptive width using JS
+## Adaptive width using JS <Badge label="Experimental" />
 
 There are cases where CSS `relative` does not properly synchronize the width of the floating element, such as when using the `portal` at the same time. At this point, you can use the `adaptiveWidth` prop, which uses the [`ResizeObserver` API](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) to monitor the width of the reference element and synchronize it to the floating element, but the performance will be worse than the CSS implementation.
 
