@@ -1,4 +1,8 @@
+import { resolve } from 'path'
+import type { UserConfig as ViteConfig } from 'vite'
 import { defineConfigWithTheme, type DefaultTheme, type HeadConfig } from 'vitepress'
+import Components from 'unplugin-vue-components/vite'
+import UnoCSS from 'unocss/vite'
 import type { Config as ThemeConfig } from './theme/config'
 import type { AlgoliaLocale } from './theme/composables/docsearch'
 
@@ -86,6 +90,8 @@ export default defineConfigWithTheme<ThemeConfig>({
       locales: algoliaLocales(),
     },
   },
+
+  vite: viteConfig(),
 })
 
 function frameworksNav() {
@@ -249,4 +255,16 @@ function algoliaLocales() {
       },
     },
   } as Record<string, AlgoliaLocale>
+}
+
+function viteConfig() {
+  return <ViteConfig>{
+    plugins: [
+      Components({
+        dirs: resolve(__dirname, 'theme/components'),
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      }),
+      UnoCSS(),
+    ],
+  }
 }
