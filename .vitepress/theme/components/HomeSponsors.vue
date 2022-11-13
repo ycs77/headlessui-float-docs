@@ -1,14 +1,4 @@
-<script setup lang="ts">
-  import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue'
-
-  defineProps<{
-    message: string
-    actionText: string
-    actionLink: string
-  }>()
-  </script>
-
-  <template>
+<template>
   <section class="VPHomeSponsors">
     <div class="container">
       <div class="header">
@@ -31,6 +21,16 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue'
+
+defineProps<{
+  message: string
+  actionText: string
+  actionLink: string
+}>()
+</script>
 
 <style scoped>
 .VPHomeSponsors {

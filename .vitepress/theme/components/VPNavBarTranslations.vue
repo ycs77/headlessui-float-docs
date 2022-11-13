@@ -1,12 +1,3 @@
-<script lang="ts" setup>
-import { useLanguageLinks } from '../composables/nav'
-import VPIconLanguages from 'vitepress/dist/client/theme-default/components/icons/VPIconLanguages.vue'
-import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue'
-import VPMenuLink from 'vitepress/dist/client/theme-default/components/VPMenuLink.vue'
-
-const languageLinks = useLanguageLinks()
-</script>
-
 <template>
   <VPFlyout
     v-if="languageLinks"
@@ -22,6 +13,15 @@ const languageLinks = useLanguageLinks()
     </div>
   </VPFlyout>
 </template>
+
+<script setup lang="ts">
+import { useLanguageLinks } from '../composables/nav'
+import VPIconLanguages from 'vitepress/dist/client/theme-default/components/icons/VPIconLanguages.vue'
+import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue'
+import VPMenuLink from 'vitepress/dist/client/theme-default/components/VPMenuLink.vue'
+
+const languageLinks = useLanguageLinks()
+</script>
 
 <style scoped>
 .VPNavBarTranslations {

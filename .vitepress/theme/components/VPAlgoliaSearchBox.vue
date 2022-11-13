@@ -1,3 +1,7 @@
+<template>
+  <div id="docsearch" />
+</template>
+
 <script setup lang="ts">
 import { default as docsearch } from '@docsearch/js'
 import { computed, watch, onMounted } from 'vue'
@@ -150,7 +154,3 @@ function getRelativePath(absoluteUrl: string) {
   )
 }
 </script>
-
-<template>
-  <div id="docsearch" />
-</template>

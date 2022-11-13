@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import { provide } from 'vue'
-import { useNav } from 'vitepress/dist/client/theme-default/composables/nav.js'
-import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
-import VPNavBar from './VPNavBar.vue'
-import VPNavScreen from './VPNavScreen.vue'
-
-const { isScreenOpen, closeScreen, toggleScreen } = useNav()
-const { hasSidebar } = useSidebar()
-
-provide('close-screen', closeScreen)
-</script>
-
 <template>
   <header class="VPNav" :class="{ 'no-sidebar' : !hasSidebar }">
     <VPNavBar :is-screen-open="isScreenOpen" @toggle-screen="toggleScreen">
@@ -25,6 +12,19 @@ provide('close-screen', closeScreen)
     </VPNavScreen>
   </header>
 </template>
+
+<script setup lang="ts">
+import { provide } from 'vue'
+import { useNav } from 'vitepress/dist/client/theme-default/composables/nav.js'
+import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
+import VPNavBar from './VPNavBar.vue'
+import VPNavScreen from './VPNavScreen.vue'
+
+const { isScreenOpen, closeScreen, toggleScreen } = useNav()
+const { hasSidebar } = useSidebar()
+
+provide('close-screen', closeScreen)
+</script>
 
 <style scoped>
 .VPNav {

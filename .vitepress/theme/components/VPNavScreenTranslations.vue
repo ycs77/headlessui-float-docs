@@ -1,18 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { useLanguageLinks } from '../composables/nav'
-import VPIconChevronDown from 'vitepress/dist/client/theme-default/components/icons/VPIconChevronDown.vue'
-import VPIconLanguages from 'vitepress/dist/client/theme-default/components/icons/VPIconLanguages.vue'
-
-const languageLinks = useLanguageLinks()
-
-const isOpen = ref(false)
-
-function toggle() {
-  isOpen.value = !isOpen.value
-}
-</script>
-
 <template>
   <div v-if="languageLinks" class="VPNavScreenTranslations" :class="{ open: isOpen }">
     <button class="title" @click="toggle">
@@ -28,6 +13,21 @@ function toggle() {
     </ul>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useLanguageLinks } from '../composables/nav'
+import VPIconChevronDown from 'vitepress/dist/client/theme-default/components/icons/VPIconChevronDown.vue'
+import VPIconLanguages from 'vitepress/dist/client/theme-default/components/icons/VPIconLanguages.vue'
+
+const languageLinks = useLanguageLinks()
+
+const isOpen = ref(false)
+
+function toggle() {
+  isOpen.value = !isOpen.value
+}
+</script>
 
 <style scoped>
 .VPNavScreenTranslations {

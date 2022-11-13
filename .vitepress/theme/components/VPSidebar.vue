@@ -1,25 +1,3 @@
-<script lang="ts" setup>
-import { ref, watchPostEffect, nextTick } from 'vue'
-import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
-import VPSidebarGroup from 'vitepress/dist/client/theme-default/components/VPSidebarGroup.vue'
-
-const { sidebar, hasSidebar } = useSidebar()
-
-const props = defineProps<{
-  open: boolean
-}>()
-
-// a11y: focus Nav element when menu has opened
-let navEl = ref<(Element & { focus(): void }) | null>(null)
-
-watchPostEffect(async () => {
-  if (props.open) {
-    await nextTick()
-    navEl.value?.focus()
-  }
-})
-</script>
-
 <template>
   <aside
     v-if="hasSidebar"
@@ -46,6 +24,28 @@ watchPostEffect(async () => {
     <slot name="sidebar-after" />
   </aside>
 </template>
+
+<script setup lang="ts">
+import { ref, type Ref, watchPostEffect, nextTick } from 'vue'
+import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
+import VPSidebarGroup from 'vitepress/dist/client/theme-default/components/VPSidebarGroup.vue'
+
+const { sidebar, hasSidebar } = useSidebar()
+
+const props = defineProps<{
+  open: boolean
+}>()
+
+// a11y: focus Nav element when menu has opened
+let navEl = ref(null) as Ref<(Element & { focus(): void }) | null>
+
+watchPostEffect(async () => {
+  if (props.open) {
+    await nextTick()
+    navEl.value?.focus()
+  }
+})
+</script>
 
 <style scoped>
 .VPSidebar {

@@ -1,25 +1,3 @@
-<script lang="ts" setup>
-import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
-import VPNavBarTitle from './VPNavBarTitle.vue'
-import VPNavBarSearch from './VPNavBarSearch.vue'
-import VPNavBarMenu from './VPNavBarMenu.vue'
-import VPNavBarTranslations from './VPNavBarTranslations.vue'
-import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
-import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
-import VPNavBarExtra from 'vitepress/dist/client/theme-default/components/VPNavBarExtra.vue'
-import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
-
-defineProps<{
-  isScreenOpen: boolean
-}>()
-
-defineEmits<{
-  (e: 'toggle-screen'): void
-}>()
-
-const { hasSidebar } = useSidebar()
-</script>
-
 <template>
   <div class="VPNavBar" :class="{ 'has-sidebar' : hasSidebar }">
     <div class="container">
@@ -46,6 +24,28 @@ const { hasSidebar } = useSidebar()
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
+import VPNavBarTitle from './VPNavBarTitle.vue'
+import VPNavBarSearch from './VPNavBarSearch.vue'
+import VPNavBarMenu from './VPNavBarMenu.vue'
+import VPNavBarTranslations from './VPNavBarTranslations.vue'
+import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
+import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
+import VPNavBarExtra from 'vitepress/dist/client/theme-default/components/VPNavBarExtra.vue'
+import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
+
+defineProps<{
+  isScreenOpen: boolean
+}>()
+
+defineEmits<{
+  (e: 'toggle-screen'): void
+}>()
+
+const { hasSidebar } = useSidebar()
+</script>
 
 <style scoped>
 .VPNavBar {

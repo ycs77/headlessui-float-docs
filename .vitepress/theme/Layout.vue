@@ -1,31 +1,3 @@
-<script setup lang="ts">
-import { provide, watch } from 'vue'
-import { useData, useRoute } from 'vitepress'
-import { useSidebar, useCloseSidebarOnEscape } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
-import VPSkipLink from 'vitepress/dist/client/theme-default/components/VPSkipLink.vue'
-import VPBackdrop from 'vitepress/dist/client/theme-default/components/VPBackdrop.vue'
-import VPNav from './components/VPNav.vue'
-import VPLocalNav from 'vitepress/dist/client/theme-default/components/VPLocalNav.vue'
-import VPSidebar from './components/VPSidebar.vue'
-import VPContent from 'vitepress/dist/client/theme-default/components/VPContent.vue'
-import VPFooter from 'vitepress/dist/client/theme-default/components/VPFooter.vue'
-
-const {
-  isOpen: isSidebarOpen,
-  open: openSidebar,
-  close: closeSidebar
-} = useSidebar()
-
-const route = useRoute()
-watch(() => route.path, closeSidebar)
-
-useCloseSidebarOnEscape(isSidebarOpen, closeSidebar)
-
-provide('close-sidebar', closeSidebar)
-
-const { frontmatter } = useData()
-</script>
-
 <template>
   <div v-if="frontmatter.layout !== false" class="Layout">
     <slot name="layout-top" />
@@ -68,6 +40,34 @@ const { frontmatter } = useData()
   </div>
   <Content v-else />
 </template>
+
+<script setup lang="ts">
+import { provide, watch } from 'vue'
+import { useData, useRoute } from 'vitepress'
+import { useSidebar, useCloseSidebarOnEscape } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
+import VPSkipLink from 'vitepress/dist/client/theme-default/components/VPSkipLink.vue'
+import VPBackdrop from 'vitepress/dist/client/theme-default/components/VPBackdrop.vue'
+import VPNav from './components/VPNav.vue'
+import VPLocalNav from 'vitepress/dist/client/theme-default/components/VPLocalNav.vue'
+import VPSidebar from './components/VPSidebar.vue'
+import VPContent from 'vitepress/dist/client/theme-default/components/VPContent.vue'
+import VPFooter from 'vitepress/dist/client/theme-default/components/VPFooter.vue'
+
+const {
+  isOpen: isSidebarOpen,
+  open: openSidebar,
+  close: closeSidebar
+} = useSidebar()
+
+const route = useRoute()
+watch(() => route.path, closeSidebar)
+
+useCloseSidebarOnEscape(isSidebarOpen, closeSidebar)
+
+provide('close-sidebar', closeSidebar)
+
+const { frontmatter } = useData()
+</script>
 
 <style scoped>
 .Layout {

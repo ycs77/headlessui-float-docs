@@ -1,26 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import VPNavScreenMenu from './VPNavScreenMenu.vue'
-import VPNavScreenAppearance from 'vitepress/dist/client/theme-default/components/VPNavScreenAppearance.vue'
-import VPNavScreenTranslations from './VPNavScreenTranslations.vue'
-import VPNavScreenSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavScreenSocialLinks.vue'
-
-defineProps<{
-  open: boolean
-}>()
-
-const screen = ref<HTMLElement | null>(null)
-
-function lockBodyScroll() {
-  disableBodyScroll(screen.value!, { reserveScrollBarGap: true })
-}
-
-function unlockBodyScroll() {
-  clearAllBodyScrollLocks()
-}
-</script>
-
 <template>
   <transition
     name="fade"
@@ -39,6 +16,29 @@ function unlockBodyScroll() {
     </div>
   </transition>
 </template>
+
+<script setup lang="ts">
+import { ref, type Ref } from 'vue'
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+import VPNavScreenMenu from './VPNavScreenMenu.vue'
+import VPNavScreenTranslations from './VPNavScreenTranslations.vue'
+import VPNavScreenAppearance from 'vitepress/dist/client/theme-default/components/VPNavScreenAppearance.vue'
+import VPNavScreenSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavScreenSocialLinks.vue'
+
+defineProps<{
+  open: boolean
+}>()
+
+const screen = ref(null) as Ref<HTMLElement | null>
+
+function lockBodyScroll() {
+  disableBodyScroll(screen.value!, { reserveScrollBarGap: true })
+}
+
+function unlockBodyScroll() {
+  clearAllBodyScrollLocks()
+}
+</script>
 
 <style scoped>
 .VPNavScreen {

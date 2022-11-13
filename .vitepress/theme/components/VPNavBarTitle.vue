@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { useData } from 'vitepress'
-import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
-import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
-
-const { site, theme, localePath } = useData()
-const { hasSidebar } = useSidebar()
-</script>
-
 <template>
   <div class="VPNavBarTitle" :class="{ 'has-sidebar': hasSidebar }">
     <a class="title" :href="localePath">
@@ -19,6 +10,15 @@ const { hasSidebar } = useSidebar()
     </a>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useData } from 'vitepress'
+import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
+import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
+
+const { site, theme, localePath } = useData()
+const { hasSidebar } = useSidebar()
+</script>
 
 <style scoped>
 .VPNavBarTitle {
