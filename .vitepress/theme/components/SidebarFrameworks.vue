@@ -30,17 +30,18 @@ import type { DefaultTheme } from 'vitepress/theme'
 import { useElementSize, promiseTimeout } from '@vueuse/core'
 import { useFrameworkLinks } from '../composables/nav'
 
-interface FrameworkElSize {
+const gap = 4
+
+const noTransition = ref(true)
+const els = ref([]) as Ref<{
   width: number
   left: number
   link: DefaultTheme.NavItemWithLink
-}
-
-const noTransition = ref(true)
-const els = ref([]) as Ref<FrameworkElSize[]>
-const gap = 4
+}[]>
 
 const { links, isActive, currentFramework } = useFrameworkLinks()
+
+const findSize = (framework: string) => els.value.find(({ link }) => link.text === framework)
 
 const reactSize = computed(() => findSize('React'))
 const vueSize = computed(() => findSize('Vue'))
@@ -55,19 +56,15 @@ function setEl(el: HTMLElement, link: DefaultTheme.NavItemWithLink, index: numbe
       if (index === 0) {
         return 0
       }
-      return els.value.slice(0, index).reduce((carry, item) => {
-        return carry + gap + item.width
-      }, 0)
+      return els.value
+        .slice(0, index)
+        .reduce((carry, item) => carry + gap + item.width, 0)
     }) as unknown as number,
   }
 }
 
-function findSize(framework: string) {
-  return els.value.find(({ link }) => link.text === framework)
-}
-
 onMounted(async () => {
-  await promiseTimeout(0)
+  await promiseTimeout(100)
   noTransition.value = false
 })
 </script>
@@ -77,6 +74,7 @@ onMounted(async () => {
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: var(--vp-c-bg-alt);
   padding: 16px 0;
   border-bottom: 1px solid var(--vp-c-divider-light);
 }
