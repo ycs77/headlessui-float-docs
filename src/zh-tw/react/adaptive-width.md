@@ -11,7 +11,7 @@
 現在按鈕和選單就會有同等的寬度了：
 
 ```jsx
-import * as React from 'react'
+import React from 'react'
 
 <Listbox>
   <Float

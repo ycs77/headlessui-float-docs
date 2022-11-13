@@ -11,7 +11,7 @@ First add `as="div"` and `className="relative"` to the `<Float>` component, rend
 Now the button and options will have the same width:
 
 ```jsx
-import * as React from 'react'
+import React from 'react'
 
 <Listbox>
   <Float
