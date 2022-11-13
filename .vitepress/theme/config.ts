@@ -34,4 +34,4 @@ export interface Config extends DefaultTheme.Config {
   algolia?: AlgoliaSearchOptions
 }
 
-export type NavItemWithFramework = DefaultTheme.NavItem & { name: string }
+export type NavItemWithFramework = DefaultTheme.NavItemWithLink & { name: string }

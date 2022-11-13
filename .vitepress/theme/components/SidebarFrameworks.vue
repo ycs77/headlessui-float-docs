@@ -4,7 +4,7 @@
       <div class="frameworks-buttons">
         <a
           v-for="(link, i) in links"
-          :key="link.text"
+          :key="link.name"
           :href="link.link"
           :class="{ 'active': isActive(link) }"
           :ref="el => setEl(el as HTMLElement, link, i)"
@@ -13,7 +13,6 @@
         </a>
       </div>
       <div
-        ref="frameworkBgRef"
         class="framework-bg"
         :class="[
           `framework-bg-${currentFramework?.name || ''}`,
@@ -26,8 +25,8 @@
 
 <script setup lang="ts">
 import { ref, type Ref, computed, onMounted } from 'vue'
-import type { DefaultTheme } from 'vitepress/theme'
 import { useElementSize, promiseTimeout } from '@vueuse/core'
+import type { NavItemWithFramework } from '../config'
 import { useFrameworkLinks } from '../composables/nav'
 
 const gap = 4
@@ -36,26 +35,23 @@ const noTransition = ref(true)
 const els = ref([]) as Ref<{
   width: number
   left: number
-  link: DefaultTheme.NavItemWithLink
+  link: NavItemWithFramework
 }[]>
 
 const { links, isActive, currentFramework } = useFrameworkLinks()
 
-const findSize = (framework: string) => els.value.find(({ link }) => link.text === framework)
+const findSize = (framework: string) => els.value.find(({ link }) => link.name === framework)
 
-const reactSize = computed(() => findSize('React'))
-const vueSize = computed(() => findSize('Vue'))
+const reactSize = computed(() => findSize('react'))
+const vueSize = computed(() => findSize('vue'))
 
-function setEl(el: HTMLElement, link: DefaultTheme.NavItemWithLink, index: number) {
+function setEl(el: HTMLElement, link: NavItemWithFramework, index: number) {
   const { width } = useElementSize(el)
 
   els.value[index] = {
     link,
     width: width as unknown as number,
     left: computed(() => {
-      if (index === 0) {
-        return 0
-      }
       return els.value
         .slice(0, index)
         .reduce((carry, item) => carry + gap + item.width, 0)
@@ -74,9 +70,32 @@ onMounted(async () => {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: var(--vp-c-bg-alt);
-  padding: 16px 0;
+  padding: 16px 0 32px;
+  margin-bottom: 10px;
+  background-color: var(--vp-c-bg);
   border-bottom: 1px solid var(--vp-c-divider-light);
+}
+.SidebarFrameworks::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  height: 36px;
+  background-color: var(--vp-c-bg);
+}
+@media (min-width: 960px) {
+  .SidebarFrameworks {
+    padding: 16px 0;
+    margin-bottom: 0;
+    background-color: var(--vp-c-bg-alt);
+  }
+  .SidebarFrameworks::before {
+    content: none;
+  }
 }
 
 .frameworks-container {
@@ -106,6 +125,9 @@ onMounted(async () => {
 }
 .frameworks-buttons a.active {
   color: #fff;
+}
+.frameworks-buttons a:not(.active):hover {
+  color: var(--vp-c-text-1);
 }
 
 .framework-bg {

@@ -1,7 +1,7 @@
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
-import type { Config as ThemeConfig } from '../config'
+import type { Config as ThemeConfig, NavItemWithFramework } from '../config'
 
 export function useLanguageLinks() {
   const { site, localePath, theme } = useData<ThemeConfig>()
@@ -38,32 +38,24 @@ export function useLanguageLinks() {
 export function useFrameworkLinks() {
   const { localePath, theme } = useData<ThemeConfig>()
   const route = useRoute()
-  const frameworksNav = theme.value.frameworksNav!
+  const frameworksNav = theme.value.frameworksNav || []
 
   const currentFramework = computed(() => {
-    return frameworksNav.find(link => {
-      return route.path.match(new RegExp(link.activeMatch!))
-    })
+    return frameworksNav.find(link => route.path.match(new RegExp(link.activeMatch!)))
   })
 
   const links = computed(() => {
     if (currentFramework.value) {
-      return frameworksNav?.map(link => ({
-        text: link.text,
-        link: route.path.replace(
-          /^\/(\w{2}-\w{2}\/)?\w+/,
-          `${localePath.value}${link.name}`
-        ),
-      })) as DefaultTheme.NavItemWithLink[]
+      return frameworksNav.map(link => ({
+        ...link,
+        link: route.path.replace(/^\/(\w{2}-\w{2}\/)?\w+/, `${localePath.value}${link.name}`),
+      }))
     }
 
-    return frameworksNav?.map(link => ({
-      text: link.text,
-      link: (link as DefaultTheme.NavItemWithLink).link,
-    })) as DefaultTheme.NavItemWithLink[]
+    return frameworksNav
   })
 
-  const isActive = (current: DefaultTheme.NavItemWithLink) => {
+  const isActive = (current: NavItemWithFramework) => {
     return current.text === currentFramework.value?.text
   }
 
@@ -73,12 +65,12 @@ export function useFrameworkLinks() {
 export function useDocsNav() {
   const { theme, lang } = useData<ThemeConfig>()
   const { currentFramework } = useFrameworkLinks()
-  const frameworksNav = theme.value.frameworksNav!
+  const frameworksNav = theme.value.frameworksNav || []
 
   return computed(() => {
-    const framework = currentFramework.value?.name || frameworksNav[0].name
+    const framework = currentFramework.value?.name || frameworksNav[0]?.name || ''
 
-    const nav = {
+    const nav = <Record<string, DefaultTheme.NavItemWithLink[]>>{
       'en': [
         { text: 'Guide', link: `/${framework}/quick-start.html`, activeMatch: `/${framework}/(?!api)` },
         { text: 'API', link: `/${framework}/api.html`, activeMatch: `/${framework}/api` },
@@ -87,7 +79,7 @@ export function useDocsNav() {
         { text: '指南', link: `/zh-tw/${framework}/quick-start.html`, activeMatch: `/zh-tw/${framework}/(?!api)` },
         { text: 'API', link: `/zh-tw/${framework}/api.html`, activeMatch: `/zh-tw/${framework}/api` },
       ],
-    } as Record<string, DefaultTheme.NavItemWithLink[]>
+    }
 
     return nav[lang.value]
   })

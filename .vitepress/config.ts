@@ -3,7 +3,7 @@ import type { UserConfig as ViteConfig } from 'vite'
 import { defineConfigWithTheme, type DefaultTheme, type HeadConfig } from 'vitepress'
 import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
-import type { Config as ThemeConfig } from './theme/config'
+import type { Config as ThemeConfig, NavItemWithFramework } from './theme/config'
 import type { AlgoliaLocale } from './theme/composables/docsearch'
 
 const metadata = [
@@ -95,7 +95,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 })
 
 function frameworksNav() {
-  return [
+  return <NavItemWithFramework[]>[
     {
       name: 'react',
       text: 'React',
