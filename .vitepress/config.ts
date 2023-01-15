@@ -6,7 +6,7 @@ import UnoCSS from 'unocss/vite'
 import type { Config as ThemeConfig, NavItemWithFramework } from './theme/config'
 import type { AlgoliaLocale } from './theme/composables/docsearch'
 
-const metadata = [
+const head = <HeadConfig[]>[
   ['meta', { property: 'og:type', content: 'website' }],
   ['meta', { property: 'og:title', content: 'Headless UI Float' }],
   ['meta', {
@@ -20,7 +20,7 @@ const metadata = [
     name: 'google-site-verification',
     content: 'Wa8krcXE98k0kOUZMVWseTPxyzqchmJRU9qlvpuo4OE',
   }],
-] as HeadConfig[]
+]
 
 export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'src',
@@ -31,7 +31,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       title: 'Headless UI Float',
       description: 'Easily float the Headless UI components',
       head: [
-        ...metadata,
+        ...head,
         ['meta', { property: 'og:description', content: 'Easily float the Headless UI components' }],
       ],
     },
@@ -40,7 +40,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       title: 'Headless UI Float',
       description: '輕鬆浮動定位 Headless UI 元件',
       head: [
-        ...metadata,
+        ...head,
         ['meta', { property: 'og:description', content: '輕鬆浮動定位 Headless UI 元件' }],
       ],
     },
