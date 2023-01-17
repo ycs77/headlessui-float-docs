@@ -1,4 +1,5 @@
-import { h, App } from 'vue'
+import { h } from 'vue'
+import { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import CrawlDocFramework from './components/CrawlDocFramework.vue'
@@ -8,7 +9,7 @@ import './styles/vars.css'
 import './styles/button.css'
 import 'uno.css'
 
-export default {
+export default <Theme>{
   ...DefaultTheme,
   Layout: () => {
     return h(Layout, null, {
@@ -16,7 +17,7 @@ export default {
       'doc-before': () => h(CrawlDocGroupName),
     })
   },
-  enhanceApp({ app }: { app: App }) {
+  enhanceApp({ app }) {
     //
   },
 }
