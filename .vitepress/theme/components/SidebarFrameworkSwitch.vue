@@ -1,7 +1,7 @@
 <template>
-  <div class="SidebarFrameworks">
-    <div class="frameworks-container">
-      <div class="frameworks-buttons">
+  <div class="SidebarFrameworkSwitch">
+    <div class="switch-container">
+      <div class="switch-buttons">
         <a
           v-for="(link, i) in links"
           :key="link.name"
@@ -13,9 +13,9 @@
         </a>
       </div>
       <div
-        class="framework-bg"
+        class="switch-bg"
         :class="[
-          `framework-bg-${currentFramework?.name || ''}`,
+          `switch-bg-${currentFramework?.name || ''}`,
           { 'no-transition': noTransition },
         ]"
       ></div>
@@ -66,7 +66,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.SidebarFrameworks {
+.SidebarFrameworkSwitch {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -75,7 +75,7 @@ onMounted(async () => {
   background-color: var(--vp-c-bg);
   border-bottom: 1px solid var(--vp-c-divider-light);
 }
-.SidebarFrameworks::before {
+.SidebarFrameworkSwitch::before {
   content: '';
   position: absolute;
   left: 0;
@@ -88,29 +88,29 @@ onMounted(async () => {
   background-color: var(--vp-c-bg);
 }
 @media (min-width: 960px) {
-  .SidebarFrameworks {
+  .SidebarFrameworkSwitch {
     padding: 16px 0;
     margin-bottom: 0;
     background-color: var(--vp-c-bg-alt);
   }
-  .SidebarFrameworks::before {
+  .SidebarFrameworkSwitch::before {
     content: none;
   }
 }
 
-.frameworks-container {
+.switch-container {
   position: relative;
   padding: 10px 16px;
   background-color: var(--vp-c-bg-mute);
   border-radius: 4px;
 }
 
-.frameworks-buttons {
+.switch-buttons {
   display: flex;
   gap: v-bind(`${gap}px`);
 }
 
-.frameworks-buttons a {
+.switch-buttons a {
   position: relative;
   z-index: 1;
   flex: 1;
@@ -123,14 +123,14 @@ onMounted(async () => {
   user-select: none;
   transition: color 0.5s;
 }
-.frameworks-buttons a.active {
+.switch-buttons a.active {
   color: #fff;
 }
-.frameworks-buttons a:not(.active):hover {
+.switch-buttons a:not(.active):hover {
   color: var(--vp-c-text-1);
 }
 
-.framework-bg {
+.switch-bg {
   position: absolute;
   width: 77px;
   height: 28px;
@@ -138,13 +138,13 @@ onMounted(async () => {
   border-radius: 4px;
 }
 
-.framework-bg-react {
+.switch-bg-react {
   width: v-bind(`${reactSize?.width ?? 0}px`);
   top: 10px;
   left: calc(16px + v-bind(`${reactSize?.left ?? 0}px`));
   background-color: var(--vp-c-react);
 }
-.framework-bg-vue {
+.switch-bg-vue {
   width: v-bind(`${vueSize?.width ?? 0}px`);
   top: 10px;
   left: calc(16px + v-bind(`${vueSize?.left ?? 0}px`));
