@@ -1,5 +1,10 @@
 # 快速開始 {#quick-start}
 
+## 線上 Demo {#online-demo}
+
+* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
+* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)
+
 ## 安裝 {#installation}
 
 套件相依於 **Vue 3** 和 **Headless UI Vue**，記得需要先安裝。
@@ -10,11 +15,6 @@ npm i @headlessui-float/vue
 # yarn
 yarn add @headlessui-float/vue
 ```
-
-### 線上 Demo {#online-demo}
-
-* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
-* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)
 
 ## 開始使用 {#usage}
 

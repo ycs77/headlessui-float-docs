@@ -1,5 +1,10 @@
 # 快速開始 {#quick-start}
 
+## 線上 Demo {#online-demo}
+
+* [**React**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
+* [**React + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react-ts?file=src%2FApp.tsx)
+
 ## 安裝 {#installation}
 
 套件相依於 **React**、**React DOM** 和 **Headless UI React**，記得需要先安裝。
@@ -10,11 +15,6 @@ npm i @headlessui-float/react
 # yarn
 yarn add @headlessui-float/react
 ```
-
-### 線上 Demo {#online-demo}
-
-* [**React**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
-* [**React + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react-ts?file=src%2FApp.tsx)
 
 ## 開始使用 {#usage}
 

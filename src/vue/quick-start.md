@@ -1,5 +1,10 @@
 # Quick Start
 
+## Online Demo
+
+* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
+* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)
+
 ## Installation
 
 This package is require **Vue 3** and **Headless UI Vue**, you must be installed them first.
@@ -10,11 +15,6 @@ npm i @headlessui-float/vue
 # yarn
 yarn add @headlessui-float/vue
 ```
-
-### Online Demo
-
-* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
-* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)
 
 ## Usage
 
