@@ -70,10 +70,10 @@ onMounted(async () => {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 16px 0 32px;
+  padding: 16px 0;
   margin-bottom: 10px;
-  background-color: var(--vp-c-bg);
-  border-bottom: 1px solid var(--vp-c-divider-light);
+  background-color: var(--vp-sidebar-bg-color);
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 .SidebarFrameworkSwitch::before {
   content: '';
@@ -85,13 +85,11 @@ onMounted(async () => {
   display: block;
   width: 100%;
   height: 36px;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vp-sidebar-bg-color);
 }
 @media (min-width: 960px) {
   .SidebarFrameworkSwitch {
-    padding: 16px 0;
     margin-bottom: 0;
-    background-color: var(--vp-c-bg-alt);
   }
   .SidebarFrameworkSwitch::before {
     content: none;
@@ -101,7 +99,7 @@ onMounted(async () => {
 .switch-container {
   position: relative;
   padding: 10px 16px;
-  background-color: var(--vp-c-bg-mute);
+  background-color: var(--vp-sidebar-bg-color);
   border-radius: 4px;
 }
 

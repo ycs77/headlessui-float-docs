@@ -12,13 +12,16 @@
       <template #nav-screen-content-after><slot name="nav-screen-content-after" /></template>
     </VPNav>
     <VPLocalNav :open="isSidebarOpen" @open-menu="openSidebar" />
+
     <VPSidebar :open="isSidebarOpen">
-      <template #sidebar-before><slot name="sidebar-before" /></template>
-      <template #sidebar-after><slot name="sidebar-after" /></template>
+      <template #sidebar-nav-before><slot name="sidebar-nav-before" /></template>
+      <template #sidebar-nav-after><slot name="sidebar-nav-after" /></template>
     </VPSidebar>
 
     <VPContent>
       <template #home-hero-before><slot name="home-hero-before" /></template>
+      <template #home-hero-info><slot name="home-hero-info" /></template>
+      <template #home-hero-image><slot name="home-hero-image" /></template>
       <template #home-hero-after><slot name="home-hero-after" /></template>
       <template #home-features-before><slot name="home-features-before" /></template>
       <template #home-features-after><slot name="home-features-after" /></template>
@@ -42,14 +45,14 @@
 </template>
 
 <script setup lang="ts">
-import { provide, watch } from 'vue'
-import { useData, useRoute } from 'vitepress'
+import { computed, provide, useSlots, watch, type Ref } from 'vue'
+import { useRoute, useData, type PageData } from 'vitepress'
 import { useSidebar, useCloseSidebarOnEscape } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
 import VPSkipLink from 'vitepress/dist/client/theme-default/components/VPSkipLink.vue'
 import VPBackdrop from 'vitepress/dist/client/theme-default/components/VPBackdrop.vue'
 import VPNav from './components/VPNav.vue'
 import VPLocalNav from 'vitepress/dist/client/theme-default/components/VPLocalNav.vue'
-import VPSidebar from './components/VPSidebar.vue'
+import VPSidebar from 'vitepress/dist/client/theme-default/components/VPSidebar.vue'
 import VPContent from 'vitepress/dist/client/theme-default/components/VPContent.vue'
 import VPFooter from 'vitepress/dist/client/theme-default/components/VPFooter.vue'
 
@@ -65,8 +68,16 @@ watch(() => route.path, closeSidebar)
 useCloseSidebarOnEscape(isSidebarOpen, closeSidebar)
 
 provide('close-sidebar', closeSidebar)
+provide('is-sidebar-open', isSidebarOpen)
 
-const { frontmatter } = useData()
+const { frontmatter } = useData() as unknown as {
+  frontmatter: Ref<PageData['frontmatter']>
+}
+
+const slots = useSlots()
+const heroImageSlotExists = computed(() => !!slots['home-hero-image'])
+
+provide('hero-image-slot-exists', heroImageSlotExists)
 </script>
 
 <style scoped>

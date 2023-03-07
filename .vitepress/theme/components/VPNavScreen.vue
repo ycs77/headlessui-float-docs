@@ -18,18 +18,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref } from 'vue'
+import { ref } from 'vue'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import VPNavScreenMenu from './VPNavScreenMenu.vue'
-import VPNavScreenTranslations from './VPNavScreenTranslations.vue'
 import VPNavScreenAppearance from 'vitepress/dist/client/theme-default/components/VPNavScreenAppearance.vue'
+import VPNavScreenTranslations from 'vitepress/dist/client/theme-default/components/VPNavScreenTranslations.vue'
 import VPNavScreenSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavScreenSocialLinks.vue'
 
 defineProps<{
   open: boolean
 }>()
 
-const screen = ref(null) as Ref<HTMLElement | null>
+const screen = ref<HTMLElement | null>(null)
 
 function lockBodyScroll() {
   disableBodyScroll(screen.value!, { reserveScrollBarGap: true })
@@ -43,16 +43,18 @@ function unlockBodyScroll() {
 <style scoped>
 .VPNavScreen {
   position: fixed;
-  top: var(--vp-nav-height-mobile);
+  top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 1px);
+  /*rtl:ignore*/
   right: 0;
   bottom: 0;
+  /*rtl:ignore*/
   left: 0;
   padding: 0 32px;
   width: 100%;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vp-nav-screen-bg-color);
   overflow-y: auto;
   transition: background-color 0.5s;
-  pointer-events: all;
+  pointer-events: auto;
 }
 
 .VPNavScreen.fade-enter-active,

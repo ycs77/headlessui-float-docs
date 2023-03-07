@@ -26,11 +26,28 @@ declare module 'vitepress/dist/client/theme-default/composables/sidebar.js' {
   export function useSidebar(): {
     isOpen: Ref<boolean>
     sidebar: ComputedRef<any>
+    sidebarGroups: ComputedRef<any>
     hasSidebar: ComputedRef<boolean>
     hasAside: ComputedRef<boolean>
+    isSidebarEnabled: ComputedRef<boolean>
     open: () => void
     close: () => void
     toggle: () => void
   }
   export function useCloseSidebarOnEscape(isOpen: any, close: any): void
+}
+
+declare module 'vitepress/dist/client/theme-default/composables/langs.js' {
+  import type { ComputedRef } from 'vue'
+  export function useLangs({ removeCurrent, correspondingLink }?: {
+    removeCurrent?: boolean
+    correspondingLink?: boolean
+  }): {
+    localeLinks: ComputedRef<{ text: any, link: string }[]>
+    currentLang: ComputedRef<{ label: any, link: any }>
+  }
+}
+
+declare module 'vitepress/dist/client/theme-default/support/utils.js' {
+  export function normalizeLink(url: string): string
 }

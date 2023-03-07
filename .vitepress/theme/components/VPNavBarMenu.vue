@@ -11,12 +11,16 @@
 </template>
 
 <script setup lang="ts">
+import type { Ref } from 'vue'
 import { useData } from 'vitepress'
 import { useDocsNav } from '../composables/nav'
 import VPNavBarMenuLink from 'vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue'
 import VPNavBarMenuGroup from 'vitepress/dist/client/theme-default/components/VPNavBarMenuGroup.vue'
 
-const { theme } = useData()
+const { theme } = useData() as unknown as {
+  theme: Ref<any>
+}
+
 const docsNav = useDocsNav()
 </script>
 

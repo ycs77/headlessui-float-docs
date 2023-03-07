@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import { Theme } from 'vitepress'
+import { type Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import CrawlDocFramework from './components/CrawlDocFramework.vue'
@@ -13,7 +13,10 @@ export default <Theme>{
   ...DefaultTheme,
   Layout: () => {
     return h(Layout, null, {
-      'sidebar-before': () => [h(CrawlDocFramework), h(SidebarFrameworkSwitch)],
+      'sidebar-nav-before': () => [
+        h(CrawlDocFramework),
+        h(SidebarFrameworkSwitch),
+      ],
       'doc-before': () => h(CrawlDocGroupName),
     })
   },

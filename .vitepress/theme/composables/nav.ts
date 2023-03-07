@@ -3,40 +3,8 @@ import { useData, useRoute } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
 import type { Config as ThemeConfig, NavItemWithFramework } from '../config'
 
-export function useLanguageLinks() {
-  const { site, localePath, theme } = useData<ThemeConfig>()
-  const route = useRoute()
-
-  return computed(() => {
-    const langs = site.value.langs
-    const localePaths = Object.keys(langs)
-
-    // only one language
-    if (localePaths.length < 2) {
-      return null
-    }
-
-    // intentionally remove the leading slash because each locale has one
-    const currentPath = route.path
-      .replace(localePath.value, '')
-      .replace('index.html', '')
-
-    const selectText = theme.value.selectText || 'Languages'
-
-    const items = localePaths.map((localePath) => ({
-      text: langs[localePath].label,
-      link: `${localePath}${currentPath}`,
-    } as DefaultTheme.NavItemWithLink))
-
-    return {
-      text: selectText,
-      items,
-    }
-  })
-}
-
 export function useFrameworkLinks() {
-  const { localePath, theme } = useData<ThemeConfig>()
+  const { localeIndex, theme } = useData<ThemeConfig>()
   const route = useRoute()
   const frameworksNav = theme.value.frameworksNav || []
 
@@ -48,7 +16,10 @@ export function useFrameworkLinks() {
     if (currentFramework.value) {
       return frameworksNav.map(link => ({
         ...link,
-        link: route.path.replace(/^\/(\w{2}-\w{2}\/)?\w+/, `${localePath.value}${link.name}`),
+        link: route.path.replace(
+          /^\/(\w{2}-\w{2}\/)?\w+/,
+          `${localeIndex.value === 'root' ? '/' : `/${localeIndex.value}/`}${link.name}`
+        ),
       }))
     }
 

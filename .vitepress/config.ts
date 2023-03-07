@@ -3,8 +3,7 @@ import type { UserConfig as ViteConfig } from 'vite'
 import { defineConfigWithTheme, type DefaultTheme, type HeadConfig } from 'vitepress'
 import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
-import type { Config as ThemeConfig, NavItemWithFramework } from './theme/config'
-import type { AlgoliaLocale } from './theme/composables/docsearch'
+import type { Config as ThemeConfig, AlgoliaSearchOptions, NavItemWithFramework } from './theme/config'
 
 const head = <HeadConfig[]>[
   ['meta', { property: 'og:type', content: 'website' }],
@@ -26,53 +25,55 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'src',
 
   locales: {
-    '/': {
+    root: {
+      label: 'English',
       lang: 'en',
       title: 'Headless UI Float',
       description: 'Easily float the Headless UI components',
+
       head: [
         ...head,
         ['meta', { property: 'og:description', content: 'Easily float the Headless UI components' }],
       ],
+
+      themeConfig: {
+        sidebar: sidebar('root'),
+
+        editLink: {
+          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/src/:path',
+          text: 'Edit this page on GitHub',
+        },
+
+        lastUpdatedText: 'Updated Date',
+      },
     },
-    '/zh-tw/': {
+
+    'zh-tw': {
+      label: '繁體中文',
       lang: 'zh-TW',
       title: 'Headless UI Float',
       description: '輕鬆浮動定位 Headless UI 元件',
+
       head: [
         ...head,
         ['meta', { property: 'og:description', content: '輕鬆浮動定位 Headless UI 元件' }],
       ],
+
+      themeConfig: {
+        sidebar: sidebar('zh-tw'),
+
+        editLink: {
+          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/src/:path',
+          text: '在 GitHub 上編輯此頁面',
+        },
+
+        lastUpdatedText: '更新於',
+      },
     },
   },
 
   themeConfig: {
-    locales: {
-      '/': {
-        label: 'English',
-        selectText: 'Languages',
-        editLink: {
-          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/src/:path',
-          text: 'Suggest changes to this page',
-        },
-        lastUpdated: 'Last Updated',
-
-        frameworksNav: frameworksNav(),
-        sidebar: sidebar('en'),
-      },
-      '/zh-tw/': {
-        label: '繁體中文',
-        selectText: '語言',
-        editLink: {
-          pattern: 'https://github.com/ycs77/headlessui-float-docs/edit/main/src/:path',
-          text: '為此頁面提供修改建議',
-        },
-        lastUpdated: '最後更新於',
-
-        frameworksNav: frameworksNav(),
-        sidebar: sidebar('zh-TW'),
-      },
-    },
+    frameworksNav: frameworksNav(),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ycs77/headlessui-float' },
@@ -113,7 +114,7 @@ function frameworksNav() {
 
 function sidebar(lang: string) {
   const locales = {
-    'en': {
+    'root': {
       '/react/': [
         {
           text: 'Guide',
@@ -158,7 +159,7 @@ function sidebar(lang: string) {
         },
       ],
     },
-    'zh-TW': {
+    'zh-tw': {
       '/zh-tw/react/': [
         {
           text: '指南',
@@ -210,10 +211,10 @@ function sidebar(lang: string) {
 
 function algoliaLocales() {
   return {
-    '/': {
+    'root': {
       placeholder: 'Search docs for %s version',
     },
-    '/zh-tw/': {
+    'zh-tw': {
       placeholder: '搜尋文檔 (%s版本)',
       translations: {
         button: {
@@ -254,7 +255,7 @@ function algoliaLocales() {
         },
       },
     },
-  } as Record<string, AlgoliaLocale>
+  } as AlgoliaSearchOptions['locales']
 }
 
 function viteConfig() {

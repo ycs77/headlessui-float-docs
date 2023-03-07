@@ -2,18 +2,24 @@
  * Colors
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --vp-c-green: #42b883;
   --vp-c-green-light: #42d392;
   --vp-c-green-lighter: #35eb9a;
   --vp-c-green-dark: #33a06f;
   --vp-c-green-darker: #155f3e;
+  --vp-c-green-dimm-1: rgba(66, 184, 131, 0.05);
+  --vp-c-green-dimm-2: rgba(66, 184, 131, 0.2);
+  --vp-c-green-dimm-3: rgba(66, 184, 131, 0.5);
 
   --vp-c-blue: #3b8eed;
   --vp-c-blue-light: #549ced;
   --vp-c-blue-lighter: #50a2ff;
   --vp-c-blue-dark: #3468a3;
   --vp-c-blue-darker: #255489;
+  --vp-c-blue-dimm-1: rgba(59, 142, 237, 0.05);
+  --vp-c-blue-dimm-2: rgba(59, 142, 237, 0.2);
+  --vp-c-blue-dimm-3: rgba(59, 142, 237, 0.5);
 
   --vp-c-react: var(--vp-c-blue);
   --vp-c-react-light: var(--vp-c-blue-light);
@@ -32,14 +38,13 @@
   --vp-c-brand-lighter: var(--vp-c-blue-lighter);
   --vp-c-brand-dark: var(--vp-c-blue-dark);
   --vp-c-brand-darker: var(--vp-c-blue-darker);
-  --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
 }
 
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --vp-button-react-border: var(--vp-c-react-light);
   --vp-button-react-text: var(--vp-c-text-dark-1);
   --vp-button-react-bg: var(--vp-c-react);
@@ -65,7 +70,7 @@
  * Component: Home
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     285deg,
@@ -97,14 +102,13 @@
  * Component: Custom Block
  * -------------------------------------------------------------------------- */
 
- :root {
-  --vp-custom-block-tip-border: var(--vp-c-brand-light);
-  --vp-custom-block-tip-text: var(--vp-c-brand);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+:root {
+  --vp-custom-block-tip-border: var(--vp-c-blue);
+  --vp-custom-block-tip-text: var(--vp-c-blue);
+  --vp-custom-block-tip-bg: var(--vp-c-bg-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-bg-soft-down);
 }
 
 .dark {
-  --vp-custom-block-tip-border: var(--vp-c-brand);
-  --vp-custom-block-tip-text: var(--vp-c-brand-light);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+  --vp-custom-block-tip-text: var(--vp-c-blue-light);
 }
