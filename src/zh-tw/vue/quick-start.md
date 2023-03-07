@@ -7,7 +7,7 @@
 
 ## 安裝 {#installation}
 
-套件相依於 **Vue 3** 和 **Headless UI Vue**，記得需要先安裝。
+套件相依於 **Vue 3** 和 **Headless UI Vue**，記得需要先安裝好。
 
 ```bash
 # npm
