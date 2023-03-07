@@ -1,13 +1,7 @@
 # Portal
 
-Append the floating element to `<body>`:
+Render the floating element to the end of `<body>`:
 
 ```jsx
 <Float portal>
-```
-
-Or can select other elements that already exist:
-
-```jsx
-<Float portal="#other-root-element">
 ```
