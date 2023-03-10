@@ -9,12 +9,21 @@
 
 套件相依於 **Vue 3** 和 **Headless UI Vue**，記得需要先安裝好。
 
-```bash
-# npm
+::: code-group
+
+```bash [npm]
 npm i @headlessui-float/vue
-# yarn
+```
+
+```bash [yarn]
 yarn add @headlessui-float/vue
 ```
+
+```bash [pnpm]
+pnpm add @headlessui-float/vue
+```
+
+:::
 
 ## 開始使用 {#usage}
 

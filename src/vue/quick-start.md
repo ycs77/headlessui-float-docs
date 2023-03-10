@@ -9,12 +9,21 @@
 
 This package is require **Vue 3** and **Headless UI Vue**, you must be installed them first.
 
-```bash
-# npm
+::: code-group
+
+```bash [npm]
 npm i @headlessui-float/vue
-# yarn
+```
+
+```bash [yarn]
 yarn add @headlessui-float/vue
 ```
+
+```bash [pnpm]
+pnpm add @headlessui-float/vue
+```
+
+:::
 
 ## Usage
 
