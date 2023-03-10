@@ -2,7 +2,7 @@
 
 首先先引入 `<FloatArrow>` 元件，並放置在浮動元素內部，然後加上 class：
 
-```html
+```html {5-6,14}
 <Popover>
   <Float>
     ...
@@ -16,7 +16,6 @@
 </Popover>
 
 <script setup>
-...
 import { Float, FloatArrow } from '@headlessui-float/vue'
 </script>
 ```
@@ -29,7 +28,7 @@ import { Float, FloatArrow } from '@headlessui-float/vue'
 
 但這時候會發現箭頭疊在浮動元素的上面，並不是我們要的效果，所以要把下面的內容包裝起來，並設定 position 為 `relative`，就會移到箭頭的上面。當然還要設定背景顏色，否則還是會看到下方的箭頭：
 
-```html
+```html {1,4}
 <PopoverPanel class="w-[240px] h-[70px] bg-white border border-gray-200 rounded-md shadow-lg focus:outline-none">
   <FloatArrow class="..." />
 
