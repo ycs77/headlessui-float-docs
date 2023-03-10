@@ -121,6 +121,7 @@ function sidebar(lang: string) {
           items: [
             { text: 'Quick Start', link: '/react/quick-start' },
             { text: 'Floating UI Options', link: '/react/floatingui-options' },
+            { text: 'Render Wrapper', link: '/react/render-wrapper' },
             { text: 'Transition', link: '/react/transition' },
             { text: 'Arrow', link: '/react/arrow' },
             { text: 'Adaptive Width', link: '/react/adaptive-width' },
@@ -141,6 +142,7 @@ function sidebar(lang: string) {
           items: [
             { text: 'Quick Start', link: '/vue/quick-start' },
             { text: 'Floating UI Options', link: '/vue/floatingui-options' },
+            { text: 'Render Wrapper', link: '/vue/render-wrapper' },
             { text: 'Transition', link: '/vue/transition' },
             { text: 'Arrow', link: '/vue/arrow' },
             { text: 'Adaptive Width', link: '/vue/adaptive-width' },
@@ -164,6 +166,7 @@ function sidebar(lang: string) {
           items: [
             { text: '快速開始', link: '/zh-tw/react/quick-start' },
             { text: 'Floating UI 選項', link: '/zh-tw/react/floatingui-options' },
+            { text: '渲染 Wrapper 元素', link: '/zh-tw/react/render-wrapper' },
             { text: 'Transition (過場)', link: '/zh-tw/react/transition' },
             { text: '箭頭', link: '/zh-tw/react/arrow' },
             { text: '自適應寬度', link: '/zh-tw/react/adaptive-width' },
@@ -184,6 +187,7 @@ function sidebar(lang: string) {
           items: [
             { text: '快速開始', link: '/zh-tw/vue/quick-start' },
             { text: 'Floating UI 選項', link: '/zh-tw/vue/floatingui-options' },
+            { text: '渲染 Wrapper 元素', link: '/zh-tw/vue/render-wrapper' },
             { text: 'Transition (過場)', link: '/zh-tw/vue/transition' },
             { text: '箭頭', link: '/zh-tw/vue/arrow' },
             { text: '自適應寬度', link: '/zh-tw/vue/adaptive-width' },

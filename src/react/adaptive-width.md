@@ -32,10 +32,6 @@ import React from 'react'
 </Listbox>
 ```
 
-::: tip INFO
-Requires upgrading to **v0.9+** to use the `floatingAs` prop.
-:::
-
 Of course, you can also specify the width directly:
 
 ```jsx
@@ -66,29 +62,9 @@ If you put it in a `flex` container to fill the width, you need to add the `w-fu
 </div>
 ```
 
-### With transition
-
-It should be noted that if the transition uses the `transform` property of CSS, it will not work properly. Because `floating-as` is set to `React.Fragment`, the floating element will be positioned directly, and to optimize performance, `transform` is used for positioning by default. If you want to use it, turn off `transform` to switch to `top`/`left` properties for positioning:
-
-```jsx
-<Float transform={false}>
-```
-
-Then you can add the class for the transition:
-
-```jsx
-<Float
-  transform={false}
-  floatingAs={React.Fragment}
-  enter="transition duration-200 ease-out"
-  enterFrom="opacity-0 scale-75"
-  enterTo="opacity-100 scale-100"
-  leave="transition duration-150 ease-in"
-  leaveFrom="opacity-100 scale-100"
-  leaveTo="opacity-0 scale-75"
-  tailwindcssOriginClass
->
-```
+::: tip INFO
+This solution involves the use of `floatingAs={React.Fragment}`. If a transition  that includes CSS `transform` is also used simultaneously, it will cause conflicts. If you need to use it, please refer to [Render floating element wrapper - With transition](render-wrapper.md#with-transition) for a solution to this problem.
+:::
 
 ## Adaptive width using JS <Badge label="Experimental" />
 
