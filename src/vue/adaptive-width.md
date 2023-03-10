@@ -1,4 +1,4 @@
-# Adaptive width
+# Adaptive Width
 
 In some cases, we need to make the floating element and the reference element above it have the same width, which can be achieved using CSS or JS.
 
