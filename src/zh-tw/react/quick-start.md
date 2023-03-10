@@ -26,9 +26,9 @@ import { Float } from '@headlessui-float/react'
 
 然後在 `<Menu.Button>` 和 `<Menu.Items>` 外包一層 `<Float>`：
 
-```diff
+```jsx {2,10}
 <Menu>
-+ <Float>
+  <Float>
     <Menu.Button className="...">
       Options
     </Menu.Button>
@@ -36,7 +36,7 @@ import { Float } from '@headlessui-float/react'
     <Menu.Items className="...">
       ...
     </Menu.Items>
-+ </Float>
+  </Float>
 </Menu>
 ```
 

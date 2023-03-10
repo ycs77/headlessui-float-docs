@@ -28,9 +28,9 @@ import { Float } from '@headlessui-float/vue'
 
 然後在 `<MenuButton>` 和 `<MenuItems>` 外包一層 `<Float>`：
 
-```diff
+```html {2,10}
 <Menu>
-+ <Float>
+  <Float>
     <MenuButton class="...">
       Options
     </MenuButton>
@@ -38,7 +38,7 @@ import { Float } from '@headlessui-float/vue'
     <MenuItems class="...">
       ...
     </MenuItems>
-+ </Float>
+  </Float>
 </Menu>
 ```
 

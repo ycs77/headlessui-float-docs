@@ -26,9 +26,9 @@ import { Float } from '@headlessui-float/react'
 
 Then wrap `<Float>` around `<Menu.Button>` and `<Menu.Items>`:
 
-```diff
+```jsx {2,10}
 <Menu>
-+ <Float>
+  <Float>
     <Menu.Button className="...">
       Options
     </Menu.Button>
@@ -36,7 +36,7 @@ Then wrap `<Float>` around `<Menu.Button>` and `<Menu.Items>`:
     <Menu.Items className="...">
       ...
     </Menu.Items>
-+ </Float>
+  </Float>
 </Menu>
 ```
 

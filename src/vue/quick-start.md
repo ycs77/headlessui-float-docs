@@ -28,9 +28,9 @@ import { Float } from '@headlessui-float/vue'
 
 Then wrap `<Float>` around `<MenuButton>` and `<MenuItems>`:
 
-```diff
+```html {2,10}
 <Menu>
-+ <Float>
+  <Float>
     <MenuButton class="...">
       Options
     </MenuButton>
@@ -38,7 +38,7 @@ Then wrap `<Float>` around `<MenuButton>` and `<MenuItems>`:
     <MenuItems class="...">
       ...
     </MenuItems>
-+ </Float>
+  </Float>
 </Menu>
 ```
 
