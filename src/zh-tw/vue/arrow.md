@@ -1,4 +1,4 @@
-# Arrow (箭頭) {#arrow}
+# 箭頭 {#arrow}
 
 首先先引入 `<FloatArrow>` 元件，並放置在浮動元素內部，然後加上 class：
 
