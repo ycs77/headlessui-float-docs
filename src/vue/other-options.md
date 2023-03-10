@@ -63,3 +63,11 @@ The default is to use CSS transform to position floating elements. If this cause
 ```html
 <Float :transform="false">
 ```
+
+## Portal (Teleport) {#portal}
+
+Render the floating element to the end of `<body>`:
+
+```html
+<Float portal>
+```
