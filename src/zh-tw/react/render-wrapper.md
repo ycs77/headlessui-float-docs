@@ -63,7 +63,9 @@
 如果把 `floatingAs` 設定為 `Fragment` 時，浮動元素就不會渲染 Wrapper 元素，而直接定位浮動元素本身：
 
 ```jsx {1}
-<Float show floatingAs={React.Fragment}>
+import { Fragment } from 'react'
+
+<Float show floatingAs={Fragment}>
   <button type="button">button</button>
   <div>content</div>
 </Float>
@@ -118,7 +120,7 @@ Wrapper.displayName = 'Wrapper'
 
 ### 同時使用過場動畫 {#with-transition}
 
-需要注意的是，設定 `floatingAs={React.Fragment}` 並同時使用包含 CSS `transform` 的過場動畫的話，會無法正常使用。因為 `floatingAs` 設為 `Fragment` 時，會直接定位浮動元素；且為了優化效能，預設使用 `transform` 來做定位的。因此會造成過場動畫的 `transform` 會和定位用的 `transform` 造成衝突。
+需要注意的是，設定 `floatingAs={Fragment}` 並同時使用包含 CSS `transform` 的過場動畫的話，會無法正常使用。因為 `floatingAs` 設為 `Fragment` 時，會直接定位浮動元素；且為了優化效能，預設使用 `transform` 來做定位的。因此會造成過場動畫的 `transform` 會和定位用的 `transform` 造成衝突。
 
 如果要使用的話，需要關閉 `transform` 來切換成 `top`/`left` 屬性來做定位：
 
@@ -129,11 +131,11 @@ Wrapper.displayName = 'Wrapper'
 然後就可以加上過場動畫的 class 了：
 
 ```jsx
-import React from 'react'
+import { Fragment } from 'react'
 
 <Float
   transform={false}
-  floatingAs={React.Fragment}
+  floatingAs={Fragment}
   enter="transition duration-200 ease-out"
   enterFrom="opacity-0 scale-75"
   enterTo="opacity-100 scale-100"

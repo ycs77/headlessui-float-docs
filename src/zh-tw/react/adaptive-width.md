@@ -6,12 +6,12 @@
 
 要使用 CSS 來實現自適應寬度，我們可以增加以下設定：
 
-先將 `<Float>` 元件增加 `as="div"` 和 `className="relative"`，將外圍渲染成 `<div className="relative">` 後，再增加 `floatingAs={React.Fragment}` 讓浮動元素外圍不渲染任何元素 (因為預設會渲染一層 `<div>` 元素)，直接對浮動元素進行定位，最後為參考元素和浮動元素加上 `w-full` class 就大功告成了。
+先將 `<Float>` 元件增加 `as="div"` 和 `className="relative"`，將外圍渲染成 `<div className="relative">` 後，再增加 `floatingAs={Fragment}` 讓浮動元素外圍不渲染任何元素 (因為預設會渲染一層 `<div>` 元素)，直接對浮動元素進行定位，最後為參考元素和浮動元素加上 `w-full` class 就大功告成了。
 
 現在按鈕和選單就會有同等的寬度了：
 
 ```jsx
-import React from 'react'
+import { Fragment } from 'react'
 
 <Listbox>
   <Float
@@ -19,7 +19,7 @@ import React from 'react'
     className="relative"
     placement="bottom"
     offset={4}
-    floatingAs={React.Fragment}
+    floatingAs={Fragment}
   >
     <Listbox.Button className="w-full ...">
       ...
@@ -63,7 +63,7 @@ import React from 'react'
 ```
 
 ::: tip 提示
-這個解決方法有使用到 `floatingAs={React.Fragment}`，如果同時使用包含 CSS `transform` 的過場動畫的話，會造成衝突。需要使用的話請參考 [渲染浮動元素 Wrapper - 同時使用過場動畫](render-wrapper.md#with-transition) 來解決這個問題。
+這個解決方法有使用到 `floatingAs={Fragment}`，如果同時使用包含 CSS `transform` 的過場動畫的話，會造成衝突。需要使用的話請參考 [渲染浮動元素 Wrapper - 同時使用過場動畫](render-wrapper.md#with-transition) 來解決這個問題。
 :::
 
 ## 使用 JS 實現自適應寬度 <Badge label="實驗性" /> {#adaptive-width-using-js}

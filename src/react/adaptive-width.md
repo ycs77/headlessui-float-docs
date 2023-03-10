@@ -6,12 +6,12 @@ In some cases, we need to make the **floating element** and the **reference elem
 
 To achieve adaptive width using CSS, we can add the following settings:
 
-First add `as="div"` and `className="relative"` to the `<Float>` component, render the periphery as `<div className="relative">`, and then add `floatingAs={React.Fragment}` let no elements be rendered around the floating element (the default will render a layer of `<div>` elements), directly position the floating element, and finally add the `w-full` class to the reference element and the floating element and you are done.
+First add `as="div"` and `className="relative"` to the `<Float>` component, render the periphery as `<div className="relative">`, and then add `floatingAs={Fragment}` let no elements be rendered around the floating element (the default will render a layer of `<div>` elements), directly position the floating element, and finally add the `w-full` class to the reference element and the floating element and you are done.
 
 Now the button and options will have the same width:
 
 ```jsx
-import React from 'react'
+import { Fragment } from 'react'
 
 <Listbox>
   <Float
@@ -19,7 +19,7 @@ import React from 'react'
     className="relative"
     placement="bottom"
     offset={4}
-    floatingAs={React.Fragment}
+    floatingAs={Fragment}
   >
     <Listbox.Button className="w-full ...">
       ...
@@ -63,7 +63,7 @@ If you put it in a `flex` container to fill the width, you need to add the `w-fu
 ```
 
 ::: tip INFO
-This solution involves the use of `floatingAs={React.Fragment}`. If a transition  that includes CSS `transform` is also used simultaneously, it will cause conflicts. If you need to use it, please refer to [Render floating element wrapper - With transition](render-wrapper.md#with-transition) for a solution to this problem.
+This solution involves the use of `floatingAs={Fragment}`. If a transition  that includes CSS `transform` is also used simultaneously, it will cause conflicts. If you need to use it, please refer to [Render floating element wrapper - With transition](render-wrapper.md#with-transition) for a solution to this problem.
 :::
 
 ## Adaptive width using JS <Badge label="Experimental" />

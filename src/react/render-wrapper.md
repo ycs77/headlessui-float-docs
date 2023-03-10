@@ -63,7 +63,9 @@ The following HTML will be rendered:
 If you set `floating-as` to `Fragment`, the floating element will not render the wrapper element, but position the floating element itself directly:
 
 ```jsx {1}
-<Float show floatingAs={React.Fragment}>
+import { Fragment } from 'react'
+
+<Float show floatingAs={Fragment}>
   <button type="button">button</button>
   <div>content</div>
 </Float>
@@ -118,7 +120,7 @@ If you don't want to use the approach of passing component, you can use the `<Fl
 
 ### With transition
 
-It should be noted if setting `floatingAs={React.Fragment}` and using the transition that includes CSS transform at the same time will result in abnormal behavior. When `floatingAs` is set to `Fragment`, the floating element is positioned directly, and for performance optimization, transform is used for positioning by default. Therefore, conflicts may occur between the transform used in the transition animation and the transform used for positioning.
+It should be noted if setting `floatingAs={Fragment}` and using the transition that includes CSS transform at the same time will result in abnormal behavior. When `floatingAs` is set to `Fragment`, the floating element is positioned directly, and for performance optimization, transform is used for positioning by default. Therefore, conflicts may occur between the transform used in the transition animation and the transform used for positioning.
 
 If you need to use it, turn off `transform` to switch to using `top`/`left` properties for positioning:
 
@@ -129,11 +131,11 @@ If you need to use it, turn off `transform` to switch to using `top`/`left` prop
 Then you can add the class for the transition:
 
 ```jsx
-import React from 'react'
+import { Fragment } from 'react'
 
 <Float
   transform={false}
-  floatingAs={React.Fragment}
+  floatingAs={Fragment}
   enter="transition duration-200 ease-out"
   enterFrom="opacity-0 scale-75"
   enterTo="opacity-100 scale-100"
