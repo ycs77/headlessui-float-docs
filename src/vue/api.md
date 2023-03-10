@@ -2,6 +2,8 @@
 
 ## `<Float>`
 
+Provides positioning floating element, transition, and portal.
+
 - **Props**
 
   ```ts
@@ -10,12 +12,12 @@
      * The element or component the <Float> should render as.
      * Default: "template"
      */
-    as?: string | Component
+    as?: string | FunctionalComponent
     /**
      * The element or component that wraps the floating element.
      * Default: "div"
      */
-    floatingAs?: string | Component
+    floatingAs?: string | FunctionalComponent
     /**
      * Control the floating element is show or not.
      * Set to `true` / `false` to force the display or not,
@@ -97,10 +99,10 @@
     tailwindcssOriginClass?: boolean
 
     /**
-     * Render floating element in the other exists element.
+     * Render the floating element to the end of `<body>`.
      * Default: false
      */
-    portal?: boolean | string
+    portal?: boolean
     /**
      * Use CSS transform to positioning floating element.
      * Default: true
@@ -111,14 +113,24 @@
      * Default: false
      */
     adaptiveWidth?: boolean
+    /**
+     * Enable Composable mode.
+     * Default: false
+     */
+    composable?: boolean
+    /**
+     * Enable Dialog mode.
+     * Default: false
+     */
+    dialog?: boolean
 
     /**
      * Customizing middleware for Floating UI.
      * Default: () => []
      */
     middleware?: Middleware[] | ((refs: {
-      referenceEl: Ref<HTMLElement | null>,
-      floatingEl: Ref<HTMLElement | null>,
+      referenceEl: Ref<ReferenceElement | null>
+      floatingEl: Ref<HTMLElement | null>
     }) => Middleware[])
   }
 
@@ -131,7 +143,76 @@
   - `@hide`
   - `@update`
 
+- **Slot Props**
+
+  ```ts
+  interface FloatSlotProps {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+  }
+  ```
+
+## `<FloatReference>` {#float-reference}
+
+Can be used for reference element that needs to be referenced when [Composable Mode](composable-mode.md) is enabled.
+
+- **Props**
+
+  `<FloatReference>` accepts the same props as `<Float>`:
+
+  ```ts
+  interface FloatReferenceProps extends Pick<FloatProps, 'as'> {}
+  ```
+
+- **Slot Props**
+
+  ```ts
+  interface FloatReferenceSlotProps {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+  }
+  ```
+
+- **See also:** [Composable Mode](composable-mode.md)
+
+## `<FloatContent>` {#float-content}
+
+Can be used for floating element that needs to be positioned when [Composable Mode](composable-mode.md) is enabled.
+
+- **Props**
+
+  `<FloatContent>` accepts the same props as `<Float>` includes `as`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class` props, plus a additional prop:
+
+  ```ts
+  interface FloatContentProps extends Pick<FloatProps, 'as' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass'> {
+    /**
+     * Use the `<TransitionChild>` of Headless UI.
+     * Default: false
+     */
+    transitionChild?: boolean
+  }
+  ```
+
+- **Slot Props**
+
+  ```ts
+  interface FloatContentSlotProps {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+  }
+  ```
+
+- **See also:** [Composable Mode](composable-mode.md)
+
 ## `<FloatArrow>` {#float-arrow}
+
+Provides positioning arrow element.
 
 - **Props**
 
@@ -141,7 +222,7 @@
      * The element or component the arrow should render as.
      * Default: "div"
      */
-    as?: string | Component
+    as?: string | FunctionalComponent
     /**
      * Offset of the arrow to the outside of the floating element.
      * Default: 4
@@ -150,7 +231,7 @@
   }
   ```
 
-- **Slot Props**：
+- **Slot Props**
 
   ```ts
   interface FloatArrowSlotProps {
@@ -160,3 +241,108 @@
     placement: Placement
   }
   ```
+
+- **See also:** [Arrow](arrow.md)
+
+## `<FloatVirtual>` {#float-virtual}
+
+Utilizes the Floating UI [Virtual Elements](https://floating-ui.com/docs/virtual-elements) is often used to implement functionality such as context menu and mouse cursor following.
+
+- **Props**
+
+  `<FloatVirtual>` accepts the same props as `<Float>` includes `as`, `show`, `placement`, `strategy`, `offset`, `shift`, `flip`, `arrow`, `autoPlacement`, `hide`, `autoUpdate`, `zIndex`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class`, `portal`, `transform`, `middleware` props:
+
+  ```ts
+  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'hide' | 'autoUpdate' | 'zIndex' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
+  ```
+
+- **Events**
+
+  - `@show`
+  - `@hide`
+  - `@update`
+  - `@initial`
+
+  The `initial` event of `<FloatVirtual>` component includes the following props:
+
+  ```ts
+  import type { VirtualElement } from '@floating-ui/dom'
+
+  interface FloatVirtualInitialProps {
+    /**
+     * Current floating element is show or not.
+     */
+    show: Ref<boolean>
+    /**
+     * Current floating element placement.
+     */
+    placement: Readonly<Ref<Placement>>
+    /**
+     * Reference element.
+     */
+    reference: Ref<VirtualElement>
+    /**
+     * Floating element.
+     */
+    floating: Ref<HTMLElement | null>
+  }
+  ```
+
+- **Slot Props**
+
+  ```ts
+  interface FloatVirtualSlotProps {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+    /**
+     * Close virtual element.
+     */
+    close: () => void
+  }
+  ```
+
+- **See also:** [Virtual Element](virtual-element.md)
+
+## `<FloatContextMenu>` {#float-contextmenu}
+
+Provides positioning context menu.
+
+- **Props**
+
+  `<FloatContextMenu>` accepts the same props as `<FloatVirtual>` except `show` and `portal`:
+
+  ```ts
+  interface FloatContextMenuProps extends Omit<FloatVirtualProps, 'show' | 'portal'> {}
+  ```
+
+- **Slot Props**
+
+  `<FloatContextMenu>` contains the same slot props as `<FloatVirtual>`.
+
+- **See also:** [Virtual Element](virtual-element.md)
+
+## `<FloatCursor>` {#float-cursor}
+
+Provides positioning mouse cursor following.
+
+- **Props**
+
+  `<FloatCursor>` accepts the same props as `<FloatVirtual>` except `show` and `portal`, plus a additional prop:
+
+  ```ts
+  interface FloatCursorProps extends Omit<FloatVirtualProps, 'show' | 'portal'> {
+    /**
+     * Add the global CSS to hide the cursor.
+     * Default: true
+     */
+    globalHideCursor?: boolean
+  }
+  ```
+
+- **Slot Props**
+
+  `<FloatCursor>` contains the same slot props as `<FloatVirtual>`.
+
+- **See also:** [Virtual Element](virtual-element.md)

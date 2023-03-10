@@ -2,6 +2,8 @@
 
 ## `<Float>`
 
+提供了浮動元素計算位置、轉場和 Portal 等功能。
+
 - **Props**
 
   ```ts
@@ -69,7 +71,7 @@
     zIndex?: number | string
 
     /**
-     * 定義 `<transition>` 過場 class 的 prop。
+     * 定義過場 class 的 props。
      */
     enter?: string
     enterFrom?: string
@@ -88,10 +90,10 @@
     tailwindcssOriginClass?: boolean
 
     /**
-     * 傳送浮動元素到頁面的其他元素之中。
+     * 將浮動元素渲染到 `<body>` 的底部。
      * 預設：false
      */
-    portal?: boolean | string
+    portal?: boolean
     /**
      * 是否啟用 CSS transform 來定位參考元素。
      * 預設：true
@@ -102,6 +104,16 @@
      * 預設：false
      */
     adaptiveWidth?: boolean
+    /**
+     * 啟用組合模式。
+     * 預設：false
+     */
+    composable?: boolean
+    /**
+     * 啟用 Dialog 模式。
+     * 預設：false
+     */
+    dialog?: boolean
 
     /**
      * 自訂 Floating UI 的 middleware (中間件)。
@@ -123,7 +135,74 @@
   type OriginClassResolver = (placement: Placement) => string
   ```
 
-## `<FloatArrow>` {#float-arrow}
+- **Render Prop**
+
+  ```ts
+  interface FloatRenderProp {
+    /**
+     * 當前浮動元素顯示的方向位置。
+     */
+    placement: Placement
+  }
+  ```
+
+## `<Float.Reference>` {#float-reference}
+
+可以在啟用 [組合模式](composable-mode.md) 時，用於需要當參考座標的參考元素。
+
+- **Props**
+
+  `<Float.Reference>` 僅包含了 `<Float>` 的 `as` props：
+
+  ```ts
+  interface FloatReferenceProps extends Pick<FloatProps, 'as'> {}
+  ```
+
+- **Render Prop**
+
+  ```ts
+  interface FloatReferenceRenderProp {
+    /**
+     * 當前浮動元素顯示的方向位置。
+     */
+    placement: Placement
+  }
+  ```
+
+- **參考：**[組合模式](composable-mode.md)
+
+## `<Float.Content>` {#float-content}
+
+可以在啟用 [組合模式](composable-mode.md) 時，用於需要定位的浮動元素。
+
+- **Props**
+
+  `<Float.Content>` 包含了 `<Float>` 的 `as`、`enter`、`enterFrom`、`enterTo`、`leave`、`leaveFrom`、`leaveTo`、`originClass`、`tailwindcssOriginClass` props，並增加了一個額外的 prop：
+
+  ```ts
+  interface FloatContentProps extends Pick<FloatProps, 'as' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass'> {
+    /**
+     * 使用 Headless UI 的 `<Transition.Child>` 元件。
+     * 預設：false
+     */
+    transitionChild?: boolean
+  }
+  ```
+
+- **Render Prop**
+
+  ```ts
+  interface FloatContentRenderProp {
+    /**
+     * 當前浮動元素顯示的方向位置。
+     */
+    placement: Placement
+  }
+  ```
+
+- **參考：**[組合模式](composable-mode.md)
+
+## `<Float.Arrow>` {#float-arrow}
 
 - **Props**
 
@@ -142,13 +221,112 @@
   }
   ```
 
-- **Render Prop**：
+- **Render Prop**
 
   ```ts
   interface FloatArrowRenderProp {
     /**
-     * 目前浮動元素顯示的方向位置。
+     * 當前浮動元素顯示的方向位置。
      */
     placement: Placement
   }
   ```
+
+- **參考：**[箭頭](arrow.md)
+
+## `<Float.Virtual>` {#float-virtual}
+
+使用 Floating UI [虛擬元素](https://floating-ui.com/docs/virtual-elements) 功能定位的元件，常用於實現右鍵選單、跟隨鼠標等功能。
+
+- **Props**
+
+  `<Float.Virtual>` 包含了 `<Float>` 的 `as`、`show`、`placement`、`strategy`、`offset`、`shift`、`flip`、`arrow`、`autoPlacement`、`hide`、`autoUpdate`、`zIndex`、`enter`、`enterFrom`、`enterTo`、`leave`、`leaveFrom`、`leaveTo`、`originClass`、`tailwindcssOriginClass`、`portal`、`transform`、`middleware` props：
+
+  ```ts
+  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'hide' | 'autoUpdate' | 'zIndex' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {
+    /**
+     * 事件
+     */
+    onInitial: (props: FloatVirtualInitialProps) => void
+  }
+  ```
+
+  `<Float.Virtual>` 的 `onInitial` 事件包含以下的 props：
+
+  ```ts
+  import type { ExtendedRefs } from '@floating-ui/react'
+
+  interface FloatVirtualInitialProps {
+    /**
+     * 當前元素的顯示狀態。
+     */
+    showRef: [boolean, Dispatch<SetStateAction<boolean>>]
+    /**
+     * 當前浮動元素顯示的方向位置。
+     */
+    placement: Readonly<Ref<Placement>>
+    /**
+     * 參考元素和浮動元素。
+     */
+    refs: ExtendedRefs<HTMLElement>
+  }
+  ```
+
+- **Render Prop**
+
+  ```ts
+  interface FloatVirtualRenderProp {
+    /**
+     * 當前浮動元素顯示的方向位置。
+     */
+    placement: Placement
+    /**
+     * 關閉虛擬元素。
+     */
+    close: () => void
+  }
+  ```
+
+- **參考：**[虛擬元素](virtual-element.md)
+
+## `<Float.ContextMenu>` {#float-contextmenu}
+
+提供了右鍵選單的定位功能。
+
+- **Props**
+
+  `<Float.ContextMenu>` 包含了 `<Float.Virtual>` 除了 `show` 和 `portal` 以外的 props：
+
+  ```ts
+  interface FloatContextMenuProps extends Omit<FloatVirtualProps, 'show' | 'portal' | 'onInitial'> {}
+  ```
+
+- **Render Prop**
+
+  `<Float.ContextMenu>` 包含了跟 `<Float.Virtual>` 一樣的 render prop。
+
+- **參考：**[虛擬元素](virtual-element.md)
+
+## `<Float.Cursor>` {#float-cursor}
+
+提供了跟隨鼠標定位功能。
+
+- **Props**
+
+  `<Float.Cursor>` 包含了 `<Float.Virtual>` 除了 `show` 和 `portal` 以外的 props，並增加了一個額外的 prop：
+
+  ```ts
+  interface FloatCursorProps extends Omit<FloatVirtualProps, 'show' | 'portal' | 'onInitial'> {
+    /**
+     * 增加全局隱藏鼠標的 CSS。
+     * 預設：true
+     */
+    globalHideCursor?: boolean
+  }
+  ```
+
+- **Render Prop**
+
+  `<Float.Cursor>` 包含了跟 `<Float.Virtual>` 一樣的 render prop。
+
+- **參考：**[虛擬元素](virtual-element.md)

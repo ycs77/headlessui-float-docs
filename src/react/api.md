@@ -2,6 +2,8 @@
 
 ## `<Float>`
 
+Provides positioning floating element, transition, and portal.
+
 - **Props**
 
   ```ts
@@ -88,10 +90,10 @@
     tailwindcssOriginClass?: boolean
 
     /**
-     * Render floating element in the other exists element.
+     * Render the floating element to the end of `<body>`.
      * Default: false
      */
-    portal?: boolean | string
+    portal?: boolean
     /**
      * Use CSS transform to positioning floating element.
      * Default: true
@@ -102,6 +104,16 @@
      * Default: false
      */
     adaptiveWidth?: boolean
+    /**
+     * Enable Composable mode.
+     * Default: false
+     */
+    composable?: boolean
+    /**
+     * Enable Dialog mode.
+     * Default: false
+     */
+    dialog?: boolean
 
     /**
      * Customizing middleware for Floating UI.
@@ -123,7 +135,76 @@
   type OriginClassResolver = (placement: Placement) => string
   ```
 
-## `<FloatArrow>` {#float-arrow}
+- **Render Prop**
+
+  ```ts
+  interface FloatRenderProp {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+  }
+  ```
+
+## `<Float.Reference>` {#float-reference}
+
+Can be used for reference element that needs to be referenced when [Composable Mode](composable-mode.md) is enabled.
+
+- **Props**
+
+  `<Float.Reference>` accepts the same props as `<Float>`:
+
+  ```ts
+  interface FloatReferenceProps extends Pick<FloatProps, 'as'> {}
+  ```
+
+- **Render Prop**
+
+  ```ts
+  interface FloatReferenceRenderProp {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+  }
+  ```
+
+- **See also:** [Composable Mode](composable-mode.md)
+
+## `<Float.Content>` {#float-content}
+
+Can be used for floating element that needs to be positioned when [Composable Mode](composable-mode.md) is enabled.
+
+- **Props**
+
+  `<Float.Content>` accepts the same props as `<Float>` includes `as`, `enter`, `enterFrom`, `enterTo`, `leave`, `leaveFrom`, `leaveTo`, `originClass`, `tailwindcssOriginClass` props, plus a additional prop:
+
+  ```ts
+  interface FloatContentProps extends Pick<FloatProps, 'as' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass'> {
+    /**
+     * Use the `<Transition.Child>` of Headless UI.
+     * Default: false
+     */
+    transitionChild?: boolean
+  }
+  ```
+
+- **Render Prop**
+
+  ```ts
+  interface FloatContentRenderProp {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+  }
+  ```
+
+- **See also:** [Composable Mode](composable-mode.md)
+
+## `<Float.Arrow>` {#float-arrow}
+
+Provides positioning arrow element.
 
 - **Props**
 
@@ -142,7 +223,7 @@
   }
   ```
 
-- **Render Prop**：
+- **Render Prop**
 
   ```ts
   interface FloatArrowRenderProp {
@@ -152,3 +233,102 @@
     placement: Placement
   }
   ```
+
+- **See also:** [Arrow](arrow.md)
+
+## `<Float.Virtual>` {#float-virtual}
+
+Utilizes the Floating UI [Virtual Elements](https://floating-ui.com/docs/virtual-elements) is often used to implement functionality such as context menu and mouse cursor following.
+
+- **Props**
+
+  `<Float.Virtual>` accepts the same props as `<Float>` includes `as`, `show`, `placement`, `strategy`, `offset`, `shift`, `flip`, `arrow`, `autoPlacement`, `hide`, `autoUpdate`, `zIndex`, `enter`, `enterFrom`, `enterTo`, `leave`, `leaveFrom`, `leaveTo`, `originClass`, `tailwindcssOriginClass`, `portal`, `transform`, `middleware` props:
+
+  ```ts
+  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'hide' | 'autoUpdate' | 'zIndex' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {
+    /**
+     * Events
+     */
+    onInitial: (props: FloatVirtualInitialProps) => void
+  }
+  ```
+
+  The `onInitial` event of `<Float.Virtual>` component includes the following props:
+
+  ```ts
+  import type { ExtendedRefs } from '@floating-ui/react'
+
+  interface FloatVirtualInitialProps {
+    /**
+     * Current floating element is show or not.
+     */
+    showRef: [boolean, Dispatch<SetStateAction<boolean>>]
+    /**
+     * Current floating element placement.
+     */
+    placement: Readonly<Ref<Placement>>
+    /**
+     * Refs of reference element and floating element.
+     */
+    refs: ExtendedRefs<HTMLElement>
+  }
+  ```
+
+- **Render Prop**
+
+  ```ts
+  interface FloatVirtualRenderProp {
+    /**
+     * Current floating element placement.
+     */
+    placement: Placement
+    /**
+     * Close virtual element.
+     */
+    close: () => void
+  }
+  ```
+
+- **See also:** [Virtual Element](virtual-element.md)
+
+## `<Float.ContextMenu>` {#float-contextmenu}
+
+Provides positioning context menu.
+
+- **Props**
+
+  `<Float.ContextMenu>` accepts the same props as `<Float.Virtual>` except `show` and `portal`:
+
+  ```ts
+  interface FloatContextMenuProps extends Omit<FloatVirtualProps, 'show' | 'portal' | 'onInitial'> {}
+  ```
+
+- **Render Prop**
+
+  `<Float.ContextMenu>` contains the same render prop as `<Float.Virtual>`.
+
+- **See also:** [Virtual Element](virtual-element.md)
+
+## `<Float.Cursor>` {#float-cursor}
+
+Provides positioning mouse cursor following.
+
+- **Props**
+
+  `<Float.Cursor>` accepts the same props as `<Float.Virtual>` except `show` and `portal`, plus a additional prop:
+
+  ```ts
+  interface FloatCursorProps extends Omit<FloatVirtualProps, 'show' | 'portal' | 'onInitial'> {
+    /**
+     * Add the global CSS to hide the cursor.
+     * Default: true
+     */
+    globalHideCursor?: boolean
+  }
+  ```
+
+- **Render Prop**
+
+  `<Float.Cursor>` contains the same render prop as `<Float.Virtual>`.
+
+- **See also:** [Virtual Element](virtual-element.md)
