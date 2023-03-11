@@ -8,7 +8,7 @@
 
 ## 右鍵選單 {#context-menu}
 
-`<Float.ContextMenu>` 元件是一個右鍵選單的無樣式組件，可以自己設計右鍵選單的內容，如果要用 `<Menu>` 元件的話，需要把 `<Menu.Items>` 的 `static` 開啟：
+`<Float.ContextMenu>` 元件是一個無樣式的右鍵選單元件，可以自己設計右鍵選單的內容，如果要用 `<Menu>` 元件的話，還要把 `<Menu.Items>` 的 `static` 開啟：
 
 ```jsx
 import { Float } from '@headlessui-float/react'
