@@ -262,7 +262,8 @@ Utilizes the Floating UI [Virtual Elements](https://floating-ui.com/docs/virtual
     /**
      * Current floating element is show or not.
      */
-    showRef: [boolean, Dispatch<SetStateAction<boolean>>]
+    show: boolean
+    setShow: Dispatch<SetStateAction<boolean>>
     /**
      * Current floating element placement.
      */

@@ -260,7 +260,8 @@
     /**
      * 當前元素的顯示狀態。
      */
-    showRef: [boolean, Dispatch<SetStateAction<boolean>>]
+    show: boolean
+    setShow: Dispatch<SetStateAction<boolean>>
     /**
      * 當前浮動元素顯示的方向位置。
      */
