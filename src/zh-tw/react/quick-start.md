@@ -1,6 +1,6 @@
 # 快速開始 {#quick-start}
 
-## 線上 Demo {#online-demo}
+## 線上範例 {#online-demo}
 
 * [**React**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
 * [**React + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react-ts?file=src%2FApp.tsx)

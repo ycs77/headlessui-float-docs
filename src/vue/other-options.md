@@ -1,6 +1,6 @@
 # Other Options
 
-## Show/Hide
+## Show/hide
 
 Since the control of the display is in the Headless UI component, it can usually be used directly without any setting.
 
@@ -56,7 +56,7 @@ CSS `z-index` property for the floating element, the default value is 9999, and 
 <Float :z-index="100">
 ```
 
-## Position Mode
+## Position mode
 
 The default is to use CSS transform to position floating elements. If this causes a conflict in transform properties, can set `false` to use `top` / `left` for positioning:
 

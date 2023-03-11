@@ -2,14 +2,12 @@
 
 First, put the `<Float.Arrow>` inside the floating element, then add the class:
 
-```jsx {5-6,14}
+```jsx {5,13}
 <Popover>
   <Float>
     ...
     <Popover.Panel>
-      {/* add arrow */}
       <Float.Arrow className="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
-
       Popover & arrow, content...
     </Popover.Panel>
   </Float>

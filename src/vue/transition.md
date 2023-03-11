@@ -33,7 +33,7 @@ If need to override the `origin` class, can use `origin-class`.
 <Float origin-class="origin-top-left">
 ```
 
-## Named Transitions
+## Named transitions
 
 Use named class to define transition styles:
 

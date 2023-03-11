@@ -2,14 +2,12 @@
 
 首先先將 `<Float.Arrow>` 放置在浮動元素內部，然後加上 class：
 
-```jsx {5-6,14}
+```jsx {5,13}
 <Popover>
   <Float>
     ...
     <Popover.Panel>
-      {/* 加入箭頭 */}
       <Float.Arrow className="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
-
       Popover & arrow, content...
     </Popover.Panel>
   </Float>

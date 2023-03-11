@@ -2,14 +2,12 @@
 
 First, import the `<FloatArrow>` component and put it inside the floating element, then add the class:
 
-```html {5-6,14}
+```html {5,13}
 <Popover>
   <Float>
     ...
     <PopoverPanel>
-      <!-- add arrow -->
       <FloatArrow class="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
-
       Popover & arrow, content...
     </PopoverPanel>
   </Float>

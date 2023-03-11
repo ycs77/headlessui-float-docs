@@ -1,6 +1,6 @@
 # 快速開始 {#quick-start}
 
-## 線上 Demo {#online-demo}
+## 線上範例 {#online-demo}
 
 * [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
 * [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)

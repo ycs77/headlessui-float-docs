@@ -2,14 +2,12 @@
 
 首先先引入 `<FloatArrow>` 元件，並放置在浮動元素內部，然後加上 class：
 
-```html {5-6,14}
+```html {5,13}
 <Popover>
   <Float>
     ...
     <PopoverPanel>
-      <!-- 加入箭頭 -->
       <FloatArrow class="absolute bg-white w-5 h-5 rotate-45 border border-gray-200" />
-
       Popover & arrow, content...
     </PopoverPanel>
   </Float>

@@ -71,7 +71,7 @@ With composable mode, the design of components can be more flexible:
 </Popover>
 ```
 
-## Dialog Mode
+## Dialog mode
 
 The mode for positioning dialog around a reference element is designed by integrating the dialog box, which can be positioned around a reference element. This mode uses **composable mode** and off the `transform`. If `<Transition>` is used, you also need to enable `transitionChild` on `<Float.Content>` and use `<Transition.Child>` from Headless UI to set the transition.
 
