@@ -1,4 +1,4 @@
-# 組合模式
+# 組合模式 {#composable-mode}
 
 原本的 `<Float>` 設計上為了使用簡單，只能且一定要有**參考元素**和**浮動元素**，但沒辦法使用在更複雜的元件上使用。啟用組合模式後提供了 `<FloatReference>` 和 `<FloatContent>` 元件，可以自由更改**參考元素**和**浮動元素**在 DOM 中的位置。
 
@@ -22,7 +22,7 @@
 </Popover>
 ```
 
-同樣的效果啟用組合模式：
+同樣的結果但使用組合模式：
 
 ```html {2,3,7,9,13}
 <Popover>
@@ -71,7 +71,7 @@
 </Popover>
 ```
 
-## Dialog 模式
+## Dialog 模式 {#dialog-mode}
 
 整合 Dialog 對話框，讓 Dialog 可以定位在參考元素的周圍而設計的模式，會同時開啟**組合模式**和關閉 `transform`。同時如果使用了 `<TransitionRoot>` 的時候，還需要在 `<FloatContent>` 上啟用 `transition-child`，改用 Headless UI 的 `<TransitionChild>` 來設定轉場。
 
