@@ -114,6 +114,22 @@ Wrapper.displayName = 'Wrapper'
 </div>
 ```
 
+如果在 TypeScript 中使用，需要為 `forwardRef()` 加上 `HTMLDivElement` 型別變數，當然類型具體要看 `ref` 用在哪個 HTML 標籤上：
+
+```tsx
+import { forwardRef } from 'react'
+
+const Wrapper = forwardRef<HTMLDivElement>((props, ref) => (
+  <div
+    ref={ref}
+    {...props}
+    className="wrapper-class"
+    data-label="wrapper label"
+  />
+))
+Wrapper.displayName = 'Wrapper'
+```
+
 ::: tip 提示
 如果不想要使用傳入元件的方式的話，可以改用 `<Float.Content>` 元件，使用方法參考[組合模式](composable-mode.md)。
 :::

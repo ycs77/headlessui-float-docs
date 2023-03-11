@@ -109,6 +109,19 @@ The following HTML will be rendered:
 </div>
 ```
 
+If using TypeScript, you can add the `FunctionalComponent` type:
+
+```js
+import { type FunctionalComponent, h, mergeProps } from 'vue'
+
+const Wrapper: FunctionalComponent = (props, { slots }) => {
+  return h('div', mergeProps(props, {
+    'class': 'wrapper-class',
+    'data-label': 'wrapper label',
+  }), slots)
+}
+```
+
 ::: tip INFO
 If you don't want to use the approach of passing component, you can use the `<FloatContent>` component instead, following the usage instructions for the [Composable Mode](composable-mode.md).
 :::

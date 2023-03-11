@@ -109,6 +109,19 @@ const Wrapper = (props, { slots }) => {
 </div>
 ```
 
+如果在 TypeScript 中使用，可以加上 `FunctionalComponent` 類型：
+
+```js
+import { type FunctionalComponent, h, mergeProps } from 'vue'
+
+const Wrapper: FunctionalComponent = (props, { slots }) => {
+  return h('div', mergeProps(props, {
+    'class': 'wrapper-class',
+    'data-label': 'wrapper label',
+  }), slots)
+}
+```
+
 ::: tip 提示
 如果不想要使用傳入元件的方式的話，可以改用 `<FloatContent>` 元件，使用方法參考[組合模式](composable-mode.md)。
 :::

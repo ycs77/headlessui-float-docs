@@ -114,6 +114,22 @@ The following HTML will be rendered:
 </div>
 ```
 
+If using TypeScript, you need to add an `HTMLDivElement` type variable to `forwardRef()`, depending on which HTML tag the `ref` is used on:
+
+```tsx
+import { forwardRef } from 'react'
+
+const Wrapper = forwardRef<HTMLDivElement>((props, ref) => (
+  <div
+    ref={ref}
+    {...props}
+    className="wrapper-class"
+    data-label="wrapper label"
+  />
+))
+Wrapper.displayName = 'Wrapper'
+```
+
 ::: tip INFO
 If you don't want to use the approach of passing component, you can use the `<Float.Content>` component instead, following the usage instructions for the [Composable Mode](composable-mode.md).
 :::
