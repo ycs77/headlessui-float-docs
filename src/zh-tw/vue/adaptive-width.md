@@ -64,7 +64,7 @@
 這個解決方法有使用到 `floating-as="template"`，如果同時使用包含 CSS `transform` 的過場動畫的話，會造成衝突。需要使用的話請參考 [渲染浮動元素 Wrapper - 同時使用過場動畫](render-wrapper.md#with-transition) 來解決這個問題。
 :::
 
-## 使用 JS 實現自適應寬度 <Badge label="實驗性" /> {#adaptive-width-using-js}
+## 使用 JS 實現自適應寬度 {#adaptive-width-using-js}
 
 有些情況下 CSS `relative` 無法正常同步浮動元素的寬度，比如像同時使用到 [`portal`](other-options.md#portal) 的時候。此時可以使用 `adaptive-width` prop，背後使用了 [`ResizeObserver` API](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) 來監測參考元素的寬度並同步到浮動元素上，但相對的是效能會比 CSS 實現還要差。
 
