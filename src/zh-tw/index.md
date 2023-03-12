@@ -31,7 +31,7 @@ features:
     details: 使用 Floating UI (新版 Popper.js) 定位浮動元素
     icon: 💬
   - title: 更多功能...
-    details: 支援 Transition、Portal (Teleport) 和箭頭 (Arrow)
+    details: 支援 Transition、Portal、箭頭和虛擬元素
     icon: 🛠️
 ---
 

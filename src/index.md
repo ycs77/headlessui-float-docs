@@ -31,7 +31,7 @@ features:
     details: Using Floating UI (New version Popper.js) to position floating elements
     icon: 💬
   - title: More feature...
-    details: Support Transition, Portal and Arrow
+    details: Support Transition, Portal, Arrow and Virtual Element
     icon: 🛠️
 ---
 

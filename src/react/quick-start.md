@@ -52,7 +52,7 @@ Then wrap `<Float>` around `<Menu.Button>` and `<Menu.Items>`:
 Note that `<Float>` must contain 2 child elements, the first is the reference element, and the second is the floating element. It can be a Headless UI component or an HTML element.
 
 ::: tip INFO
-If you want to use HTML elements, or manually control the display of Headless UI components, reference [Show/Hide](other-options.md#show-hide).
+If you want to use HTML elements, or manually control the display of Headless UI components, reference [Show/hide](other-options.md#show-hide).
 :::
 
 Then remove the `absolute`, `right-0` and other positioning class from `<Menu.Items>`, and add the `placement="bottom-end"` attribute:
