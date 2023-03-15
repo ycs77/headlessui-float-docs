@@ -14,10 +14,10 @@
 </Popover>
 ```
 
-然後在 `<Float>` 中啟用 `arrow` 功能，和增加 `offset={15}` 讓箭頭離參考元素遠點：
+然後在 `<Float>` 中啟用 `arrow={5}` 功能，讓箭頭保持距離浮動元素容器 `5px` 的間距，和增加 `offset={15}` 讓箭頭離參考元素遠點：
 
 ```jsx
-<Float arrow offset={15}>
+<Float arrow={5} offset={15}>
 ```
 
 但這時候會發現箭頭疊在浮動元素的上面，並不是我們要的效果，所以要把下面的內容包裝起來，並設定 position 為 `relative`，就會移到箭頭的上面。當然還要設定背景顏色，否則還是會看到下方的箭頭：
@@ -44,7 +44,7 @@ export default function ArrowExample() {
       <Float
         placement="bottom-start"
         offset={15}
-        arrow
+        arrow={5}
       >
         <Popover.Button className="px-5 py-2 bg-rose-50 hover:bg-rose-100 text-rose-500 rounded">
           Button

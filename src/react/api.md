@@ -50,7 +50,7 @@ Provides positioning floating element, transition, and portal.
      */
     flip?: boolean | number | Partial<FlipOptions & DetectOverflowOptions>
     /**
-     * Enable arrow positioning.
+     * Enable arrow positioning, or setting the padding between container and arrow.
      * Default: false
      */
     arrow?: boolean | number

@@ -50,7 +50,7 @@
      */
     flip?: boolean | number | Partial<FlipOptions & DetectOverflowOptions>
     /**
-     * 啟用箭頭定位。
+     * 啟用箭頭定位，也可以設定箭頭到容器之間的間距。
      * 預設：false
      */
     arrow?: boolean | number

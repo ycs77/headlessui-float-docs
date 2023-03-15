@@ -14,10 +14,10 @@ First, put the `<Float.Arrow>` inside the floating element, then add the class:
 </Popover>
 ```
 
-Then add the `arrow` prop in `<Float>`, and add `offset={15}` to keep the arrow away from the reference element:
+Then add the `arrow={5}` prop in `<Float>`, make the arrow keep `5px` padding from the float element container, and add `offset={15}` to keep the arrow away from the reference element:
 
 ```jsx
-<Float arrow offset={15}>
+<Float arrow={5} offset={15}>
 ```
 
 But then we will find that the arrow is stacked on top of the floating element, which is not the effect we want, so need to wrap the content below and set the position to `relative`, and it will move to the top of the arrow. Of course, we also need to set the background color, otherwise will still see the arrow below:
@@ -44,7 +44,7 @@ export default function ArrowExample() {
       <Float
         placement="bottom-start"
         offset={15}
-        arrow
+        arrow={5}
       >
         <Popover.Button className="px-5 py-2 bg-rose-50 hover:bg-rose-100 text-rose-500 rounded">
           Button
