@@ -59,11 +59,3 @@ The default is to use CSS transform to position floating elements. If this cause
 ```jsx
 <Float transform={false}>
 ```
-
-## Portal
-
-Render the floating element to the end of `<body>`:
-
-```jsx
-<Float portal>
-```
