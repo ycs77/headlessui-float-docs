@@ -2,6 +2,8 @@
 
 ## 線上範例 {#online-demo}
 
+可以在 StackBlitz 上試用 Headless UI Float：
+
 * [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
 * [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)
 
