@@ -10,7 +10,7 @@
 
 現在按鈕和選單就會有同等的寬度了：
 
-```jsx
+```jsx {5,6,9,11,15}
 import { Fragment } from 'react'
 
 <Listbox>
@@ -34,7 +34,7 @@ import { Fragment } from 'react'
 
 當然也可以直接指定寬度：
 
-```jsx
+```jsx {4}
 <Listbox>
   <Float
     ...
@@ -48,7 +48,7 @@ import { Fragment } from 'react'
 
 如果放在 `flex` 容器中要撐滿寬度的話，需要加上 `w-full` class：
 
-```jsx
+```jsx {5}
 <div className="flex justify-center items-center">
   <Listbox>
     <Float

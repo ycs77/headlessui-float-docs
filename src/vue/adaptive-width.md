@@ -10,7 +10,7 @@ First add `as="div"` and `class="relative"` to the `<Float>` component, render t
 
 Now the button and options will have the same width:
 
-```html
+```html {3,4,7,9,13}
 <Listbox>
   <Float
     as="div"
@@ -32,7 +32,7 @@ Now the button and options will have the same width:
 
 Of course, you can also specify the width directly:
 
-```html
+```html {4}
 <Listbox>
   <Float
     ...
@@ -46,7 +46,7 @@ Of course, you can also specify the width directly:
 
 If you put it in a `flex` container to fill the width, you need to add the `w-full` class:
 
-```html
+```html {5}
 <div class="flex justify-center items-center">
   <Listbox>
     <Float

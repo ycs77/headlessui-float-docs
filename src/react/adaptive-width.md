@@ -10,7 +10,7 @@ First add `as="div"` and `className="relative"` to the `<Float>` component, rend
 
 Now the button and options will have the same width:
 
-```jsx
+```jsx {5,6,9,11,15}
 import { Fragment } from 'react'
 
 <Listbox>
@@ -34,7 +34,7 @@ import { Fragment } from 'react'
 
 Of course, you can also specify the width directly:
 
-```jsx
+```jsx {4}
 <Listbox>
   <Float
     ...
@@ -48,7 +48,7 @@ Of course, you can also specify the width directly:
 
 If you put it in a `flex` container to fill the width, you need to add the `w-full` class:
 
-```jsx
+```jsx {5}
 <div className="flex justify-center items-center">
   <Listbox>
     <Float

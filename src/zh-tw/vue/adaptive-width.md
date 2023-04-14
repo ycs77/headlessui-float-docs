@@ -10,7 +10,7 @@
 
 現在按鈕和選單就會有同等的寬度了：
 
-```html
+```html {3,4,7,9,13}
 <Listbox>
   <Float
     as="div"
@@ -32,7 +32,7 @@
 
 當然也可以直接指定寬度：
 
-```html
+```html {4}
 <Listbox>
   <Float
     ...
@@ -46,7 +46,7 @@
 
 如果放在 `flex` 容器中要撐滿寬度的話，需要加上 `w-full` class：
 
-```html
+```html {5}
 <div class="flex justify-center items-center">
   <Listbox>
     <Float
