@@ -12,8 +12,8 @@
     "@types/node": "^18.7.16",
     "@vueuse/core": "^9.2.0",
     "body-scroll-lock": "^4.0.0-beta.0",
-    "unocss": "^0.45.18",
-    "unplugin-vue-components": "^0.22.4",
+    "unocss": "^0.53.1",
+    "unplugin-vue-components": "^0.25.1",
     "vitepress": "1.0.0-alpha.50",
     "vue": "^3.2.33"
   }
