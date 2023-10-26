@@ -1,5 +1,7 @@
 # Quick Start
 
+Headless UI Float is a package that makes it easy to position floating elements in [Headless UI](https://headlessui.com/), it uses [Floating UI](https://floating-ui.com/) (new version Popper.js) for positioning.
+
 ## Online demo
 
 You can try Headless UI Float online on StackBlitz:

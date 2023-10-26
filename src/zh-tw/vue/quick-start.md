@@ -1,5 +1,7 @@
 # 快速開始 {#quick-start}
 
+Headless UI Float 是一個可以輕鬆在 [Headless UI](https://headlessui.com/) 中定位浮動元素的套件，使用 [Floating UI](https://floating-ui.com/) (新版 Popper.js) 來做定位。
+
 ## 線上範例 {#online-demo}
 
 可以在 StackBlitz 上試用 Headless UI Float：
