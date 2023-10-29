@@ -89,7 +89,7 @@ In addition to `<Menu>`, the same can be used on `<Listbox>`, `<Popover>` or `<C
 
 The main purpose of creating Headless UI Float is to make it easy to position Headless UI components. It does not take into account many complex use cases. If you find that this package cannot easily achieve your goals, I recommend the following methods:
 
-### Pure CSS
+### Using CSS
 
 This is arguably the simplest way to position an element. If you only need to position it in one direction, I recommend using this method directly.
 

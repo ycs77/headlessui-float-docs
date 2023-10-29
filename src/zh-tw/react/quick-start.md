@@ -87,7 +87,7 @@ import { Float } from '@headlessui-float/react'
 
 我建立 Headless UI Float 的目的主要是為了可以輕鬆地為 Headless UI 的元件來做定位，未考慮到許多複雜的使用場景，如果發現本套件無法輕鬆達到你的目的，建議可以參考以下方式：
 
-### 純 CSS {#pure-css}
+### 使用 CSS {#using-css}
 
 這可說是最單純的定位方式了，如果只有固定一個方向的話，建議可以直接使用此方式。
 
