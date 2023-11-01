@@ -6,8 +6,8 @@ Headless UI Float is a package that makes it easy to position floating elements 
 
 You can try Headless UI Float online on StackBlitz:
 
-* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
-* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)
+* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2Fpages%2Ffloatingui-options.vue)
+* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2Fpages%2Ffloatingui-options.vue)
 
 ## Installation
 

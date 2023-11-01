@@ -6,8 +6,8 @@ Headless UI Float is a package that makes it easy to position floating elements 
 
 You can try Headless UI Float online on StackBlitz:
 
-* [**React**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2FApp.jsx)
-* [**React + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react-ts?file=src%2FApp.tsx)
+* [**React**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react?file=src%2Fpages%2Ffloatingui-options.jsx)
+* [**React + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-react-ts?file=src%2Fpages%2Ffloatingui-options.tsx)
 
 ## Installation
 

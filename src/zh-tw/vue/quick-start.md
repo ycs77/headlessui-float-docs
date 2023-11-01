@@ -6,8 +6,8 @@ Headless UI Float 是一個可以輕鬆在 [Headless UI](https://headlessui.com/
 
 可以在 StackBlitz 上試用 Headless UI Float：
 
-* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2FApp.vue)
-* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2FApp.vue)
+* [**Vue**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue?file=src%2Fpages%2Ffloatingui-options.vue)
+* [**Vue + TS**](https://stackblitz.com/github/ycs77/headlessui-float/tree/main/examples/example-vue-ts?file=src%2Fpages%2Ffloatingui-options.vue)
 
 ## 安裝 {#installation}
 
