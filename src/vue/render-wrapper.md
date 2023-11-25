@@ -125,29 +125,3 @@ const Wrapper: FunctionalComponent = (props, { slots }) => {
 ::: tip INFO
 If you don't want to use the approach of passing component, you can use the `<FloatContent>` component instead, following the usage instructions for the [Composable Mode](composable-mode.md).
 :::
-
-### With transition
-
-It should be noted if setting `floating-as="template"` and using the transition that includes CSS transform at the same time will result in abnormal behavior. When `floating-as` is set to `template`, the floating element is positioned directly, and for performance optimization, transform is used for positioning by default. Therefore, conflicts may occur between the transform used in the transition animation and the transform used for positioning.
-
-If you need to use it, turn off `transform` to switch to using `top`/`left` properties for positioning:
-
-```html
-<Float :transform="false">
-```
-
-Then you can add the class for the transition:
-
-```html
-<Float
-  :transform="false"
-  floating-as="template"
-  enter="transition duration-200 ease-out"
-  enter-from="opacity-0 scale-75"
-  enter-to="opacity-100 scale-100"
-  leave="transition duration-150 ease-in"
-  leave-from="opacity-100 scale-100"
-  leave-to="opacity-0 scale-75"
-  tailwindcss-origin-class
->
-```

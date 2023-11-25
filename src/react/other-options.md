@@ -54,8 +54,8 @@ CSS `z-index` property for the floating element, the default value is 9999, and 
 
 ## Position mode
 
-The default is to use CSS transform to position floating elements. If this causes a conflict in transform properties, can set `false` to use `top` / `left` for positioning:
+The default is to use `top` / `left` to position floating elements. If you need to use transform to position floating elements, you can enable `transform`:
 
 ```jsx
-<Float transform={false}>
+<Float transform>
 ```

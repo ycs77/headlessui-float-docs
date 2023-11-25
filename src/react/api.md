@@ -96,7 +96,7 @@ Provides positioning floating element, transition, and portal.
     portal?: boolean
     /**
      * Use CSS transform to positioning floating element.
-     * Default: true
+     * Default: false
      */
     transform?: boolean
     /**

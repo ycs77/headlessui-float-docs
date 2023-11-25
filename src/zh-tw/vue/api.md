@@ -105,7 +105,7 @@
     portal?: boolean
     /**
      * 是否啟用 CSS transform 來定位參考元素。
-     * 預設：true
+     * 預設：false
      */
     transform?: boolean
     /**

@@ -133,31 +133,3 @@ Wrapper.displayName = 'Wrapper'
 ::: tip 提示
 如果不想要使用傳入元件的方式的話，可以改用 `<Float.Content>` 元件，使用方法參考[組合模式](composable-mode.md)。
 :::
-
-### 同時使用過場動畫 {#with-transition}
-
-需要注意的是，設定 `floatingAs={Fragment}` 並同時使用包含 CSS `transform` 的過場動畫的話，會無法正常使用。因為 `floatingAs` 設為 `Fragment` 時，會直接定位浮動元素；且為了優化效能，預設使用 `transform` 來做定位的。因此會造成過場動畫的 `transform` 會和定位用的 `transform` 造成衝突。
-
-如果要使用的話，需要關閉 `transform` 來切換成 `top`/`left` 屬性來做定位：
-
-```jsx
-<Float transform={false}>
-```
-
-然後就可以加上過場動畫的 class 了：
-
-```jsx
-import { Fragment } from 'react'
-
-<Float
-  transform={false}
-  floatingAs={Fragment}
-  enter="transition duration-200 ease-out"
-  enterFrom="opacity-0 scale-75"
-  enterTo="opacity-100 scale-100"
-  leave="transition duration-150 ease-in"
-  leaveFrom="opacity-100 scale-100"
-  leaveTo="opacity-0 scale-75"
-  tailwindcssOriginClass
->
-```

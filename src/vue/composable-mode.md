@@ -73,7 +73,7 @@ With composable mode, the design of components can be more flexible:
 
 ## Dialog mode
 
-The mode for positioning dialog around a reference element is designed by integrating the dialog box, which can be positioned around a reference element. This mode uses **composable mode** and off the `transform`. If `<TransitionRoot>` is used, you also need to enable `transition-child` on `<FloatContent>` and use `<TransitionChild>` from Headless UI to set the transition.
+The mode for positioning dialog around a reference element is designed by integrating the dialog box, which can be positioned around a reference element. This mode uses **composable mode**. If `<TransitionRoot>` is used, you also need to enable `transition-child` on `<FloatContent>` and use `<TransitionChild>` from Headless UI to set the transition.
 
 Note that in dialog, `<FloatContent>` needs to be set to `as="template"`, and the first element inside it must be `<DialogPanel>`.
 

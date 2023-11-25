@@ -73,7 +73,7 @@
 
 ## Dialog 模式 {#dialog-mode}
 
-整合 Dialog 對話框，讓 Dialog 可以定位在參考元素的周圍而設計的模式，會同時開啟**組合模式**和關閉 `transform`。同時如果使用了 `<Transition>` 的時候，還需要在 `<Float.Content>` 上啟用 `transitionChild`，改用 Headless UI 的 `<Transition.Child>` 來設定轉場。
+整合 Dialog 對話框，讓 Dialog 可以定位在參考元素的周圍而設計的模式，會同時開啟**組合模式**。如果同時使用了 `<Transition>` 的時候，還需要在 `<Float.Content>` 上啟用 `transitionChild`，改用 Headless UI 的 `<Transition.Child>` 來設定轉場。
 
 需要注意的是，在 Dialog 中要把 `<Float.Content>` 設為 `as={Fragment}`，以及裡面的第一個元素一定要是 `<Dialog.Panel>`。
 
