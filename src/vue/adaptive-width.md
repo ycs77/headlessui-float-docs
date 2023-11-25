@@ -60,14 +60,10 @@ If you put it in a `flex` container to fill the width, you need to add the `w-fu
 </div>
 ```
 
-## Adaptive width using JS
+## Adaptive width using JS <Badge label="v0.10+" />
 
 There are cases where CSS `relative` does not properly synchronize the width of the floating element, such as when using the [`portal`](other-options.md#portal) at the same time. At this point, you can use the `adaptive-width` prop, which uses the [`ResizeObserver` API](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) to monitor the width of the reference element and synchronize it to the floating element, but the performance will be worse than the CSS implementation.
 
 ```html
 <Float adaptive-width>
 ```
-
-::: tip INFO
-Requires upgrading to **v0.10+** to use the `adaptive-width` prop.
-:::

@@ -1,10 +1,6 @@
-# Virtual Element
+# Virtual Element <Badge label="v0.11+" />
 
 Components that use the Floating UI's [virtual elements](https://floating-ui.com/docs/virtual-elements) feature can position floating element relative to the virtual element. This is often used to implement functionality such as context menus and following the cursor.
-
-::: tip INFO
-Requires upgrading to **v0.11+** to use the virtual element.
-:::
 
 ## Context menu
 
