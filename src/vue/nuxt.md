@@ -5,15 +5,15 @@ Install the Nuxt module for Headless UI Float:
 ::: code-group
 
 ```bash [npm]
-npm i @headlessui-float/nuxt
+npm i -D @headlessui-float/nuxt
 ```
 
 ```bash [yarn]
-yarn add @headlessui-float/nuxt
+yarn add -D @headlessui-float/nuxt
 ```
 
 ```bash [pnpm]
-pnpm add @headlessui-float/nuxt
+pnpm add -D @headlessui-float/nuxt
 ```
 
 :::
