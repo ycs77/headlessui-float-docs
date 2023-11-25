@@ -1,13 +1,8 @@
 # 自動引入元件 {#auto-importing}
 
-使用 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 來自動引入元件：
-
-::: tip 提示
-需要升級 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 至 **v0.19+** 才能正常使用。
-:::
+使用 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 來自動引入元件，將 `HeadlessUiFloatResolver` 新增到 `vite.config.js`：
 
 ```js
-// vite.config.js
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import { HeadlessUiFloatResolver } from '@headlessui-float/vue'

@@ -117,9 +117,14 @@ function sidebar(lang: string) {
     'root': {
       '/react/': [
         {
-          text: 'Guide',
+          text: 'Overview',
           items: [
             { text: 'Quick Start', link: '/react/quick-start' },
+          ],
+        },
+        {
+          text: 'Guide',
+          items: [
             { text: 'Floating UI Options', link: '/react/floatingui-options' },
             { text: 'Render Wrapper', link: '/react/render-wrapper' },
             { text: 'Transition', link: '/react/transition' },
@@ -142,9 +147,16 @@ function sidebar(lang: string) {
       ],
       '/vue/': [
         {
-          text: 'Guide',
+          text: 'Overview',
           items: [
             { text: 'Quick Start', link: '/vue/quick-start' },
+            { text: 'Nuxt', link: '/vue/nuxt' },
+            { text: 'Auto Importing', link: '/vue/auto-importing' },
+          ],
+        },
+        {
+          text: 'Guide',
+          items: [
             { text: 'Floating UI Options', link: '/vue/floatingui-options' },
             { text: 'Render Wrapper', link: '/vue/render-wrapper' },
             { text: 'Transition', link: '/vue/transition' },
@@ -156,7 +168,6 @@ function sidebar(lang: string) {
             { text: 'Virtual Element', link: '/vue/virtual-element' },
             { text: 'Other Options', link: '/vue/other-options' },
             { text: 'High-Order Component', link: '/vue/high-order-component' },
-            { text: 'Auto Importing Components', link: '/vue/auto-importing' },
           ],
         },
         {
@@ -170,9 +181,14 @@ function sidebar(lang: string) {
     'zh-tw': {
       '/zh-tw/react/': [
         {
-          text: '指南',
+          text: '概述',
           items: [
             { text: '快速開始', link: '/zh-tw/react/quick-start' },
+          ],
+        },
+        {
+          text: '指南',
+          items: [
             { text: 'Floating UI 選項', link: '/zh-tw/react/floatingui-options' },
             { text: '渲染 Wrapper 元素', link: '/zh-tw/react/render-wrapper' },
             { text: 'Transition (過場)', link: '/zh-tw/react/transition' },
@@ -195,9 +211,16 @@ function sidebar(lang: string) {
       ],
       '/zh-tw/vue/': [
         {
-          text: '指南',
+          text: '概述',
           items: [
             { text: '快速開始', link: '/zh-tw/vue/quick-start' },
+            { text: 'Nuxt', link: '/zh-tw/vue/nuxt' },
+            { text: '自動引入', link: '/zh-tw/vue/auto-importing' },
+          ],
+        },
+        {
+          text: '指南',
+          items: [
             { text: 'Floating UI 選項', link: '/zh-tw/vue/floatingui-options' },
             { text: '渲染 Wrapper 元素', link: '/zh-tw/vue/render-wrapper' },
             { text: 'Transition (過場)', link: '/zh-tw/vue/transition' },
@@ -209,7 +232,6 @@ function sidebar(lang: string) {
             { text: '虛擬元素', link: '/zh-tw/vue/virtual-element' },
             { text: '其他選項', link: '/zh-tw/vue/other-options' },
             { text: 'High-Order Component', link: '/zh-tw/vue/high-order-component' },
-            { text: '自動引入元件', link: '/zh-tw/vue/auto-importing' },
           ],
         },
         {
