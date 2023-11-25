@@ -99,17 +99,37 @@ Floating elements choose the placement with more space left:
 More options supported by `autoPlacement`, refer to Floating UI's `autoPlacement` documentation: https://floating-ui.com/docs/autoPlacement
 :::
 
-<!-- ## hide
+## hide <Badge label="v0.13+" />
 
-When the reference element is not visible, the floating element is hidden:
+When the reference element is not visible, will apply the class of `reference-hidden-class`, which can add the `invisible` class to hide the floating element:
 
 ```html
-<Float hide>
+<Float
+  hide
+  reference-hidden-class="invisible"
+>
+```
+
+You can also use another strategy, which is to apply the class of `escaped-class` if you can't see the floating element:
+
+```html
+<Float
+  :hide="{ strategy: 'escaped' }"
+  escaped-class="opacity-50"
+>
+```
+
+When you want to use two strategies, you can pass in an array:
+
+```html
+<Float
+  :hide="[{}, { strategy: 'escaped' }]"
+>
 ```
 
 ::: tip INFO
 More options supported by `hide`, refer to Floating UI's `hide` documentation: https://floating-ui.com/docs/hide
-::: -->
+:::
 
 ## autoUpdate {#auto-update}
 

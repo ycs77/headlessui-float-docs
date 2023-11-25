@@ -99,17 +99,37 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 更多 `autoPlacement` 支援的輸入選項，請參考 Floating UI 的 `autoPlacement` 說明：https://floating-ui.com/docs/autoPlacement
 :::
 
-<!-- ## hide
+## hide <Badge label="v0.13+" />
 
-當無法看到參考元素時，就會隱藏浮動元素：
+當無法看到參考元素時，會套用 `reference-hidden-class` 的 class，可以增加 `invisible` 來達到隱藏浮動元素的效果：
 
 ```html
-<Float hide>
+<Float
+  hide
+  reference-hidden-class="invisible"
+>
+```
+
+也可以使用另一種策略，是當無法看到浮動元素時，會套用 `escaped-class` 的 class：
+
+```html
+<Float
+  :hide="{ strategy: 'escaped' }"
+  escaped-class="opacity-50"
+>
+```
+
+當要同時使用兩種策略的時候，可以傳入陣列：
+
+```html
+<Float
+  :hide="[{}, { strategy: 'escaped' }]"
+>
 ```
 
 ::: tip 提示
 更多 `hide` 支援的輸入選項，請參考 Floating UI 的 `hide` 說明：https://floating-ui.com/docs/hide
-::: -->
+:::
 
 ## autoUpdate {#auto-update}
 

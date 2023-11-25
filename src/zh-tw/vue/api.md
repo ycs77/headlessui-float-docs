@@ -60,6 +60,15 @@
      */
     autoPlacement?: boolean | Partial<AutoPlacementOptions & DetectOverflowOptions>
     /**
+     * 當無法看到參考元素時套用 class。
+     * - referenceHidden 策略套用 `referenceHiddenClass`
+     * - escaped 策略套用 `escapedClass`
+     * 預設：false
+     */
+    hide?: boolean | Partial<HideOptions & DetectOverflowOptions> | Partial<HideOptions & DetectOverflowOptions>[]
+    referenceHiddenClass?: string
+    escapedClass?: string
+    /**
      * 自動在需要的時候更新浮動元素。
      * 預設：true
      */
@@ -250,10 +259,10 @@
 
 - **Props**
 
-  `<FloatVirtual>` 包含了 `<Float>` 的 `as`、`show`、`placement`、`strategy`、`offset`、`shift`、`flip`、`arrow`、`autoPlacement`、`hide`、`autoUpdate`、`zIndex`、`transition-name`、`transition-type`、`enter`、`enter-from`、`enter-to`、`leave`、`leave-from`、`leave-to`、`origin-class`、`tailwindcss-origin-class`、`portal`、`transform`、`middleware` props：
+  `<FloatVirtual>` 包含了 `<Float>` 的 `as`、`show`、`placement`、`strategy`、`offset`、`shift`、`flip`、`arrow`、`autoPlacement`、`autoUpdate`、`zIndex`、`transition-name`、`transition-type`、`enter`、`enter-from`、`enter-to`、`leave`、`leave-from`、`leave-to`、`origin-class`、`tailwindcss-origin-class`、`portal`、`transform`、`middleware` props：
 
   ```ts
-  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'hide' | 'autoUpdate' | 'zIndex' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
+  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'autoUpdate' | 'zIndex' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
   ```
 
 - **事件**

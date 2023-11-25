@@ -60,6 +60,15 @@ Provides positioning floating element, transition, and portal.
      */
     autoPlacement?: boolean | Partial<AutoPlacementOptions & DetectOverflowOptions>
     /**
+     * 當無法看到參考元素時套用 class。
+     * - referenceHidden 策略套用 `referenceHiddenClass`
+     * - escaped 策略套用 `escapedClass`
+     * 預設：false
+     */
+    hide?: boolean | Partial<HideOptions & DetectOverflowOptions> | Partial<HideOptions & DetectOverflowOptions>[]
+    referenceHiddenClass?: string
+    escapedClass?: string
+    /**
      * Automatically update floating elements when needed.
      * Default: true
      */
@@ -250,10 +259,10 @@ Utilizes the Floating UI [Virtual Elements](https://floating-ui.com/docs/virtual
 
 - **Props**
 
-  `<FloatVirtual>` accepts the same props as `<Float>` includes `as`, `show`, `placement`, `strategy`, `offset`, `shift`, `flip`, `arrow`, `autoPlacement`, `hide`, `autoUpdate`, `zIndex`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class`, `portal`, `transform`, `middleware` props:
+  `<FloatVirtual>` accepts the same props as `<Float>` includes `as`, `show`, `placement`, `strategy`, `offset`, `shift`, `flip`, `arrow`, `autoPlacement`, `autoUpdate`, `zIndex`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class`, `portal`, `transform`, `middleware` props:
 
   ```ts
-  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'hide' | 'autoUpdate' | 'zIndex' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
+  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'autoUpdate' | 'zIndex' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
   ```
 
 - **Events**

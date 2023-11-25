@@ -99,17 +99,37 @@ Floating elements choose the placement with more space left:
 More options supported by `autoPlacement`, refer to Floating UI's `autoPlacement` documentation: https://floating-ui.com/docs/autoPlacement
 :::
 
-<!-- ## hide
+## hide <Badge label="v0.13+" />
 
-When the reference element is not visible, the floating element is hidden:
+When the reference element is not visible, will apply the class of `referenceHiddenClass`, which can add the `invisible` class to hide the floating element:
 
 ```jsx
-<Float hide>
+<Float
+  hide
+  referenceHiddenClass="invisible"
+>
+```
+
+You can also use another strategy, which is to apply the class of `escapedClass` if you can't see the floating element:
+
+```jsx
+<Float
+  hide={{ strategy: 'escaped' }}
+  escapedClass="opacity-50"
+>
+```
+
+When you want to use two strategies, you can pass in an array:
+
+```jsx
+<Float
+  hide={[{}, { strategy: 'escaped' }]}
+>
 ```
 
 ::: tip INFO
 More options supported by `hide`, refer to Floating UI's `hide` documentation: https://floating-ui.com/docs/hide
-::: -->
+:::
 
 ## autoUpdate {#auto-update}
 
