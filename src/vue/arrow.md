@@ -2,7 +2,7 @@
 
 First, import the `<FloatArrow>` component and put it inside the floating element, then add the class:
 
-```html {5,13}
+```html {5,12}
 <Popover>
   <Float>
     ...
@@ -26,7 +26,7 @@ Then add the `:arrow="5"` prop in `<Float>`, make the arrow keep `5px` padding f
 
 But then we will find that the arrow is stacked on top of the floating element, which is not the effect we want, so need to wrap the content below and set the position to `relative`, and it will move to the top of the arrow. Of course, we also need to set the background color, otherwise will still see the arrow below:
 
-```html {1,4}
+```html {1,4-6}
 <PopoverPanel class="w-[240px] h-[70px] bg-white border border-gray-200 rounded-md shadow-lg focus:outline-none">
   <FloatArrow class="..." />
 
