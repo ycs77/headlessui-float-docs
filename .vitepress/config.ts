@@ -120,6 +120,7 @@ function sidebar(lang: string) {
           text: 'Overview',
           items: [
             { text: 'Quick Start', link: '/react/quick-start' },
+            { text: 'Alternatives', link: '/react/alternatives' },
           ],
         },
         {
@@ -152,6 +153,7 @@ function sidebar(lang: string) {
             { text: 'Quick Start', link: '/vue/quick-start' },
             { text: 'Nuxt', link: '/vue/nuxt' },
             { text: 'Auto Importing', link: '/vue/auto-importing' },
+            { text: 'Alternatives', link: '/vue/alternatives' },
           ],
         },
         {
@@ -184,6 +186,7 @@ function sidebar(lang: string) {
           text: '概述',
           items: [
             { text: '快速開始', link: '/zh-tw/react/quick-start' },
+            { text: '替代方案', link: '/zh-tw/react/alternatives' },
           ],
         },
         {
@@ -216,6 +219,7 @@ function sidebar(lang: string) {
             { text: '快速開始', link: '/zh-tw/vue/quick-start' },
             { text: 'Nuxt', link: '/zh-tw/vue/nuxt' },
             { text: '自動引入', link: '/zh-tw/vue/auto-importing' },
+            { text: '替代方案', link: '/zh-tw/vue/alternatives' },
           ],
         },
         {
