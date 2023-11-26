@@ -18,7 +18,7 @@ pnpm add -D @headlessui-float/nuxt
 
 :::
 
-然後新增 `@headlessui-float/nuxt` 到 `nuxt.config.ts`：
+新增 `@headlessui-float/nuxt` 到 `nuxt.config.ts`：
 
 ```js
 export default defineNuxtConfig({
