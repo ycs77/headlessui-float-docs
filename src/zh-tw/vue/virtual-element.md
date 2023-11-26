@@ -1,4 +1,4 @@
-# 虛擬元素 {#virtual-element} <Badge label="v0.11+" />
+# 虛擬元素 <Badge label="v0.11+" /> {#virtual-element}
 
 使用 Floating UI [虛擬元素](https://floating-ui.com/docs/virtual-elements) 功能定位的元件，可以讓浮動元素相對於虛擬元素來定位，常用於實現右鍵選單、跟隨鼠標等功能。
 
