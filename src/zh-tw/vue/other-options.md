@@ -58,7 +58,7 @@ const toggle = () => {
 
 ## 定位模式 {#position-mode}
 
-預設使用 CSS 的 `top` / `left` 來定位浮動元素，如果有需要的話，可以啟用 `transform` 來改用 transform 定位浮動元素：
+預設使用 CSS 的 `top` / `left` 來定位浮動元素，如果有需要的話，可以啟用 `transform` 來改用 CSS `transform` 定位浮動元素：
 
 ```html
 <Float transform>

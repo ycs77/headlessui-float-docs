@@ -58,7 +58,7 @@ CSS `z-index` property for the floating element, the default value is 9999, and 
 
 ## Position mode
 
-The default is to use `top` / `left` to position floating elements. If you need to use transform to position floating elements, you can enable `transform`:
+The default is to use CSS `top` / `left` to position floating elements. If you need to use CSS `transform` to position floating elements, you can enable `transform`:
 
 ```html
 <Float transform>
