@@ -14,7 +14,7 @@ Here is an example using Tailwind CSS:
     Options
   </MenuButton>
 
-  <MenuItems className="absolute left-0 mt-2 w-56 origin-top-left">
+  <MenuItems className="absolute left-0 mt-2 w-56">
     ...
   </MenuItems>
 </Menu>
