@@ -60,10 +60,10 @@ Provides positioning floating element, transition, and portal.
      */
     autoPlacement?: boolean | Partial<AutoPlacementOptions & DetectOverflowOptions>
     /**
-     * 當無法看到參考元素時套用 class。
-     * - referenceHidden 策略套用 `referenceHiddenClass`
-     * - escaped 策略套用 `escapedClass`
-     * 預設：false
+     * Apply the classes when the reference element is not visible.
+     * - Apply `referenceHiddenClass` when enabled referenceHidden strategy
+     * - Apply `escapedClass` when enabled escaped strategy
+     * Default: false
      */
     hide?: boolean | Partial<HideOptions & DetectOverflowOptions> | Partial<HideOptions & DetectOverflowOptions>[]
     referenceHiddenClass?: string
