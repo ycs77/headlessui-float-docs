@@ -1,4 +1,4 @@
-# Auto focus
+# Auto Focus
 
 If you need to automatically focus on internal links or form elements and lock focus inside when opening a popover, you can use the Headless UI `<FocusTrap>` component (although it is not documented in the Headless UI documentation):
 
