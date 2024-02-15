@@ -20,7 +20,7 @@ For example, here's an example without using the composable mode:
 
 And the same result with composable mode:
 
-```html {2,3,7,9,13}
+```html {2,3,7,9,13,19-21}
 <Popover>
   <Float composable>
     <FloatReference>
@@ -36,6 +36,14 @@ And the same result with composable mode:
     </FloatContent>
   </Float>
 </Popover>
+
+<script setup>
+import {
+  Float,
+  FloatContent,
+  FloatReference,
+} from '@headlessui-float/vue'
+</script>
 ```
 
 With composable mode, the design of components can be more flexible:

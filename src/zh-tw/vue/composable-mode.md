@@ -20,7 +20,7 @@
 
 同樣的結果但使用組合模式：
 
-```html {2,3,7,9,13}
+```html {2,3,7,9,13,19-21}
 <Popover>
   <Float composable>
     <FloatReference>
@@ -36,6 +36,14 @@
     </FloatContent>
   </Float>
 </Popover>
+
+<script setup>
+import {
+  Float,
+  FloatContent,
+  FloatReference,
+} from '@headlessui-float/vue'
+</script>
 ```
 
 在組合模式下設計元件上可以更加靈活了：
