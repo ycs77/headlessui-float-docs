@@ -125,3 +125,27 @@ const Wrapper: FunctionalComponent = (props, { slots }) => {
 ::: tip 提示
 如果不想要使用傳入元件的方式的話，可以改用 `<FloatContent>` 元件，使用方法參考[組合模式](composable-mode.md)。
 :::
+
+## Template Ref 的注意事項 {#notice-of-template-ref}
+
+`<Float>` 會取得 slot 中的2個子元素：參考元素和浮動元素，並綁定這2個子元素的 ref 來取得 DOM 元素，然後可以傳遞給 Floating UI 進行定位。Vue 在 `<Float>` 元件內部綁定過一次之後，就不能再在外部重新綁定了。因此像以下兩種綁定方式都是無效的：
+
+```html
+<Float show>
+  <input ref="referenceElRef" type="text"> <!-- X -->
+  <div ref="floatingElRef">content</div> <!-- X -->
+</Float>
+```
+
+而如果在參考元素包上一層 `<div>` 之類的元素，就可以在參考元素內部綁定 ref，但浮動元素依然是不行的：
+
+```html
+<Float show>
+  <div>
+    <input ref="referenceElRef" type="text"> <!-- V -->
+  </div>
+  <div>
+    <div ref="floatingElRef">content</div> <!-- X -->
+  </div>
+</Float>
+```

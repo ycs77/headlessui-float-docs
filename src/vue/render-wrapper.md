@@ -125,3 +125,27 @@ const Wrapper: FunctionalComponent = (props, { slots }) => {
 ::: tip INFO
 If you don't want to use the approach of passing component, you can use the `<FloatContent>` component instead, following the usage instructions for the [Composable Mode](composable-mode.md).
 :::
+
+## Notice of template ref
+
+The `<Float>` component retrieves two child elements from the slot: the reference element and the floating element. It then binds the refs of these two child elements to get the DOM, which can then be passed to the Floating UI for positioning. Once the Vue component has bound the refs inside the `<Float>` component, it cannot be re-bind externally. Therefore, the following two bindings are invalid:
+
+```html
+<Float show>
+  <input ref="referenceElRef" type="text"> <!-- X -->
+  <div ref="floatingElRef">content</div> <!-- X -->
+</Float>
+```
+
+If you wrap the reference element in an element like `<div>`, you can bind the ref inside the reference element, but it still won't work for the floating element:
+
+```html
+<Float show>
+  <div>
+    <input ref="referenceElRef" type="text"> <!-- V -->
+  </div>
+  <div>
+    <div ref="floatingElRef">content</div> <!-- X -->
+  </div>
+</Float>
+```
