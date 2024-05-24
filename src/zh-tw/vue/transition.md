@@ -35,10 +35,19 @@ module.exports = {
 
 ## 過場效果命名 {#named-transitions}
 
+目前預設過場元件是 Headless UI 的 `<TransitionRoot>`，因此需要使用 `vue-transition` 來改為使用 Vue 內建的過場元件，才能使用過場效果命名。
+
+::: warning 注意
+**v0.14+** 的版本才能使用 `vue-transition`。
+:::
+
 使用命名 class 來定義過場 CSS 效果：
 
 ```html
-<Float transition-name="fade">
+<Float
+  vue-transition
+  transition-name="fade"
+>
 ```
 
 與之對應的的 class:

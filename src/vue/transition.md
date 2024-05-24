@@ -35,10 +35,19 @@ If need to override the `origin` class, can use `origin-class`.
 
 ## Named transitions
 
+The default transition component is Headless UI's `<TransitionRoot>`, so it is necessary to use `vue-transition` to use Vue's built-in transition component to use the transition effect naming feature.
+
+::: warning
+**v0.14+** above can use `vue-transition`.
+:::
+
 Use named class to define transition styles:
 
 ```html
-<Float transition-name="fade">
+<Float
+  vue-transition
+  transition-name="fade"
+>
 ```
 
 The corresponding class:

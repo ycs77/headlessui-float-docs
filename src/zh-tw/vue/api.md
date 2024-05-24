@@ -80,6 +80,11 @@
     zIndex?: number | string
 
     /**
+     * 使用 Vue 內建的過場元件來進行過場。
+     * 預設：false
+     */
+    vueTransition?: boolean
+    /**
      * 使用命名 class 來定義過場 CSS 效果。
      */
     transitionName?: string
@@ -194,10 +199,10 @@
 
 - **Props**
 
-  `<FloatContent>` 包含了 `<Float>` 的 `as`、`transition-name`、`transition-type`、`enter`、`enter-from`、`enter-to`、`leave`、`leave-from`、`leave-to`、`origin-class`、`tailwindcss-origin-class` props，並增加了一個額外的 prop：
+  `<FloatContent>` 包含了 `<Float>` 的 `as`、`vue-transition`、`transition-name`、`transition-type`、`enter`、`enter-from`、`enter-to`、`leave`、`leave-from`、`leave-to`、`origin-class`、`tailwindcss-origin-class` props，並增加了一個額外的 prop：
 
   ```ts
-  interface FloatContentProps extends Pick<FloatProps, 'as' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass'> {
+  interface FloatContentProps extends Pick<FloatProps, 'as' | 'vueTransition' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass'> {
     /**
      * 使用 Headless UI 的 `<TransitionChild>` 元件。
      * 預設：false
@@ -259,10 +264,10 @@
 
 - **Props**
 
-  `<FloatVirtual>` 包含了 `<Float>` 的 `as`、`show`、`placement`、`strategy`、`offset`、`shift`、`flip`、`arrow`、`autoPlacement`、`autoUpdate`、`zIndex`、`transition-name`、`transition-type`、`enter`、`enter-from`、`enter-to`、`leave`、`leave-from`、`leave-to`、`origin-class`、`tailwindcss-origin-class`、`portal`、`transform`、`middleware` props：
+  `<FloatVirtual>` 包含了 `<Float>` 的 `as`、`show`、`placement`、`strategy`、`offset`、`shift`、`flip`、`arrow`、`autoPlacement`、`autoUpdate`、`zIndex`、`vue-transition`、`transition-name`、`transition-type`、`enter`、`enter-from`、`enter-to`、`leave`、`leave-from`、`leave-to`、`origin-class`、`tailwindcss-origin-class`、`portal`、`transform`、`middleware` props：
 
   ```ts
-  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'autoUpdate' | 'zIndex' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
+  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'autoUpdate' | 'zIndex' | 'vueTransition' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
   ```
 
 - **事件**

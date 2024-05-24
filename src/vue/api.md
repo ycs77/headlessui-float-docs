@@ -80,6 +80,11 @@ Provides positioning floating element, transition, and portal.
     zIndex?: number | string
 
     /**
+     * Using the Vue built-in Transition component to transition.
+     * Default: false
+     */
+    vueTransition?: boolean
+    /**
      * Use named class to define transition styles.
      */
     transitionName?: string
@@ -194,10 +199,10 @@ Can be used for floating element that needs to be positioned when [Composable Mo
 
 - **Props**
 
-  `<FloatContent>` accepts the same props as `<Float>` includes `as`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class` props, plus a additional prop:
+  `<FloatContent>` accepts the same props as `<Float>` includes `as`, `vue-transition`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class` props, plus a additional prop:
 
   ```ts
-  interface FloatContentProps extends Pick<FloatProps, 'as' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass'> {
+  interface FloatContentProps extends Pick<FloatProps, 'as' | 'vueTransition' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass'> {
     /**
      * Use the `<TransitionChild>` of Headless UI.
      * Default: false
@@ -259,10 +264,10 @@ Utilizes the Floating UI [Virtual Elements](https://floating-ui.com/docs/virtual
 
 - **Props**
 
-  `<FloatVirtual>` accepts the same props as `<Float>` includes `as`, `show`, `placement`, `strategy`, `offset`, `shift`, `flip`, `arrow`, `autoPlacement`, `autoUpdate`, `zIndex`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class`, `portal`, `transform`, `middleware` props:
+  `<FloatVirtual>` accepts the same props as `<Float>` includes `as`, `show`, `placement`, `strategy`, `offset`, `shift`, `flip`, `arrow`, `autoPlacement`, `autoUpdate`, `zIndex`, `vue-transition`, `transition-name`, `transition-type`, `enter`, `enter-from`, `enter-to`, `leave`, `leave-from`, `leave-to`, `origin-class`, `tailwindcss-origin-class`, `portal`, `transform`, `middleware` props:
 
   ```ts
-  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'autoUpdate' | 'zIndex' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
+  interface FloatVirtualProps extends Pick<FloatProps, 'as' | 'show' | 'placement' | 'strategy' | 'offset' | 'shift' | 'flip' | 'arrow' | 'autoPlacement' | 'autoUpdate' | 'zIndex' | 'vueTransition' | 'transitionName' | 'transitionType' | 'enter' | 'enterFrom' | 'enterTo' | 'leave' | 'leaveFrom' | 'leaveTo' | 'originClass' | 'tailwindcssOriginClass' | 'portal' | 'transform' | 'middleware'> {}
   ```
 
 - **Events**
