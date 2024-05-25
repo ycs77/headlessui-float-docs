@@ -11,7 +11,7 @@ You can try Headless UI Float online on StackBlitz:
 
 ## Installation
 
-This package is require **Vue 3** and **Headless UI Vue**, you must be installed them first.
+This package is require **Vue 3** and **@headlessui/vue** v1, you must be installed them first.
 
 ::: code-group
 

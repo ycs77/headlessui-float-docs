@@ -2,6 +2,10 @@
 
 Headless UI Float 是一個可以輕鬆在 [Headless UI](https://headlessui.com/) 中定位浮動元素的套件，使用 [Floating UI](https://floating-ui.com/) (新版 Popper.js) 來做定位。
 
+::: warning 注意
+Headless UI Float 只支援 **@headlessui/react** v1，在 **@headlessui/react** v2 將可以直接使用 `anchor` prop 來定位 Headless UI 元件，請參考 [Headless UI Menu 範例](https://github.com/tailwindlabs/headlessui/blob/7be23e5c7e2e71218cdba405ea4f4aca7924acc8/playgrounds/react/pages/menu/menu-with-transition.tsx) 來了解如何將 Menu 搭配過場元件使用。
+:::
+
 ## 線上範例 {#online-demo}
 
 可以在 StackBlitz 上試用 Headless UI Float：
@@ -11,7 +15,7 @@ Headless UI Float 是一個可以輕鬆在 [Headless UI](https://headlessui.com/
 
 ## 安裝 {#installation}
 
-套件相依於 **React**、**React DOM** 和 **Headless UI React**，記得需要先安裝好。
+套件相依於 **React**、**React DOM** 和 **@headlessui/react** v1，記得需要先安裝好。
 
 ::: code-group
 

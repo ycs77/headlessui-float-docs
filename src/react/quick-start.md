@@ -2,6 +2,10 @@
 
 Headless UI Float is a package that makes it easy to position floating elements in [Headless UI](https://headlessui.com/), it uses [Floating UI](https://floating-ui.com/) (new version Popper.js) for positioning.
 
+::: warning
+Headless UI Float only support **@headlessui/react** v1, in the **@headlessui/react** v2 will direct using the `anchor` prop to positioning the Headless UI components, please reference the [Headless UI Menu example](https://github.com/tailwindlabs/headlessui/blob/7be23e5c7e2e71218cdba405ea4f4aca7924acc8/playgrounds/react/pages/menu/menu-with-transition.tsx) to using the transition for menu or other components.
+:::
+
 ## Online demo
 
 You can try Headless UI Float online on StackBlitz:
@@ -11,7 +15,7 @@ You can try Headless UI Float online on StackBlitz:
 
 ## Installation
 
-This package is require **React**, **React DOM** and **Headless UI React**, you must be installed them first.
+This package is require **React**, **React DOM** and **@headlessui/react** v1, you must be installed them first.
 
 ::: code-group
 

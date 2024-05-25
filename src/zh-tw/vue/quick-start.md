@@ -11,7 +11,7 @@ Headless UI Float 是一個可以輕鬆在 [Headless UI](https://headlessui.com/
 
 ## 安裝 {#installation}
 
-套件相依於 **Vue 3** 和 **Headless UI Vue**，記得需要先安裝好。
+套件相依於 **Vue 3** 和 **@headlessui/vue** v1，記得需要先安裝好。
 
 ::: code-group
 
