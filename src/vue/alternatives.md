@@ -1,10 +1,10 @@
 # Alternatives
 
-The main purpose of creating Headless UI Float is to make it easy to position Headless UI components. It does not take into account many complex use cases. If you find that this package cannot easily achieve your goals, I recommend the following methods:
+The main purpose of creating Headless UI Float is to make it easy to position Headless UI components. It does not take into account many complex use cases. If you find that this package cannot easily achieve your goals, recommend the following methods:
 
 ## Using CSS
 
-This is arguably the simplest way to position an element. If you only need to position it in one direction, I recommend using this method directly.
+This is arguably the simplest way to position an element. If you only need to position it in one direction, recommend using this method directly.
 
 Here is an example using Tailwind CSS:
 
