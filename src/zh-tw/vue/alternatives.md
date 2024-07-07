@@ -23,3 +23,7 @@
 ## 直接使用 Floating UI {#direct-using-floating-ui}
 
 Headless UI Float 就是使用 [Floating UI](https://floating-ui.com/) 來做定位，如果你想要實現更為複雜的需求，請直接使用 Floating UI。
+
+## Tooltip 替代方案 {#alternatives-to-tooltips}
+
+Headless UI Float 沒有針對 Tooltip 上做過優化，建議使用 [Tippy.js](https://atomiks.github.io/tippyjs/) / [VueTippy](https://vue-tippy.netlify.app/) 來代替。

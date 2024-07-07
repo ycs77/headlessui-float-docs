@@ -23,3 +23,7 @@ Here is an example using Tailwind CSS:
 ## Direct using Floating UI
 
 The Headless UI Float is to use [Floating UI](https://floating-ui.com/) for positioning. If you need to implement more complex requirements, please use Floating UI directly.
+
+## Alternatives to Tooltips
+
+Headless UI Float has no optimization for Tooltip. It is recommended to use [Tippy.js](https://atomiks.github.io/tippyjs/) / [VueTippy](https://vue-tippy.netlify.app/) instead.
