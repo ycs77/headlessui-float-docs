@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref, computed, onMounted } from 'vue'
+import { ref, type Ref, reactive, computed, onMounted } from 'vue'
 import { useElementSize, promiseTimeout } from '@vueuse/core'
 import type { NavItemWithFramework } from '../config'
 import { useFrameworkLinks } from '../composables/nav'
@@ -48,15 +48,15 @@ const vueSize = computed(() => findSize('vue'))
 function setEl(el: HTMLElement, link: NavItemWithFramework, index: number) {
   const { width } = useElementSize(el)
 
-  els.value[index] = {
+  els.value[index] = reactive({
     link,
-    width: width as unknown as number,
+    width: width,
     left: computed(() => {
       return els.value
         .slice(0, index)
         .reduce((carry, item) => carry + gap + item.width, 0)
-    }) as unknown as number,
-  }
+    }),
+  })
 }
 
 onMounted(async () => {

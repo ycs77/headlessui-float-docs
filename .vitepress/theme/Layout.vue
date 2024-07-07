@@ -45,8 +45,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, useSlots, watch, type Ref } from 'vue'
-import { useRoute, useData, type PageData } from 'vitepress'
+import { computed, provide, useSlots, watch } from 'vue'
+import { useRoute, useData } from 'vitepress'
 import { useSidebar, useCloseSidebarOnEscape } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
 import VPSkipLink from 'vitepress/dist/client/theme-default/components/VPSkipLink.vue'
 import VPBackdrop from 'vitepress/dist/client/theme-default/components/VPBackdrop.vue'
@@ -70,9 +70,7 @@ useCloseSidebarOnEscape(isSidebarOpen, closeSidebar)
 provide('close-sidebar', closeSidebar)
 provide('is-sidebar-open', isSidebarOpen)
 
-const { frontmatter } = useData() as unknown as {
-  frontmatter: Ref<PageData['frontmatter']>
-}
+const { frontmatter } = useData()
 
 const slots = useSlots()
 const heroImageSlotExists = computed(() => !!slots['home-hero-image'])
