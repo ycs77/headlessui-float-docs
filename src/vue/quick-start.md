@@ -2,6 +2,10 @@
 
 Headless UI Float is a package that makes it easy to position floating elements in [Headless UI](https://headlessui.com/), it uses [Floating UI](https://floating-ui.com/) (new version Popper.js) for positioning.
 
+::: tip
+[Headless UI](https://headlessui.com/) has [released version 2.0](https://tailwindcss.com/blog/headless-ui-v2#built-in-anchor-positioning) (currently for React only), which builds in anchor positioning with Floating UI. Therefore, this package will be unnecessary when Headless UI v2 supports Vue.
+:::
+
 ## Online demo
 
 You can try Headless UI Float online on StackBlitz:

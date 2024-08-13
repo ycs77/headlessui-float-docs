@@ -2,8 +2,10 @@
 
 Headless UI Float is a package that makes it easy to position floating elements in [Headless UI](https://headlessui.com/), it uses [Floating UI](https://floating-ui.com/) (new version Popper.js) for positioning.
 
-::: warning
-Headless UI Float only support **@headlessui/react** v1, in the **@headlessui/react** v2 will direct using the `anchor` prop to positioning the Headless UI components, please reference the [Headless UI Menu example](https://github.com/tailwindlabs/headlessui/blob/7be23e5c7e2e71218cdba405ea4f4aca7924acc8/playgrounds/react/pages/menu/menu-with-transition.tsx) to using the transition for menu or other components.
+::: tip
+[Headless UI](https://headlessui.com/) has [released version 2.0](https://tailwindcss.com/blog/headless-ui-v2#built-in-anchor-positioning) (currently for React only), which builds in anchor positioning with Floating UI, making this package unnecessary.
+
+You can reference the [Headless UI Menu example](https://github.com/tailwindlabs/headlessui/blob/7be23e5c7e2e71218cdba405ea4f4aca7924acc8/playgrounds/react/pages/menu/menu-with-transition.tsx) to use the transition for the menu or other components.
 :::
 
 ## Online demo

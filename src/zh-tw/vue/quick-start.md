@@ -2,6 +2,10 @@
 
 Headless UI Float 是一個可以輕鬆在 [Headless UI](https://headlessui.com/) 中定位浮動元素的套件，使用 [Floating UI](https://floating-ui.com/) (新版 Popper.js) 來做定位。
 
+::: tip 提示
+[Headless UI](https://headlessui.com/) 已[發布了 2.0 版](https://tailwindcss.com/blog/headless-ui-v2#built-in-anchor-positioning) (目前僅適用於 React)，內建 Floating UI 的定位功能，因此當未來 Headless UI v2支援 Vue 時，將不再需要使用這個套件。
+:::
+
 ## 線上範例 {#online-demo}
 
 可以在 StackBlitz 上試用 Headless UI Float：
