@@ -6,6 +6,7 @@ The high-order component can be easily applied in projects after customizing the
 <!-- HighOrderFloat.vue -->
 <template>
   <Float
+    v-slot="slotProps"
     :offset="8"
     flip
     :shift="6"
@@ -18,7 +19,7 @@ The high-order component can be easily applied in projects after customizing the
     leave-to="scale-95 opacity-0"
     tailwindcss-origin-class
   >
-    <slot></slot>
+    <slot v-bind="slotProps"></slot>
   </Float>
 </template>
 
@@ -48,9 +49,9 @@ If you using the TypeScript, can using `createHighOrderFloatComponent()` functio
 
 ```ts
 // HighOrderFloat.ts
-import { createHighOrderFloatComponent } from '@headlessui-float/vue'
+import { type Float, createHighOrderFloatComponent } from '@headlessui-float/vue'
 
-export default createHighOrderFloatComponent({
+const HighOrderFloat: typeof Float = createHighOrderFloatComponent({
   offset: 8,
   flip: true,
   shift: 6,
@@ -63,4 +64,6 @@ export default createHighOrderFloatComponent({
   leaveTo: 'scale-95 opacity-0',
   tailwindcssOriginClass: true,
 })
+
+export default HighOrderFloat
 ```
