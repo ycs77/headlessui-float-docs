@@ -99,7 +99,7 @@ Floating elements choose the placement with more space left:
 More options supported by `autoPlacement`, refer to Floating UI's `autoPlacement` documentation: https://floating-ui.com/docs/autoPlacement
 :::
 
-## hide <Badge label="v0.13+" />
+## hide <Badge type="tip" text="v0.13+" />
 
 When the reference element is not visible, will apply the class of `referenceHiddenClass`, which can add the `invisible` class to hide the floating element:
 

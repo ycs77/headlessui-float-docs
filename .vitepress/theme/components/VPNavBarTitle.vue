@@ -3,8 +3,8 @@
     <a class="title" :href="normalizeLink(currentLang.link)">
       <slot name="nav-bar-title-before" />
       <!-- <VPImage v-if="theme.logo" class="logo" :image="theme.logo" />
-      <template v-if="theme.siteTitle">{{ theme.siteTitle }}</template>
-      <template v-else-if="theme.siteTitle === undefined">{{ site.title }}</template> -->
+      <template v-if="theme.siteTitle"><span>{{ theme.siteTitle }}</span></template>
+      <template v-else-if="theme.siteTitle === undefined"><span>{{ site.title }}</span></template> -->
       <span><span class="text-brand">Headless UI</span> Float</span>
       <slot name="nav-bar-title-after" />
     </a>
@@ -36,10 +36,6 @@ const { currentLang } = useLangs()
   transition: opacity 0.25s;
 }
 
-.title:hover {
-  opacity: 0.6;
-}
-
 @media (min-width: 960px) {
   .title {
     flex-shrink: 0;
@@ -52,14 +48,10 @@ const { currentLang } = useLangs()
 
 :deep(.logo) {
   margin-right: 8px;
-  height: 24px;
+  height: var(--vp-nav-logo-height);
 }
 
 .text-brand {
-  color: var(--vp-c-brand-light);
-  transition: color 0.5s;
-}
-.dark .text-brand {
-  color: var(--vp-c-brand-lighter);
+  color: var(--vp-c-brand-1);
 }
 </style>

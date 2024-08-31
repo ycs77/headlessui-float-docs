@@ -38,8 +38,7 @@ defineProps<{
 
 <style scoped>
 .VPHomeSponsors {
-  border-top: 1px solid var(--vp-c-gutter);
-  padding: 88px 24px 96px;
+  padding: 88px 24px 40px;
 }
 
 .message {

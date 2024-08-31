@@ -3,10 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
 import docsearch from '@docsearch/js'
-import { onMounted, watch } from 'vue'
-import { useRouter, useRoute, useData } from 'vitepress'
+import { nextTick, onMounted, watch } from 'vue'
+import { useRoute, useRouter, useData } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
 import { useFrameworkLinks } from '../composables/nav'
 
 const props = defineProps<{
@@ -18,15 +18,14 @@ const route = useRoute()
 const { site, localeIndex, lang } = useData()
 const { currentFramework: framework } = useFrameworkLinks()
 
-/** @ts-ignore */
-const docsearch$: typeof docsearch = docsearch.default ?? docsearch
-type DocSearchProps = Parameters<typeof docsearch$>[0]
+type DocSearchProps = Parameters<typeof docsearch>[0]
 
 onMounted(update)
 watch(localeIndex, update)
 watch(framework, update)
 
-function update() {
+async function update() {
+  await nextTick()
   const options = {
     ...props.algolia,
     ...props.algolia.locales?.[localeIndex.value]
@@ -49,12 +48,16 @@ function update() {
     },
     placeholder: props.algolia.locales
       ?.[localeIndex.value].placeholder
-      ?.replace('%s', framework.value?.text ?? 'React')
+      ?.replace('%s', framework.value?.text ?? 'React'),
   })
 }
 
 function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
-  const options = Object.assign<{}, {}, DocSearchProps>({}, userOptions, {
+  const options = Object.assign<
+    {},
+    DefaultTheme.AlgoliaSearchOptions,
+    Partial<DocSearchProps>
+  >({}, userOptions, {
     container: '#docsearch',
 
     navigator: {
@@ -74,14 +77,13 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
     },
 
     transformItems(items) {
-      return items.map(item => {
+      return items.map((item) => {
         return Object.assign({}, item, {
           url: getRelativePath(item.url)
         })
       })
     },
 
-    // @ts-expect-error vue-tsc thinks this should return Vue JSX but it returns the required React one
     hitComponent({ hit, children }) {
       return {
         __v: null,
@@ -91,19 +93,14 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
         key: undefined,
         props: { href: hit.url, children }
       }
-    },
-  })
+    }
+  }) as DocSearchProps
 
-  docsearch$(options)
+  docsearch(options)
 }
 
-function getRelativePath(absoluteUrl: string) {
-  const { pathname, hash } = new URL(absoluteUrl)
-  return (
-    pathname.replace(
-      /\.html$/,
-      site.value.cleanUrls ? '' : '.html'
-    ) + hash
-  )
+function getRelativePath(url: string) {
+  const { pathname, hash } = new URL(url, location.origin)
+  return pathname.replace(/\.html$/, site.value.cleanUrls ? '' : '.html') + hash
 }
 </script>

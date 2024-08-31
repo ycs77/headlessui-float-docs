@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
+declare const __VP_LOCAL_SEARCH__: boolean
 declare const __ALGOLIA__: boolean
 
 declare module '*.vue' {

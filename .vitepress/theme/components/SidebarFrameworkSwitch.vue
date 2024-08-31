@@ -140,13 +140,13 @@ onMounted(async () => {
   width: v-bind(`${reactSize?.width ?? 0}px`);
   top: 10px;
   left: calc(16px + v-bind(`${reactSize?.left ?? 0}px`));
-  background-color: var(--vp-c-react);
+  background-color: var(--vp-c-react-1);
 }
 .switch-bg-vue {
   width: v-bind(`${vueSize?.width ?? 0}px`);
   top: 10px;
   left: calc(16px + v-bind(`${vueSize?.left ?? 0}px`));
-  background-color: var(--vp-c-vue);
+  background-color: var(--vp-c-vue-1);
 }
 
 .no-transition {

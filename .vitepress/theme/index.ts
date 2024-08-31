@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import { type Theme } from 'vitepress'
+import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import CrawlDocFramework from './components/CrawlDocFramework.vue'
@@ -9,8 +9,8 @@ import './styles/vars.css'
 import './styles/button.css'
 import 'uno.css'
 
-export default <Theme>{
-  ...DefaultTheme,
+export default {
+  extends: DefaultTheme,
   Layout: () => {
     return h(Layout, null, {
       'sidebar-nav-before': () => [
@@ -23,4 +23,4 @@ export default <Theme>{
   enhanceApp({ app }) {
     //
   },
-}
+} satisfies Theme

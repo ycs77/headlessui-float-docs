@@ -1,7 +1,7 @@
 <template>
-  <div v-if="currentFramework" class="framework-name sr-only" aria-hidden="true">
+  <span v-if="currentFramework" class="framework-name sr-only" aria-hidden="true">
     {{ currentFramework.name }}
-  </div>
+  </span>
 </template>
 
 <script setup lang="ts">

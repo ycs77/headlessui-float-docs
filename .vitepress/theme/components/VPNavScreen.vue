@@ -1,10 +1,10 @@
 <template>
   <transition
     name="fade"
-    @enter="lockBodyScroll"
-    @after-leave="unlockBodyScroll"
+    @enter="isLocked = true"
+    @after-leave="isLocked = false"
   >
-    <div v-if="open" class="VPNavScreen" ref="screen">
+    <div v-if="open" class="VPNavScreen" ref="screen" id="VPNavScreen">
       <div class="container">
         <slot name="nav-screen-content-before" />
         <VPNavScreenMenu class="menu" />
@@ -19,31 +19,25 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import VPNavScreenMenu from './VPNavScreenMenu.vue'
+import { inBrowser } from 'vitepress'
+import { useScrollLock } from '@vueuse/core'
 import VPNavScreenAppearance from 'vitepress/dist/client/theme-default/components/VPNavScreenAppearance.vue'
-import VPNavScreenTranslations from 'vitepress/dist/client/theme-default/components/VPNavScreenTranslations.vue'
+import VPNavScreenMenu from './VPNavScreenMenu.vue'
 import VPNavScreenSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavScreenSocialLinks.vue'
+import VPNavScreenTranslations from 'vitepress/dist/client/theme-default/components/VPNavScreenTranslations.vue'
 
 defineProps<{
   open: boolean
 }>()
 
 const screen = ref<HTMLElement | null>(null)
-
-function lockBodyScroll() {
-  disableBodyScroll(screen.value!, { reserveScrollBarGap: true })
-}
-
-function unlockBodyScroll() {
-  clearAllBodyScrollLocks()
-}
+const isLocked = useScrollLock(inBrowser ? document.body : null)
 </script>
 
 <style scoped>
 .VPNavScreen {
   position: fixed;
-  top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 1px);
+  top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px));
   /*rtl:ignore*/
   right: 0;
   bottom: 0;
@@ -53,7 +47,7 @@ function unlockBodyScroll() {
   width: 100%;
   background-color: var(--vp-nav-screen-bg-color);
   overflow-y: auto;
-  transition: background-color 0.5s;
+  transition: background-color 0.25s;
   pointer-events: auto;
 }
 

@@ -99,7 +99,7 @@ CSS `position` 屬性，`absolute` 或 `fixed`：
 更多 `autoPlacement` 支援的輸入選項，請參考 Floating UI 的 `autoPlacement` 說明：https://floating-ui.com/docs/autoPlacement
 :::
 
-## hide <Badge label="v0.13+" />
+## hide <Badge type="tip" text="v0.13+" />
 
 當無法看到參考元素時，會套用 `reference-hidden-class` 的 class，可以增加 `invisible` 來達到隱藏浮動元素的效果：
 

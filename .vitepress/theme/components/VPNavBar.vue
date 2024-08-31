@@ -1,33 +1,39 @@
 <template>
   <div class="VPNavBar" :class="classes">
-    <div class="container">
-      <div class="title">
-        <VPNavBarTitle>
-          <template #nav-bar-title-before><slot name="nav-bar-title-before" /></template>
-          <template #nav-bar-title-after><slot name="nav-bar-title-after" /></template>
-        </VPNavBarTitle>
-      </div>
+    <div class="wrapper">
+      <div class="container">
+        <div class="title">
+          <VPNavBarTitle>
+            <template #nav-bar-title-before><slot name="nav-bar-title-before" /></template>
+            <template #nav-bar-title-after><slot name="nav-bar-title-after" /></template>
+          </VPNavBarTitle>
+        </div>
 
-      <div class="content">
-        <div class="curtain" />
-        <div class="content-body">
-          <slot name="nav-bar-content-before" />
-          <VPNavBarSearch class="search" />
-          <VPNavBarMenu class="menu" />
-          <VPNavBarTranslations class="translations" />
-          <VPNavBarAppearance class="appearance" />
-          <VPNavBarSocialLinks class="social-links" />
-          <VPNavBarExtra class="extra" />
-          <slot name="nav-bar-content-after" />
-          <VPNavBarHamburger class="hamburger" :active="isScreenOpen" @click="$emit('toggle-screen')" />
+        <div class="content">
+          <div class="content-body">
+            <slot name="nav-bar-content-before" />
+            <VPNavBarSearch class="search" />
+            <VPNavBarMenu class="menu" />
+            <VPNavBarTranslations class="translations" />
+            <VPNavBarAppearance class="appearance" />
+            <VPNavBarSocialLinks class="social-links" />
+            <VPNavBarExtra class="extra" />
+            <slot name="nav-bar-content-after" />
+            <VPNavBarHamburger class="hamburger" :active="isScreenOpen" @click="$emit('toggle-screen')" />
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { useData } from 'vitepress'
+import { ref, watchPostEffect } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
 import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
 import VPNavBarTitle from './VPNavBarTitle.vue'
@@ -39,7 +45,7 @@ import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/
 import VPNavBarExtra from 'vitepress/dist/client/theme-default/components/VPNavBarExtra.vue'
 import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
 
-defineProps<{
+const props = defineProps<{
   isScreenOpen: boolean
 }>()
 
@@ -49,11 +55,18 @@ defineEmits<{
 
 const { y } = useWindowScroll()
 const { hasSidebar } = useSidebar()
+const { frontmatter } = useData()
 
-const classes = computed(() => ({
-  'has-sidebar': hasSidebar.value,
-  fill: y.value > 0
-}))
+const classes = ref<Record<string, boolean>>({})
+
+watchPostEffect(() => {
+  classes.value = {
+    'has-sidebar': hasSidebar.value,
+    'home': frontmatter.value.layout === 'home',
+    'top': y.value === 0,
+    'screen-open': props.isScreenOpen
+  }
+})
 </script>
 
 <style scoped>

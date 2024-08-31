@@ -1,4 +1,4 @@
-# Composable Mode <Badge label="v0.11+" />
+# Composable Mode <Badge type="tip" text="v0.11+" />
 
 The original design of `<Float>` is simple to use, but it can only be used with a **reference element** and a **floating element**, which may not be sufficient for more complex components. With the introduction of composable mode, `<FloatReference>` and `<FloatContent>` components are provided, which allows the positioning of the **reference element** and **floating element** to be changed freely in the DOM.
 

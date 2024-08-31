@@ -2,6 +2,7 @@ import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
 import type { Config as ThemeConfig, NavItemWithFramework } from '../config'
+import { enNav, zhTwNav } from '../../config/nav'
 
 export function useFrameworkLinks() {
   const { localeIndex, theme } = useData<ThemeConfig>()
@@ -42,14 +43,8 @@ export function useDocsNav() {
     const framework = currentFramework.value?.name || frameworksNav[0]?.name || ''
 
     const nav = <Record<string, DefaultTheme.NavItemWithLink[]>>{
-      'en': [
-        { text: 'Guide', link: `/${framework}/quick-start.html`, activeMatch: `/${framework}/(?!api)` },
-        { text: 'API', link: `/${framework}/api.html`, activeMatch: `/${framework}/api` },
-      ],
-      'zh-TW': [
-        { text: '指南', link: `/zh-tw/${framework}/quick-start.html`, activeMatch: `/zh-tw/${framework}/(?!api)` },
-        { text: 'API', link: `/zh-tw/${framework}/api.html`, activeMatch: `/zh-tw/${framework}/api` },
-      ],
+      ...enNav(framework),
+      ...zhTwNav(framework),
     }
 
     return nav[lang.value]

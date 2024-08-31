@@ -1,7 +1,7 @@
 <template>
-  <div v-if="groupTitle" class="group-title sr-only" aria-hidden="true">
+  <span v-if="groupTitle" class="group-title sr-only" aria-hidden="true">
     {{ groupTitle }}
-  </div>
+  </span>
 </template>
 
 <script setup lang="ts">
