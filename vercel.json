@@ -1,13 +1,9 @@
 {
   "redirects": [
     { "source": "/index.html", "destination": "/" },
-    { "source": "/react/", "destination": "/react/quick-start.html" },
-    { "source": "/vue/", "destination": "/vue/quick-start.html" },
-
-    { "source": "/zh-tw/index.html", "destination": "/zh-tw/" },
-    { "source": "/zh-tw/react/", "destination": "/zh-tw/react/quick-start.html" },
-    { "source": "/zh-tw/vue/", "destination": "/zh-tw/vue/quick-start.html" }
+    { "source": "/zh-tw/index.html", "destination": "/zh-tw/" }
   ],
+  "cleanUrls": true,
   "trailingSlash": true,
   "github": {
     "silent": true

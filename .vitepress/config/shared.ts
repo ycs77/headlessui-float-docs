@@ -11,12 +11,8 @@ export const shared = defineConfigWithTheme<ThemeConfig>({
   title: 'Headless UI Float',
 
   srcDir: 'src',
-
-  rewrites: {
-    'en/:rest*': ':rest*'
-  },
-
   lastUpdated: true,
+  cleanUrls: true,
 
   themeConfig: {
     frameworksNav: frameworksNav(),
@@ -39,6 +35,17 @@ export const shared = defineConfigWithTheme<ThemeConfig>({
         ...zhTwSearch,
       },
     },
+  },
+
+  transformPageData(pageData, { siteConfig }) {
+    const { site } = siteConfig
+
+    const canonicalUrl = `https://headlessui-float.vercel.app/${pageData.relativePath}`
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, site.cleanUrls ? '' : '.html')
+
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(['link', { rel: 'canonical', href: canonicalUrl }])
   },
 
   vite: viteConfig(),
