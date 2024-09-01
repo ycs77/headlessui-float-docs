@@ -15,10 +15,10 @@ hero:
   actions:
     - theme: react
       text: React
-      link: /zh-tw/react/quick-start.html
+      link: /zh-tw/react/quick-start
     - theme: vue
       text: Vue
-      link: /zh-tw/vue/quick-start.html
+      link: /zh-tw/vue/quick-start
     - theme: alt
       text: View on GitHub
       link: https://github.com/ycs77/headlessui-float
