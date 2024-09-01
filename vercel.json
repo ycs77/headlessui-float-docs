@@ -4,7 +4,6 @@
     { "source": "/zh-tw/index.html", "destination": "/zh-tw/" }
   ],
   "cleanUrls": true,
-  "trailingSlash": true,
   "github": {
     "silent": true
   }
