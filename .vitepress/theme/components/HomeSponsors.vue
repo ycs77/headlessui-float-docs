@@ -39,6 +39,7 @@ defineProps<{
 <style scoped>
 .VPHomeSponsors {
   padding: 88px 24px 40px;
+  margin: 0 !important;
 }
 
 .message {
@@ -47,8 +48,9 @@ defineProps<{
   max-width: 320px;
   text-align: center;
   line-height: 24px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 600;
   color: var(--vp-c-text-2);
+  opacity: .7;
 }
 </style>
