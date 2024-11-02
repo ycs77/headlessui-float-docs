@@ -17,7 +17,7 @@ You can try Headless UI Float online on StackBlitz:
 
 ## Installation
 
-This package is require **React** v16~18, **React DOM** and **@headlessui/react** v1, you must be installed them first.
+This package is require **React** v18, **React DOM** and **@headlessui/react** v1, you must be installed them first.
 
 ::: code-group
 
