@@ -15,6 +15,8 @@ export const shared = defineConfigWithTheme<ThemeConfig>({
   cleanUrls: true,
 
   themeConfig: {
+    siteTitle: '<span style="color: var(--vp-c-brand-1);">Headless UI</span> Float',
+
     frameworksNav: frameworksNav(),
 
     socialLinks: [
