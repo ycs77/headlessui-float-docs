@@ -3,8 +3,8 @@
     <a class="title" :href="normalizeLink(currentLang.link)">
       <slot name="nav-bar-title-before" />
       <!-- <VPImage v-if="theme.logo" class="logo" :image="theme.logo" />
-      <template v-if="theme.siteTitle"><span>{{ theme.siteTitle }}</span></template>
-      <template v-else-if="theme.siteTitle === undefined"><span>{{ site.title }}</span></template> -->
+      <span v-if="theme.siteTitle" v-html="theme.siteTitle"></span>
+      <span v-else-if="theme.siteTitle === undefined">{{ site.title }}</span> -->
       <span><span class="text-brand">Headless UI</span> Float</span>
       <slot name="nav-bar-title-after" />
     </a>
