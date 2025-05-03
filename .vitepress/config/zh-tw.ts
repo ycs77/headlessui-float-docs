@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import type { DefaultTheme } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
 import { head } from './head'
 
 export const zhTw = defineConfig({

@@ -1,7 +1,7 @@
 <template>
   <nav v-if="theme.nav || docsNav" class="VPNavScreenMenu">
     <template v-for="item in theme.nav" :key="JSON.stringify(item)">
-      <VPNavScreenMenuLink v-if="'link' in item" :item="item" />
+      <VPNavScreenMenuLink v-if="'link' in item" :item />
       <component
         v-else-if="'component' in item"
         :is="item.component"
@@ -15,7 +15,7 @@
       />
     </template>
 
-    <VPNavScreenMenuLink v-for="item in docsNav" :item="item" />
+    <VPNavScreenMenuLink v-for="item in docsNav" :item />
   </nav>
 </template>
 

@@ -1,4 +1,5 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
+import { fileURLToPath, URL } from 'node:url'
 import type { UserConfig as ViteConfig } from 'vite'
 import { defineConfigWithTheme } from 'vitepress'
 import Components from 'unplugin-vue-components/vite'
@@ -79,5 +80,27 @@ function viteConfig() {
       }),
       UnoCSS(),
     ],
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPAlgoliaSearchBox\.vue$/,
+          replacement: fileURLToPath(
+            new URL('../theme/components/VPAlgoliaSearchBox.vue', import.meta.url)
+          ),
+        },
+        {
+          find: /^.*\/VPNavBarMenu\.vue$/,
+          replacement: fileURLToPath(
+            new URL('../theme/components/VPNavBarMenu.vue', import.meta.url)
+          ),
+        },
+        {
+          find: /^.*\/VPNavScreenMenu\.vue$/,
+          replacement: fileURLToPath(
+            new URL('../theme/components/VPNavScreenMenu.vue', import.meta.url)
+          ),
+        },
+      ],
+    },
   } satisfies ViteConfig
 }

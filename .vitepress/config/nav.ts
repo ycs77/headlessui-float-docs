@@ -1,4 +1,4 @@
-import type { DefaultTheme } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/theme'
 
 export function enNav(framework: string): Record<string, DefaultTheme.NavItemWithLink[]> {
   return {

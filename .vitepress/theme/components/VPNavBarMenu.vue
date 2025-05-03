@@ -8,16 +8,16 @@
       Main Navigation
     </span>
     <template v-for="item in theme.nav" :key="JSON.stringify(item)">
-      <VPNavBarMenuLink v-if="'link' in item" :item="item" />
+      <VPNavBarMenuLink v-if="'link' in item" :item />
       <component
         v-else-if="'component' in item"
         :is="item.component"
         v-bind="item.props"
       />
-      <VPNavBarMenuGroup v-else :item="item" />
+      <VPNavBarMenuGroup v-else :item />
     </template>
 
-    <VPNavBarMenuLink v-for="item in docsNav" :item="item" />
+    <VPNavBarMenuLink v-for="item in docsNav" :item />
   </nav>
 </template>
 

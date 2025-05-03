@@ -1,11 +1,11 @@
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
-import type { Config as ThemeConfig, NavItemWithFramework } from '../config'
+import type { Config, NavItemWithFramework } from '../config'
 import { enNav, zhTwNav } from '../../config/nav'
 
 export function useFrameworkLinks() {
-  const { localeIndex, theme } = useData<ThemeConfig>()
+  const { localeIndex, theme } = useData<Config>()
   const route = useRoute()
   const frameworksNav = theme.value.frameworksNav || []
 
@@ -35,14 +35,14 @@ export function useFrameworkLinks() {
 }
 
 export function useDocsNav() {
-  const { theme, lang } = useData<ThemeConfig>()
+  const { theme, lang } = useData<Config>()
   const { currentFramework } = useFrameworkLinks()
   const frameworksNav = theme.value.frameworksNav || []
 
   return computed(() => {
     const framework = currentFramework.value?.name || frameworksNav[0]?.name || ''
 
-    const nav = <Record<string, DefaultTheme.NavItemWithLink[]>>{
+    const nav: Record<string, DefaultTheme.NavItemWithLink[]> = {
       ...enNav(framework),
       ...zhTwNav(framework),
     }

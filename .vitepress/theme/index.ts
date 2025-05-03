@@ -1,7 +1,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import Layout from './Layout.vue'
+import Layout from 'vitepress/dist/client/theme-default/Layout.vue'
 import CrawlDocFramework from './components/CrawlDocFramework.vue'
 import CrawlDocGroupName from './components/CrawlDocGroupName.vue'
 import SidebarFrameworkSwitch from './components/SidebarFrameworkSwitch.vue'
