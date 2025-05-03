@@ -6,7 +6,7 @@
           v-for="(link, i) in links"
           :key="link.name"
           :href="link.link"
-          :class="{ 'active': isActive(link) }"
+          :class="{ active: isActive(link) }"
           :ref="el => setEl(el as HTMLElement, link, i)"
         >
           {{ link.text }}
@@ -89,6 +89,7 @@ onMounted(async () => {
 }
 @media (min-width: 960px) {
   .SidebarFrameworkSwitch {
+    width: calc(var(--vp-sidebar-width) - 64px);
     margin-bottom: 0;
   }
   .SidebarFrameworkSwitch::before {
@@ -98,7 +99,6 @@ onMounted(async () => {
 
 .switch-container {
   position: relative;
-  padding: 10px 16px;
   background-color: var(--vp-sidebar-bg-color);
   border-radius: 4px;
 }
@@ -138,14 +138,14 @@ onMounted(async () => {
 
 .switch-bg-react {
   width: v-bind(`${reactSize?.width ?? 0}px`);
-  top: 10px;
-  left: calc(16px + v-bind(`${reactSize?.left ?? 0}px`));
+  top: 0;
+  left: v-bind(`${reactSize?.left ?? 0}px`);
   background-color: var(--vp-c-react-1);
 }
 .switch-bg-vue {
   width: v-bind(`${vueSize?.width ?? 0}px`);
-  top: 10px;
-  left: calc(16px + v-bind(`${vueSize?.left ?? 0}px`));
+  top: 0;
+  left: v-bind(`${vueSize?.left ?? 0}px`);
   background-color: var(--vp-c-vue-1);
 }
 
