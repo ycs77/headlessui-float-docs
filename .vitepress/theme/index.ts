@@ -5,6 +5,7 @@ import Layout from 'vitepress/dist/client/theme-default/Layout.vue'
 import CrawlDocFramework from './components/CrawlDocFramework.vue'
 import CrawlDocGroupName from './components/CrawlDocGroupName.vue'
 import SidebarFrameworkSwitch from './components/SidebarFrameworkSwitch.vue'
+import UnmaintainAlert from './components/UnmaintainAlert.vue'
 import './styles/vars.css'
 import './styles/button.css'
 import 'uno.css'
@@ -17,7 +18,10 @@ export default {
         h(CrawlDocFramework),
         h(SidebarFrameworkSwitch),
       ],
-      'doc-before': () => h(CrawlDocGroupName),
+      'doc-before': () => [
+        h(CrawlDocGroupName),
+        h(UnmaintainAlert),
+      ],
     })
   },
   enhanceApp({ app }) {
